@@ -9,7 +9,7 @@ require_once 'components.php';
     <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('public/images/contact_hq.jpg');"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-charcoal/30"></div>
     <div class="container mx-auto px-4 relative z-10 text-center">
-        <span class="inline-block px-3 py-1 bg-saudi/20 border border-saudi/40 text-saudi rounded text-xs font-bold uppercase tracking-wider mb-3">
+        <span class="inline-block px-3 py-1 bg-black/50 border border-emerald-400/40 text-emerald-300 rounded text-xs font-bold uppercase tracking-wider mb-3 shadow-md">
             <?= $lang==='ar' ? 'تواصل معنا' : 'Get In Touch' ?>
         </span>
         <h1 class="text-3xl md:text-5xl <?= $headingFontClass ?> mb-3 text-white">

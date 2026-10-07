@@ -1,67 +1,67 @@
-﻿<?php
+<?php
 $page_title = 'Our Services | Desert Iron';
 require_once 'header.php';
 
 $services = [
     [
         'title' => 'Structural Steel Buildings',
-        'title_ar' => '??????? ????????? ????????',
+        'title_ar' => 'الفولاذ الهيكلي للمباني',
         'slug' => 'structural-steel',
         'img' => 'structural_steel.jpg',
         'desc' => 'High-strength, precision-engineered steel structures for heavy industrial and commercial applications.'
     ],
     [
         'title' => 'Civil Construction',
-        'title_ar' => '?????? ??????',
+        'title_ar' => 'الإنشاءات المدنية',
         'slug' => 'civil-construction',
         'img' => 'civil_construction.jpg',
         'desc' => 'Comprehensive civil works, from massive foundational concrete pouring to complete site development.'
     ],
     [
         'title' => 'Pre-Engineered Buildings',
-        'title_ar' => '??????? ????? ???????',
+        'title_ar' => 'المباني مسبقة الصنع',
         'slug' => 'pre-engineered-buildings',
         'img' => 'peb_warehouse.jpg',
         'desc' => 'Cost-effective, rapid-deployment PEB solutions optimized for warehouses and logistics hubs.'
     ],
     [
         'title' => 'Architectural Work',
-        'title_ar' => '??????? ????????? ????????',
+        'title_ar' => 'الأعمال المعمارية',
         'slug' => 'architectural-work',
         'img' => 'architectural_work.jpg',
         'desc' => 'BIM-integrated architectural planning and geotechnical coordination aligned with SBC 201.'
     ],
     [
         'title' => 'Roof & Wall Panels',
-        'title_ar' => '????? ?????? ????????',
+        'title_ar' => 'ألواح الأسقف والجدران',
         'slug' => 'roof-wall-panels',
         'img' => 'roof_wall_panels.jpg',
         'desc' => 'Advanced cladding systems, including sandwich panels and corrugated sheets for thermal efficiency.'
     ],
     [
         'title' => 'Call-off Services',
-        'title_ar' => '????? ????????? ????????',
+        'title_ar' => 'خدمات الطلب عند الحاجة',
         'slug' => 'call-off-services',
         'img' => 'call_off_services.jpg',
         'desc' => 'On-demand contracting frameworks providing rapid mobilization for critical facility operations.'
     ],
     [
         'title' => 'Trading',
-        'title_ar' => '??????? ????????',
+        'title_ar' => 'التجارة والمواد',
         'slug' => 'trading',
         'img' => 'trading_warehouse.jpg',
         'desc' => 'Procurement and supply of premium structural materials, rebars, and fastening systems.'
     ],
     [
         'title' => 'Technical Staffing',
-        'title_ar' => '????? ??????? ??????',
+        'title_ar' => 'التزويد بالكادر الفني',
         'slug' => 'technical-staffing',
         'img' => 'technical_staffing.jpg',
         'desc' => 'Deployment of certified welders, QA/QC inspectors, and project managers for mega-projects.'
     ],
     [
         'title' => 'Shutdown & Maintenance',
-        'title_ar' => '??????? ?????? ???????',
+        'title_ar' => 'الإغلاق والصيانة',
         'slug' => 'shutdown-maintenance',
         'img' => 'shutdown_maintenance.jpg',
         'desc' => 'Time-critical plant turnaround services ensuring maximum safety and minimal operational downtime.'
@@ -70,30 +70,29 @@ $services = [
 ?>
 
 <!-- Cinematic Hero Banner -->
-<section class="relative min-h-[40vh] flex items-center bg-charcoal overflow-hidden pt-16 pb-8">
+<section class="relative min-h-[40vh] flex items-center bg-charcoal overflow-hidden pt-24 pb-12">
     <div class="absolute inset-0 z-0">
-        <img src="public/images/civil_construction.jpg" alt="Desert Iron Services" class="w-full h-full object-cover opacity-30">
-        <!-- Proper Gradient Overlay for 100% Text Visibility -->
-        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-charcoal/30"></div>
+        <img src="public/images/civil_construction.jpg" alt="Desert Iron Services" class="w-full h-full object-cover opacity-75">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/20"></div>
     </div>
     
-    <div class="container mx-auto px-4 relative z-10 text-center" >
+    <div class="container mx-auto px-4 relative z-10 text-center">
         <div class="flex items-center justify-center gap-4 mb-4">
-            <div class="w-8 h-[2px] bg-saudi"></div>
-            <span class="text-saudi text-xs font-bold uppercase tracking-widest">Our Expertise</span>
-            <div class="w-8 h-[2px] bg-saudi"></div>
+            <div class="w-8 h-[2px] bg-emerald-400"></div>
+            <span class="text-emerald-300 text-xs font-bold uppercase tracking-widest">Our Expertise</span>
+            <div class="w-8 h-[2px] bg-emerald-400"></div>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 leading-tight <?= $headingFontClass ?>">
-            <?= $lang === 'ar' ? '??????? ????????' : 'Comprehensive Services' ?>
+            <?= $lang === 'ar' ? 'خدماتنا الشاملة' : 'Comprehensive Services' ?>
         </h1>
         <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
-            <?= $lang === 'ar' ? '???? ?????? ?????? ??????? ???????? ???????? ?????????? ?? ??????? ???????? ??? ????? ????? ???????? ???????? ????? ?????? ??????.' : 'Delivering end-to-end engineering solutions for industrial and commercial mega-projects, from architectural design to steel fabrication and safe field execution.' ?>
+            <?= $lang === 'ar' ? 'تقديم حلول هندسية متكاملة للمشاريع الكبرى الصناعية والتجارية من التصميم إلى التصنيع والتنفيذ الميداني.' : 'Delivering end-to-end engineering solutions for industrial and commercial mega-projects, from architectural design to steel fabrication and safe field execution.' ?>
         </p>
     </div>
 </section>
 
 <!-- Services Grid Section -->
-<section class="py-12 md:py-20 bg-offwhite">
+<section class="py-12 md:py-16 bg-offwhite">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             
@@ -121,7 +120,7 @@ $services = [
                         <?= $service['desc'] ?>
                     </p>
                     <div class="mt-4 flex items-center text-xs font-bold text-saudi uppercase tracking-widest group-hover:text-charcoal transition-colors">
-                        <?= $lang === 'ar' ? '????? ??????' : 'Explore Service' ?> 
+                        <?= $lang === 'ar' ? 'استكشف الخدمة' : 'Explore Service' ?> 
                         <span class="inline-block transition-transform group-hover:translate-x-1 mx-2">&rarr;</span>
                     </div>
                 </div>
@@ -133,21 +132,29 @@ $services = [
     </div>
 </section>
 
-<!-- Bottom CTA -->
-<section class="py-16 bg-charcoal relative overflow-hidden">
-    <!-- Subtle Pattern -->
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #ffffff 2px, transparent 2px); background-size: 32px 32px;"></div>
-    
-    <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
-        <h2 class="text-3xl text-white font-bold mb-4 <?= $headingFontClass ?>">
-            <?= $lang === 'ar' ? '???? ???? ?????? ???????' : 'Ready to start your next project?' ?>
+<!-- Final CTA Banner -->
+<section class="py-12 md:py-16 bg-gradient-to-r from-charcoal via-[#14231f] to-charcoal text-center relative overflow-hidden border-t border-saudi/30">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#006B3F_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+    <div class="container mx-auto px-4 max-w-4xl relative z-10">
+        <span class="inline-block px-3 py-1 bg-saudi/20 border border-saudi/40 text-emerald-300 rounded text-xs font-bold uppercase tracking-wider mb-3">
+            <?= $lang === 'ar' ? 'استشارة مجانية وعروض أسعار' : 'Free Consultation & Engineering Quote' ?>
+        </span>
+        <h2 class="text-2xl sm:text-4xl text-white font-bold <?= $headingFontClass ?> mb-4 leading-tight">
+            <?= $lang === 'ar' ? 'جاهز لبناء مشروعك القادم؟' : 'Ready to start your next project?' ?>
         </h2>
-        <p class="text-gray-300 text-sm mb-8 font-light">
-            <?= $lang === 'ar' ? '????? ?? ???? ??????? ????? ??????? ???????? ??????? ??????? ??? ?????.' : 'Connect with our expert engineering team to discuss technical details and get a tailored proposal.' ?>
+        <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto mb-8 font-light leading-relaxed">
+            <?= $lang === 'ar' ? 'تواصل مع فريق مبيعات الهندسة للحصول على استشارة متخصصة وعروض أسعار منافسة.' : 'Connect with our expert engineering team to discuss technical details and get a tailored proposal.' ?>
         </p>
-        <a href="quote.php" class="inline-flex items-center gap-2 bg-saudi text-white px-8 py-3 rounded-sm font-bold uppercase tracking-widest text-sm shadow-lg hover:bg-white hover:text-saudi transition-colors">
-            <?= t('get_quote') ?>
-        </a>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="quote.php" class="w-full sm:w-auto bg-saudi text-white px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-emerald-700 transition-all duration-300 shadow-xl min-h-[44px] flex items-center justify-center space-x-2">
+                <span><?= t('get_quote') ?></span>
+                <svg class="w-4 h-4 <?= $lang === 'ar' ? 'rotate-180' : '' ?>" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="tel:+966599510213" class="w-full sm:w-auto bg-white/10 border border-white/30 text-white px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-charcoal transition-all duration-300 min-h-[44px] flex items-center justify-center space-x-2">
+                <svg class="w-4 h-4 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>+966 59 951 0213</span>
+            </a>
+        </div>
     </div>
 </section>
 

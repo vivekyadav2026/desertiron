@@ -130,10 +130,22 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
             <div class="lg:col-span-4 space-y-6">
                 
                 <!-- Quote Box -->
-                <div class="bg-charcoal text-white p-6 md:p-8 rounded-sm shadow-xl">
-                    <h3 class="text-xl md:text-2xl font-bold mb-3 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '?? ??? ????? ??????' : 'Ready to get started?' ?></h3>
-                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-light"><?= $lang === 'ar' ? '???? ????? ??????? ????? ??????? ??????? ?????? ??????? ??? ??? ??? ????.' : 'Contact our engineering team to discuss your project requirements and receive a detailed technical proposal.' ?></p>
-                    <a href="quote.php" class="block text-center bg-saudi text-white py-3.5 rounded-sm font-bold hover:bg-white hover:text-saudi transition-colors text-xs uppercase tracking-widest shadow-md min-h-[44px] flex items-center justify-center"><?= t('get_quote') ?></a>
+                <div class="bg-gradient-to-br from-charcoal to-[#14231f] text-white p-6 md:p-8 rounded-xl shadow-xl border border-saudi/30">
+                    <span class="inline-block px-2.5 py-0.5 bg-saudi/20 border border-saudi/40 text-emerald-300 rounded text-[11px] font-bold uppercase tracking-wider mb-2">
+                        <?= $lang === 'ar' ? 'استشارة مجانية' : 'Direct RFQ & Consultation' ?>
+                    </span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'جاهز لبدء مشروعك؟' : 'Ready to get started?' ?></h3>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-light"><?= $lang === 'ar' ? 'تواصل مع فريقنا الهندسي لمناقشة المتطلبات الفنية والحصول على عرض سعر مفصل.' : 'Contact our engineering team in Riyadh to discuss your structural requirements and receive a detailed technical proposal.' ?></p>
+                    <div class="space-y-3">
+                        <a href="quote.php" class="w-full bg-saudi text-white py-3 px-4 rounded-lg font-bold hover:bg-emerald-700 transition-all text-xs uppercase tracking-widest shadow-md min-h-[44px] flex items-center justify-center space-x-2">
+                            <span><?= t('get_quote') ?></span>
+                            <svg class="w-4 h-4 <?= $lang === 'ar' ? 'rotate-180' : '' ?>" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                        <a href="tel:+966599510213" class="w-full bg-white/10 border border-white/20 text-white py-3 px-4 rounded-lg font-bold hover:bg-white hover:text-charcoal transition-all text-xs uppercase tracking-widest min-h-[44px] flex items-center justify-center space-x-2">
+                            <svg class="w-4 h-4 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>+966 59 951 0213</span>
+                        </a>
+                    </div>
                 </div>
                 
                 <!-- Technical Specs (Stacked Key-Value Cards on Mobile) -->

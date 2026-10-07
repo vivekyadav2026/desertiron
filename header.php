@@ -51,6 +51,121 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
         
         /* Prevent iOS Zoom on Inputs */
         input, select, textarea { font-size: 16px !important; }
+
+        /* Scroll Reveal & Motion Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.96) translateY(12px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-scale.is-visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Hero & Hover Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 107, 63, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 107, 63, 0); }
+        }
+
+        .animate-fade-down { animation: fadeInDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-fade-up { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-pulse-glow { animation: pulseGlow 2.5s infinite; }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Interactive Card & Link Hover Effects */
+        .grid > a, .grid > div.bg-white {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+        .grid > a:hover, .grid > div.bg-white:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px -8px rgba(0, 107, 63, 0.12);
+            border-color: rgba(0, 107, 63, 0.5) !important;
+        }
+
+        /* Button Cursor Hover Shine Effect */
+        a.bg-saudi, button.bg-saudi, a.bg-charcoal, button.bg-charcoal {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+        }
+        a.bg-saudi:hover, button.bg-saudi:hover, a.bg-charcoal:hover, button.bg-charcoal:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px -4px rgba(0, 107, 63, 0.35);
+        }
+        a.bg-saudi:active, button.bg-saudi:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Button Sweep Highlight */
+        a.bg-saudi::after, button.bg-saudi::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(25deg);
+            transition: all 0.65s ease;
+            pointer-events: none;
+        }
+        a.bg-saudi:hover::after, button.bg-saudi:hover::after {
+            left: 130%;
+        }
+
+        /* Nav Link Hover Animated Underline */
+        nav a:not(.bg-saudi) {
+            position: relative;
+        }
+        nav a:not(.bg-saudi)::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #006B3F;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        nav a:not(.bg-saudi):hover::after {
+            width: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-on-scroll, .reveal-scale, .grid > a, .grid > div.bg-white {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-offwhite text-charcoal <?= $bodyFontClass ?> antialiased selection:bg-saudi selection:text-white flex flex-col min-h-screen">

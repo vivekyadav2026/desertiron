@@ -15,9 +15,9 @@ require_once 'header.php';
         <div class="max-w-3xl mx-auto">
             
             <!-- Tag Badge -->
-            <div class="inline-flex items-center gap-2 bg-saudi/20 border border-saudi/40 px-4 py-1.5 rounded-full mb-4">
-                <span class="w-2 h-2 rounded-full bg-saudi animate-ping"></span>
-                <span class="text-saudi text-xs font-bold uppercase tracking-widest">
+            <div class="inline-flex items-center gap-2 bg-black/50 border border-emerald-400/40 px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm shadow-md">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span class="text-emerald-300 text-xs font-bold uppercase tracking-widest">
                     <?= t('subline') ?>
                 </span>
             </div>
@@ -170,10 +170,28 @@ require_once 'header.php';
 </section>
 
 <!-- 6. Final CTA Banner -->
-<section class="py-10 md:py-12 bg-charcoal text-center relative overflow-hidden">
+<section class="py-12 md:py-16 bg-gradient-to-r from-charcoal via-[#14231f] to-charcoal text-center relative overflow-hidden border-t border-saudi/30">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#006B3F_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
     <div class="container mx-auto px-4 max-w-4xl relative z-10">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl text-white font-bold <?= $headingFontClass ?> mb-4"><?= t('ready_build') ?></h2>
-        <a href="contact.php" class="inline-flex items-center justify-center bg-saudi text-white px-8 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-saudi transition-colors tracking-wide min-h-[44px] shadow-md"><?= t('contact_us_now') ?></a>
+        <span class="inline-block px-3 py-1 bg-saudi/20 border border-saudi/40 text-emerald-300 rounded text-xs font-bold uppercase tracking-wider mb-3">
+            <?= $lang === 'ar' ? 'استشارة مجانية وعرض سعر' : 'Free Engineering Consultation & Quote' ?>
+        </span>
+        <h2 class="text-2xl sm:text-4xl text-white font-bold <?= $headingFontClass ?> mb-4 leading-tight">
+            <?= t('ready_build') ?>
+        </h2>
+        <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto mb-8 font-light leading-relaxed">
+            <?= $lang === 'ar' ? 'تواصل مع مهندسي المبيعات والتقدير للحصول على تحليل دقيق لمخططات الفولاذ والمباني مسبقة الصنع.' : 'Connect with our Riyadh sales and estimation team for immediate BOQ analysis and structural steel pricing.' ?>
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="quote.php" class="w-full sm:w-auto bg-saudi text-white px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-emerald-700 transition-all duration-300 shadow-xl min-h-[44px] flex items-center justify-center space-x-2">
+                <span><?= t('request_quote') ?></span>
+                <svg class="w-4 h-4 <?= $lang === 'ar' ? 'rotate-180' : '' ?>" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="tel:+966599510213" class="w-full sm:w-auto bg-white/10 border border-white/30 text-white px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-charcoal transition-all duration-300 min-h-[44px] flex items-center justify-center space-x-2">
+                <svg class="w-4 h-4 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>+966 59 951 0213</span>
+            </a>
+        </div>
     </div>
 </section>
 
