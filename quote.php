@@ -1,110 +1,272 @@
-<?php
-$page_title = "Request a Quote | Desert Iron";
+﻿<?php
+$page_title = 'Request a Technical Quote | Desert Iron';
 require_once 'header.php';
-require_once 'components.php';
 ?>
 
-<section class="pt-32 pb-20 bg-charcoal text-offwhite">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl <?= $headingFontClass ?> mb-4"><?= $lang==='ar' ? 'اطلب تسعيرة' : 'Request a Quote' ?></h1>
-        <p class="text-steel">Complete the steps below to receive a detailed estimate for your project.</p>
+<!-- Cinematic Hero Banner -->
+<section class="relative min-h-[40vh] flex items-center bg-charcoal overflow-hidden pt-24 pb-12">
+    <div class="absolute inset-0 z-0">
+        <img src="public/images/peb_warehouse.jpg" alt="Request a Quote" class="w-full h-full object-cover opacity-75">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/20"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 text-center" >
+        <div class="flex items-center justify-center gap-4 mb-4">
+            <div class="w-12 h-[3px] bg-saudi"></div>
+            <span class="text-white opacity-90 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
+                <?= $lang === 'ar' ? '??? ??? ???' : 'Commercial & Technical Proposals' ?>
+            </span>
+            <div class="w-12 h-[3px] bg-saudi"></div>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 leading-tight drop-shadow-lg <?= $headingFontClass ?>">
+            <?= $lang === 'ar' ? '??? ??? ??? ??????' : 'Request a Fast Quote' ?>
+        </h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
+            <?= $lang === 'ar' ? '?? ?????? ??????? ????? ?????? ??? ??? ??? ??? ??????? ???? ??????? ???? 24 ????.' : 'Complete our quick 3-step RFQ portal to receive a detailed engineering estimate and proposal within 24 hours.' ?>
+        </p>
     </div>
 </section>
 
-<section class="py-16 bg-offwhite min-h-[60vh]">
-    <div class="container mx-auto px-4 max-w-3xl">
+<!-- Main Estimator Portal Section -->
+<section class="py-16 md:py-24 bg-offwhite">
+    <div class="container mx-auto px-4 max-w-7xl">
         
-        <!-- Progress Bar -->
-        <div class="flex justify-between items-center mb-8 relative">
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-gray-300 z-0 rounded"></div>
-            <div id="progress-line" class="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 h-1 bg-saudi z-0 rounded transition-all duration-300"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
-            <div class="w-10 h-10 rounded-full bg-saudi text-white flex items-center justify-center relative z-10 font-bold step-indicator" id="ind-1">1</div>
-            <div class="w-10 h-10 rounded-full bg-gray-300 text-charcoal flex items-center justify-center relative z-10 font-bold step-indicator" id="ind-2">2</div>
-            <div class="w-10 h-10 rounded-full bg-gray-300 text-charcoal flex items-center justify-center relative z-10 font-bold step-indicator" id="ind-3">3</div>
-        </div>
-        
-        <div class="bg-white p-8 rounded shadow-lg border border-gray-100">
-            <form id="quote-form" onsubmit="event.preventDefault(); alert('Quote Request Submitted!');">
+            <!-- Left Info Sidebar -->
+            <div class="lg:col-span-4 space-y-8">
                 
-                <!-- Step 1 -->
-                <div class="step-container" id="step-1">
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-6">Contact Details</h2>
-                    <div class="space-y-4">
-                        <div><label class="block text-sm mb-1 text-charcoal font-medium">Full Name *</label><input type="text" class="w-full border p-3 rounded" required></div>
-                        <div><label class="block text-sm mb-1 text-charcoal font-medium">Company *</label><input type="text" class="w-full border p-3 rounded" required></div>
-                        <div><label class="block text-sm mb-1 text-charcoal font-medium">Email *</label><input type="email" class="w-full border p-3 rounded" required></div>
-                        <div><label class="block text-sm mb-1 text-charcoal font-medium">Phone *</label><input type="tel" class="w-full border p-3 rounded" required></div>
-                    </div>
-                    <div class="mt-8 text-right">
-                        <button type="button" onclick="goToStep(2)" class="bg-saudi text-white px-6 py-2 rounded font-bold hover:bg-opacity-90">Next Step &rarr;</button>
-                    </div>
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-saudi font-bold mb-2 block">Prequalified Estimators</span>
+                    <h2 class="text-3xl text-charcoal font-bold <?= $headingFontClass ?> mb-4">
+                        <?= $lang === 'ar' ? '????? ????? ?????? ??????' : 'Why RFQ With Us?' ?>
+                    </h2>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                        <?= $lang === 'ar' ? '???? ???? ??????? ???????? ????? ??????? ???? ???????? ??????????? ?????? ?????? ???? ??????? ????????.' : 'Our team of experienced Saudi structural engineers and cost estimators evaluate every RFQ to provide budget-optimized, code-compliant proposals.' ?>
+                    </p>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="step-container hidden" id="step-2">
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-6">Service Required</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <label class="border p-4 rounded cursor-pointer hover:border-saudi flex items-center gap-3">
-                            <input type="radio" name="service" class="w-5 h-5 text-saudi"> <span>Structural Steel</span>
-                        </label>
-                        <label class="border p-4 rounded cursor-pointer hover:border-saudi flex items-center gap-3">
-                            <input type="radio" name="service" class="w-5 h-5 text-saudi"> <span>PEB Systems</span>
-                        </label>
-                        <label class="border p-4 rounded cursor-pointer hover:border-saudi flex items-center gap-3">
-                            <input type="radio" name="service" class="w-5 h-5 text-saudi"> <span>Civil Construction</span>
-                        </label>
-                        <label class="border p-4 rounded cursor-pointer hover:border-saudi flex items-center gap-3">
-                            <input type="radio" name="service" class="w-5 h-5 text-saudi"> <span>Other</span>
-                        </label>
+                <!-- Benefits List -->
+                <div class="space-y-4">
+                    
+                    <div class="bg-white p-5 rounded-sm border border-gray-200 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-saudi/10 text-saudi flex items-center justify-center rounded shrink-0 font-bold">24h</div>
+                        <div>
+                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? '??????? ?????' : '24-Hour Proposal Turnaround' ?></h4>
+                            <p class="text-gray-500 text-xs font-light mt-1">Fast technical evaluation for standard PEB and structural steel inquiries.</p>
+                        </div>
                     </div>
-                    <div class="mt-8 flex justify-between">
-                        <button type="button" onclick="goToStep(1)" class="bg-gray-200 text-charcoal px-6 py-2 rounded font-bold hover:bg-gray-300">&larr; Back</button>
-                        <button type="button" onclick="goToStep(3)" class="bg-saudi text-white px-6 py-2 rounded font-bold hover:bg-opacity-90">Next Step &rarr;</button>
+
+                    <div class="bg-white p-5 rounded-sm border border-gray-200 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-saudi/10 text-saudi flex items-center justify-center rounded shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? '?????? ????? ??????? (SBC)' : 'SBC Code Pre-Check' ?></h4>
+                            <p class="text-gray-500 text-xs font-light mt-1">All design estimates are pre-vetted to ensure compliance with Saudi Building Codes.</p>
+                        </div>
                     </div>
+
+                    <div class="bg-white p-5 rounded-sm border border-gray-200 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-saudi/10 text-saudi flex items-center justify-center rounded shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? '?????? ???????? (BOQ)' : 'BOQ & Drawing Review' ?></h4>
+                            <p class="text-gray-500 text-xs font-light mt-1">Direct upload of AutoCAD/DWG drawings and BOQ spreadsheets.</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Step 3 -->
-                <div class="step-container hidden" id="step-3">
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-6">Project Details & Uploads</h2>
-                    <div class="space-y-4">
-                        <div><label class="block text-sm mb-1 text-charcoal font-medium">Project Scope / Details</label>
-                        <textarea rows="4" class="w-full border p-3 rounded" placeholder="Briefly describe your requirements..."></textarea></div>
+                <!-- Direct Assistance Box -->
+                <div class="bg-charcoal text-white p-6 rounded-sm shadow-md">
+                    <h4 class="text-base font-bold mb-2 <?= $headingFontClass ?>">Urgent Tender or RFQ?</h4>
+                    <p class="text-gray-400 text-xs font-light mb-4">For immediate tender submissions or urgent budget estimates, contact our estimation desk directly.</p>
+                    <div class="text-saudi font-bold text-sm">+966 59 951 0213</div>
+                    <div class="text-gray-300 text-xs">sales@desrtiron.com</div>
+                </div>
+
+            </div>
+            
+            <!-- Right Multi-Step Form Portal -->
+            <div class="lg:col-span-8">
+                <div class="bg-white p-8 md:p-10 rounded-sm shadow-md border border-gray-200">
+                    
+                    <!-- Progress Step Bar -->
+                    <div class="mb-10">
+                        <div class="flex justify-between items-center relative">
+                            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-gray-200 z-0 rounded-full"></div>
+                            <div id="progress-line" class="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 h-1 bg-saudi z-0 rounded-full transition-all duration-500"></div>
+                            
+                            <div class="flex flex-col items-center relative z-10">
+                                <div id="ind-1" class="w-10 h-10 rounded-full bg-saudi text-white flex items-center justify-center font-bold text-sm shadow-md transition-colors">1</div>
+                                <span class="text-[11px] font-bold text-charcoal mt-2 uppercase tracking-wider">Contact</span>
+                            </div>
+                            <div class="flex flex-col items-center relative z-10">
+                                <div id="ind-2" class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold text-sm transition-colors">2</div>
+                                <span class="text-[11px] font-bold text-gray-400 mt-2 uppercase tracking-wider">Service Scope</span>
+                            </div>
+                            <div class="flex flex-col items-center relative z-10">
+                                <div id="ind-3" class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold text-sm transition-colors">3</div>
+                                <span class="text-[11px] font-bold text-gray-400 mt-2 uppercase tracking-wider">Files & Submit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="rfq-form" action="process-form.php" method="POST" enctype="multipart/form-data">
                         
-                        <div><label class="block text-sm mb-1 text-charcoal font-medium">Upload Drawings/BOQ (PDF, ZIP)</label>
-                        <div class="border-2 border-dashed p-8 rounded text-center bg-offwhite text-steel">Drag & Drop files here or <span class="text-saudi font-bold underline cursor-pointer">Browse</span></div></div>
-                    </div>
-                    <div class="mt-8 flex justify-between">
-                        <button type="button" onclick="goToStep(2)" class="bg-gray-200 text-charcoal px-6 py-2 rounded font-bold hover:bg-gray-300">&larr; Back</button>
-                        <button type="submit" class="bg-saudi text-white px-8 py-2 rounded font-bold hover:bg-opacity-90">Submit Request</button>
-                    </div>
-                </div>
+                        <!-- STEP 1: Contact Details -->
+                        <div class="step-container space-y-5" id="step-1">
+                            <h3 class="text-xl font-bold text-charcoal mb-4 <?= $headingFontClass ?>">Step 1: Contact & Company Details</h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Company Name *</label>
+                                    <input type="text" id="company" name="company" required placeholder="Saudi Construction Co." class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Business Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="j.doe@company.com" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Phone / WhatsApp *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+966 50 000 0000" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 flex justify-end">
+                                <button type="button" onclick="goToStep(2)" class="bg-saudi text-white px-8 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-charcoal transition-colors shadow-md">
+                                    Next Step: Select Scope &rarr;
+                                </button>
+                            </div>
+                        </div>
 
-            </form>
+                        <!-- STEP 2: Service & Scope Selection -->
+                        <div class="step-container space-y-5 hidden" id="step-2">
+                            <h3 class="text-xl font-bold text-charcoal mb-4 <?= $headingFontClass ?>">Step 2: Select Scope & Requirements</h3>
+                            
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Primary Service Needed *</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="border border-gray-200 p-4 rounded-sm cursor-pointer hover:border-saudi flex items-center gap-3 bg-offwhite transition-colors">
+                                    <input type="radio" name="service" value="Structural Steel" checked class="text-saudi focus:ring-saudi">
+                                    <span class="text-sm font-medium text-charcoal">Structural Steel Buildings</span>
+                                </label>
+                                <label class="border border-gray-200 p-4 rounded-sm cursor-pointer hover:border-saudi flex items-center gap-3 bg-offwhite transition-colors">
+                                    <input type="radio" name="service" value="Pre-Engineered Buildings" class="text-saudi focus:ring-saudi">
+                                    <span class="text-sm font-medium text-charcoal">PEB Warehouse Systems</span>
+                                </label>
+                                <label class="border border-gray-200 p-4 rounded-sm cursor-pointer hover:border-saudi flex items-center gap-3 bg-offwhite transition-colors">
+                                    <input type="radio" name="service" value="Civil Construction" class="text-saudi focus:ring-saudi">
+                                    <span class="text-sm font-medium text-charcoal">Civil Construction Works</span>
+                                </label>
+                                <label class="border border-gray-200 p-4 rounded-sm cursor-pointer hover:border-saudi flex items-center gap-3 bg-offwhite transition-colors">
+                                    <input type="radio" name="service" value="Roof & Wall Panels" class="text-saudi focus:ring-saudi">
+                                    <span class="text-sm font-medium text-charcoal">Cladding & Sandwich Panels</span>
+                                </label>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Project Location</label>
+                                    <input type="text" name="location" placeholder="e.g. Riyadh, NEOM, Jubail" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Estimated Tonnage / Area</label>
+                                    <input type="text" name="tonnage" placeholder="e.g. 500 Tons / 5,000 sqm" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 flex justify-between">
+                                <button type="button" onclick="goToStep(1)" class="bg-gray-200 text-charcoal px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-gray-300 transition-colors">
+                                    &larr; Back
+                                </button>
+                                <button type="button" onclick="goToStep(3)" class="bg-saudi text-white px-8 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-charcoal transition-colors shadow-md">
+                                    Next Step: Uploads & Submit &rarr;
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3: Details, Uploads & Submit -->
+                        <div class="step-container space-y-5 hidden" id="step-3">
+                            <h3 class="text-xl font-bold text-charcoal mb-4 <?= $headingFontClass ?>">Step 3: Specifications & File Upload</h3>
+                            
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Scope Summary / Technical Requirements</label>
+                                <textarea name="message" rows="4" placeholder="Mention steel grades, clear heights, crane capacities, timeline, or special requirements..." class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors"></textarea>
+                            </div>
+
+                            <!-- File Upload Box -->
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Upload Drawings / BOQ (Optional)</label>
+                                <div class="border-2 border-dashed border-gray-300 rounded-sm p-6 text-center bg-offwhite hover:border-saudi transition-colors cursor-pointer" onclick="document.getElementById('rfq-file').click()">
+                                    <svg class="w-8 h-8 text-saudi mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                    <span class="text-xs text-gray-700 font-medium block">Click or Drag & Drop Drawings here</span>
+                                    <span class="text-[10px] text-gray-400 font-light block mt-1">Accepts DWG, PDF, ZIP, XLSX (Max 15MB)</span>
+                                    <input type="file" name="attachment" id="rfq-file" class="hidden">
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 flex justify-between">
+                                <button type="button" onclick="goToStep(2)" class="bg-gray-200 text-charcoal px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-gray-300 transition-colors">
+                                    &larr; Back
+                                </button>
+                                <button type="submit" class="bg-saudi text-white px-10 py-3.5 rounded-sm font-bold text-xs uppercase tracking-widest shadow-xl hover:bg-charcoal transition-colors">
+                                    Submit RFQ Proposal Request
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
         </div>
+
     </div>
 </section>
 
 <script>
     function goToStep(step) {
-        // Hide all
+        // Validation check for Step 1 before proceeding to Step 2
+        if (step > 1) {
+            const name = document.getElementById('name').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            
+            if (!name || !company || !email || !phone) {
+                alert('Please fill out all required contact fields before proceeding.');
+                return;
+            }
+        }
+
+        // Hide all step containers
         document.querySelectorAll('.step-container').forEach(el => el.classList.add('hidden'));
-        // Show target
+        
+        // Show target step container
         document.getElementById('step-' + step).classList.remove('hidden');
         
-        // Update indicators
-        for(let i=1; i<=3; i++) {
+        // Update Step Indicators
+        for(let i = 1; i <= 3; i++) {
             const ind = document.getElementById('ind-' + i);
-            if(i <= step) {
-                ind.classList.remove('bg-gray-300', 'text-charcoal');
+            if (i <= step) {
+                ind.classList.remove('bg-gray-200', 'text-gray-600');
                 ind.classList.add('bg-saudi', 'text-white');
             } else {
                 ind.classList.remove('bg-saudi', 'text-white');
-                ind.classList.add('bg-gray-300', 'text-charcoal');
+                ind.classList.add('bg-gray-200', 'text-gray-600');
             }
         }
         
-        // Update bar
+        // Update Progress Bar Line
         const percentages = {1: '33%', 2: '66%', 3: '100%'};
         document.getElementById('progress-line').style.width = percentages[step];
     }

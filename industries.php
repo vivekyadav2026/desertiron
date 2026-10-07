@@ -2,7 +2,7 @@
 <section class="relative pt-32 pb-20 bg-charcoal text-offwhite overflow-hidden">
 <div class="container mx-auto px-4 relative z-10 text-center">
 <h1 class="text-4xl md:text-5xl <?= $headingFontClass ?> mb-4">Industries We Serve</h1>
-<p class="text-steel max-w-2xl mx-auto">Empowering Saudi Arabia’s core economic sectors.</p>
+<p class="text-steel max-w-2xl mx-auto">Empowering Saudi Arabia's core economic sectors.</p>
 </div>
 </section>
 <section class="py-20 bg-white min-h-[50vh]">

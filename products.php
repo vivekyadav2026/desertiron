@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page_title = 'Our Products | Desert Iron';
 require_once 'header.php';
 
@@ -52,10 +52,10 @@ $products = [
 <section class="relative min-h-[45vh] flex items-center bg-charcoal overflow-hidden pt-24 pb-12">
     <div class="absolute inset-0 z-0">
         <img src="public/images/roof_wall_panels.jpg" alt="Desert Iron Products" class="w-full h-full object-cover opacity-50">
-        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/60 to-charcoal/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/20"></div>
     </div>
     
-    <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4 relative z-10 text-center" >
         <div class="flex items-center justify-center gap-4 mb-5">
             <div class="w-12 h-[3px] bg-saudi"></div>
             <span class="text-white opacity-90 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
@@ -73,7 +73,7 @@ $products = [
 </section>
 
 <!-- Quality Assurance Banner -->
-<section class="border-b border-gray-200 bg-white" data-aos="fade-up">
+<section class="border-b border-gray-200 bg-white">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 rtl:divide-x-reverse text-center">
             <div class="py-8 px-4">
@@ -100,7 +100,7 @@ $products = [
 <section class="py-16 md:py-24 bg-offwhite">
     <div class="container mx-auto px-4 max-w-7xl">
         
-        <div class="text-center mb-16" data-aos="fade-up">
+        <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl text-charcoal font-bold mb-4 <?= $headingFontClass ?>">
                 <?= $lang === 'ar' ? '?????? ????????' : 'Our Product Portfolio' ?>
             </h2>
@@ -112,17 +112,14 @@ $products = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <?php foreach($products as $idx => $prod): ?>
-            <div class="group bg-white rounded-sm shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="<?= ($idx % 3) * 100 ?>">
+            <div class="group bg-white rounded-sm shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 
-                <!-- Image Box -->
                 <div class="relative h-56 overflow-hidden">
                     <img src="public/images/<?= $prod['img'] ?>" alt="<?= $prod['title'] ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <!-- Edge overlay -->
                     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-charcoal/60 to-transparent"></div>
                     <div class="absolute bottom-0 start-0 w-full h-1 bg-saudi transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rtl:origin-right duration-300"></div>
                 </div>
                 
-                <!-- Content Box -->
                 <div class="p-6 md:p-8">
                     <h3 class="text-xl text-charcoal font-bold mb-3 <?= $headingFontClass ?> leading-tight group-hover:text-saudi transition-colors">
                         <?= $lang === 'ar' ? $prod['title_ar'] : $prod['title'] ?>
@@ -149,7 +146,7 @@ $products = [
 <section class="py-16 bg-charcoal relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #ffffff 2px, transparent 2px); background-size: 32px 32px;"></div>
     
-    <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
         <h2 class="text-3xl text-white font-bold mb-4 <?= $headingFontClass ?>">
             <?= $lang === 'ar' ? '????? ??? ?????? ??? ???????' : 'Need a detailed technical catalogue?' ?>
         </h2>

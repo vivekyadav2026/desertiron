@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page_title = 'Our Services | Desert Iron';
 require_once 'header.php';
 
@@ -77,7 +77,7 @@ $services = [
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-charcoal/30"></div>
     </div>
     
-    <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4 relative z-10 text-center" >
         <div class="flex items-center justify-center gap-4 mb-4">
             <div class="w-8 h-[2px] bg-saudi"></div>
             <span class="text-saudi text-xs font-bold uppercase tracking-widest">Our Expertise</span>
@@ -98,7 +98,7 @@ $services = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             
             <?php foreach($services as $idx => $service): ?>
-            <a href="<?= $service['slug'] ?>.php" class="group block relative rounded-sm overflow-hidden bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="<?= ($idx % 3) * 100 ?>">
+            <a href="<?= $service['slug'] ?>.php" class="group block relative rounded-sm overflow-hidden bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 
                 <!-- Image Box -->
                 <div class="relative h-56 overflow-hidden">
@@ -138,7 +138,7 @@ $services = [
     <!-- Subtle Pattern -->
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle at 100% 0%, #ffffff 2px, transparent 2px); background-size: 32px 32px;"></div>
     
-    <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center" data-aos="fade-up">
+    <div class="container mx-auto px-4 relative z-10 max-w-4xl text-center">
         <h2 class="text-3xl text-white font-bold mb-4 <?= $headingFontClass ?>">
             <?= $lang === 'ar' ? '???? ???? ?????? ???????' : 'Ready to start your next project?' ?>
         </h2>

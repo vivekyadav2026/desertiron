@@ -1,74 +1,89 @@
 <?php
-session_start();
-
-if (isset($_GET['lang']) && in_array($_GET['lang'], ['en', 'ar'])) {
-    $_SESSION['lang'] = $_GET['lang'];
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
-$lang = $_SESSION['lang'] ?? 'en';
-$dir = $lang === 'ar' ? 'rtl' : 'ltr';
 
-$fontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
-$headingFontClass = $lang === 'ar' ? 'font-arabic font-bold' : 'font-heading';
+if (isset($_GET['lang'])) {
+    $lang = $_GET['lang'] === 'ar' ? 'ar' : 'en';
+    $_SESSION['lang'] = $lang;
+} else {
+    $lang = $_SESSION['lang'] ?? 'en';
+}
+
+$dir = $lang === 'ar' ? 'rtl' : 'ltr';
 
 $translations = [
     'en' => [
-        // Global
-        'tagline' => 'Building a Stronger Tomorrow',
+        // Global & Navigation
+        'tagline' => 'Building A Stronger Tomorrow',
         'subline' => 'Structural Steel | Engineering | Construction',
-        'switch_lang' => 'عربي',
+        'switch_lang' => 'العربية',
         'switch_lang_code' => 'ar',
-        'company' => 'Company',
+        'company' => 'Desert Iron',
         'more' => 'More',
-        'vision_2030' => 'Proudly aligned with Saudi Vision 2030.',
+        'vision_2030' => 'Saudi Vision 2030',
         'learn_more' => 'Learn More',
-        
-        // Navigation
-        'home' => 'Home', 'about' => 'About Us', 'services' => 'Services', 'products' => 'Products',
-        'projects' => 'Projects', 'industries' => 'Industries', 'clients' => 'Our Clients',
-        'certifications' => 'Certifications', 'careers' => 'Careers', 'news' => 'News/Insights',
-        'contact' => 'Contact', 'get_quote' => 'Get a Quote',
-        
-        // 1. Hero
-        'hero_line' => 'Engineered Structures for a Stronger Saudi Arabia',
-        'home_hero_sub' => 'Unlocking the potential of industrial and commercial spaces with world-class steel fabrication and civil engineering.',
+
+        // Nav Items
+        'home' => 'Home',
+        'about' => 'About Us',
+        'services' => 'Services',
+        'products' => 'Products',
+        'projects' => 'Projects',
+        'industries' => 'Industries',
+        'clients' => 'Clients',
+        'certifications' => 'Certifications',
+        'careers' => 'Careers',
+        'news' => 'News',
+        'contact' => 'Contact Us',
+        'get_quote' => 'Get a Quote',
+
+        // Hero Keys
+        'hero_tag' => 'Engineering & Construction',
+        'hero_title' => 'Building A Stronger Tomorrow',
+        'hero_desc' => 'Leading Saudi Arabia\'s industrial transformation with world-class structural steel, PEB systems, and mega-project execution aligned with Vision 2030.',
+        'request_quote' => 'Request a Quote',
+        'explore_projects' => 'Explore Projects',
+        'hero_line' => 'Building A Stronger Tomorrow',
+        'home_hero_sub' => 'Leading force in structural steel fabrication, civil construction, and gigaproject execution in Riyadh and across Saudi Arabia.',
         'our_services' => 'Our Services',
         'scroll_down' => 'Scroll Down',
 
-        // 2. Who We Are
+        // Who We Are
         'who_we_are' => 'Who We Are',
-        'who_we_are_sub' => 'Driving industrial growth across the Kingdom.',
-        'who_we_are_desc' => 'Desert Iron is a premier engineering and structural steel contractor based in Riyadh. We are dedicated to shaping the nation\'s infrastructure with precision, unmatched strength, and a relentless commitment to excellence. From heavy industrial frameworks to iconic commercial structures, our teams deliver complex engineering feats that stand the test of time.',
+        'who_we_are_sub' => 'Building a Stronger Tomorrow.',
+        'who_we_are_desc' => 'Desert Iron is a premier engineering and construction contractor in Saudi Arabia, specializing in heavy structural steel, pre-engineered buildings (PEB), and industrial civil works. Backed by state-of-the-art fabrication facilities in Riyadh, we deliver uncompromised quality and safety.',
         'tag_structural' => 'Structural Steel',
         'tag_engineering' => 'Engineering',
-        'tag_construction' => 'Construction',
+        'tag_construction' => 'Civil Construction',
         'more_about_us' => 'More About Us',
 
-        // 3. Our Capability
-        'our_capability' => 'Our Capability',
-        'cap_steel' => 'Steel Fabrication',
-        'cap_civil' => 'Civil Works & Construction',
-        'cap_eng' => 'Engineering & Design',
+        // Our Capability
+        'our_capability' => 'Our Capabilities',
+        'cap_steel' => 'Structural Steel Fabrication',
+        'cap_civil' => 'Civil & Foundation Works',
+        'cap_eng' => 'Engineering & Detailing',
 
-        // 4. Services
+        // Services
         'services_title' => 'Our Services',
-        'services_sub' => 'Comprehensive solutions from design to erection.',
-        'srv_1_t' => 'Structural Steel Fabrication', 'srv_1_d' => 'High-grade steel processing tailored for industrial scale.',
-        'srv_2_t' => 'Pre-Engineered Buildings (PEB)', 'srv_2_d' => 'Fast, cost-effective, and fully customized steel structures.',
-        'srv_3_t' => 'Engineering & Design', 'srv_3_d' => 'Advanced modeling and structural detailing software.',
-        'srv_4_t' => 'Civil & Construction', 'srv_4_d' => 'Comprehensive site preparation, foundation, and concrete works.',
-        'srv_5_t' => 'Erection & Installation', 'srv_5_d' => 'Safe, efficient, and precise on-site assembly by certified teams.',
-        'srv_6_t' => 'Roof & Wall Cladding', 'srv_6_d' => 'Durable and aesthetic exterior enclosures for facilities.',
-        'srv_7_t' => 'Sandblasting & Painting', 'srv_7_d' => 'Surface preparation and protective coatings for extreme conditions.',
-        'srv_8_t' => 'Quality Testing & NDT', 'srv_8_d' => 'Rigorous non-destructive testing ensuring material integrity.',
-        'srv_9_t' => 'Project Management', 'srv_9_d' => 'End-to-end execution, ensuring delivery on time and budget.',
+        'services_sub' => 'Comprehensive engineering and construction solutions.',
+        'srv_1_t' => 'Architectural Work', 'srv_1_d' => 'BIM-integrated architectural planning and SBC 201 compliance.',
+        'srv_2_t' => 'Civil Construction', 'srv_2_d' => 'Comprehensive civil works, foundations, and heavy concrete structures.',
+        'srv_3_t' => 'Pre-Engineered Buildings (PEB)', 'srv_3_d' => 'Cost-effective, rapid-deployment PEB warehouse systems.',
+        'srv_4_t' => 'Structural Steel', 'srv_4_d' => 'High-strength steel structures for heavy industrial mega-projects.',
+        'srv_5_t' => 'Roof & Wall Panels', 'srv_5_d' => 'Insulated sandwich panels and corrugated cladding systems.',
+        'srv_6_t' => 'Call-off Services', 'srv_6_d' => 'On-demand contracting frameworks and rapid site mobilization.',
+        'srv_7_t' => 'Trading & Materials', 'srv_7_d' => 'Supply of certified structural steel, rebars, and industrial components.',
+        'srv_8_t' => 'Technical Staffing', 'srv_8_d' => 'Certified welders, QA/QC inspectors, and structural riggers.',
+        'srv_9_t' => 'Shutdown & Maintenance', 'srv_9_d' => 'Time-critical plant turnaround and turnaround maintenance.',
 
-        // 5. Stats
+        // Stats
         'stats_years' => 'Years of Experience',
         'stats_projects' => 'Projects Delivered',
         'stats_staff' => 'Skilled Workforce',
         'stats_clients' => 'Happy Clients',
 
-        // 6. Why Choose Us
+        // Why Choose Us
         'why_choose_us' => 'Why Choose Us',
         'why_choose_sub' => 'The pillars of our success and your peace of mind.',
         'why_1' => 'Reliable Execution', 'why_2' => 'Experienced Engineers',
@@ -76,12 +91,7 @@ $translations = [
         'why_5' => 'Safety & Compliance', 'why_6' => 'On-time Delivery',
         'why_7' => 'Strong Relationships', 'why_8' => 'Innovative Solutions',
 
-        // 7. Industries We Serve
-        'ind_title' => 'Industries We Serve',
-        'ind_1' => 'Commercial', 'ind_2' => 'Industrial', 'ind_3' => 'Oil & Gas',
-        'ind_4' => 'Infrastructure', 'ind_5' => 'Logistics', 'ind_6' => 'Defense',
-
-        // 8. Featured Projects
+        // Featured Projects
         'feat_proj' => 'Featured Projects',
         'feat_proj_sub' => 'Landmarks of our engineering prowess.',
         'loc' => 'Location', 'client' => 'Client',
@@ -89,97 +99,101 @@ $translations = [
         'proj_3' => 'Jubail Petrochemical Plant', 'proj_4' => 'Jeddah Commercial Hub',
         'proj_5' => 'Dammam Warehouse Complex',
 
-        // 9. Logos
+        // Logos & CTA
         'trusted_by' => 'Trusted by Industry Leaders',
-
-        // 10. Final CTA
         'ready_build' => 'Ready to build together?',
         'contact_us_now' => 'Contact Us Now',
     ],
     'ar' => [
-        // Global
+        // Global & Navigation
         'tagline' => 'نبني غداً أقوى',
-        'subline' => 'الصلب الهيكلي | الهندسة | البناء',
-        'switch_lang' => 'EN',
+        'subline' => 'الصلب الهيكلي | الهندسة | الإنشاءات',
+        'switch_lang' => 'English',
         'switch_lang_code' => 'en',
-        'company' => 'الشركة',
+        'company' => 'صحراء الحديد',
         'more' => 'المزيد',
-        'vision_2030' => 'نفخر بمواءمة رؤيتنا مع رؤية السعودية 2030.',
-        'learn_more' => 'اعرف المزيد',
+        'vision_2030' => 'رؤية السعودية 2030',
+        'learn_more' => 'اقرأ المزيد',
 
-        // Navigation
-        'home' => 'الرئيسية', 'about' => 'من نحن', 'services' => 'خدماتنا', 'products' => 'منتجاتنا',
-        'projects' => 'مشاريعنا', 'industries' => 'قطاعاتنا', 'clients' => 'عملاؤنا',
-        'certifications' => 'الشهادات', 'careers' => 'الوظائف', 'news' => 'الأخبار',
-        'contact' => 'اتصل بنا', 'get_quote' => 'اطلب تسعيرة',
+        // Nav Items
+        'home' => 'الرئيسية',
+        'about' => 'من نحن',
+        'services' => 'خدماتنا',
+        'products' => 'منتجاتنا',
+        'projects' => 'مشاريعنا',
+        'industries' => 'القطاعات',
+        'clients' => 'عملاؤنا',
+        'certifications' => 'شهاداتنا',
+        'careers' => 'الوظائف',
+        'news' => 'الأخبار',
+        'contact' => 'اتصل بنا',
+        'get_quote' => 'طلب سعر',
 
-        // 1. Hero
-        'hero_line' => 'هياكل هندسية لسعودية أقوى',
-        'home_hero_sub' => 'نطلق العنان لإمكانيات المساحات الصناعية والتجارية من خلال تصنيع الصلب والهندسة المدنية ذات المستوى العالمي.',
+        // Hero Keys
+        'hero_tag' => 'الهندسة والإنشاءات',
+        'hero_title' => 'نبني غداً أقوى',
+        'hero_desc' => 'نشارك في التحول الصناعي للمملكة العربية السعودية بمنتجات الهياكل الصلبة، والمباني مسبقة الصنع، وتنفيذ المشاريع الكبرى بما يتماشى مع رؤية 2030.',
+        'request_quote' => 'طلب عرض سعر',
+        'explore_projects' => 'استكشف المشاريع',
+        'hero_line' => 'نبني غداً أقوى',
+        'home_hero_sub' => 'قوة رائدة في تصنيع الهياكل الفولاذية، والإنشاءات المدنية، وتنفيذ المشاريع العملاقة في الرياض وكافة أنحاء المملكة.',
         'our_services' => 'خدماتنا',
-        'scroll_down' => 'مرر لأسفل',
+        'scroll_down' => 'تمرير للأسفل',
 
-        // 2. Who We Are
+        // Who We Are
         'who_we_are' => 'من نحن',
-        'who_we_are_sub' => 'نقود النمو الصناعي في جميع أنحاء المملكة.',
-        'who_we_are_desc' => 'تعتبر شركة ديزيرت آيرون من أبرز المقاولين في مجال الهندسة والصلب الهيكلي ومقرها الرياض. نحن ملتزمون بتشكيل البنية التحتية للمملكة بدقة وقوة لا تضاهى والتزام لا يتزعزع بالتميز. من الأطر الصناعية الثقيلة إلى الهياكل التجارية البارزة، تقدم فرقنا إنجازات هندسية معقدة تصمد أمام اختبار الزمن.',
-        'tag_structural' => 'الصلب الهيكلي',
-        'tag_engineering' => 'الهندسة',
-        'tag_construction' => 'البناء والتشييد',
+        'who_we_are_sub' => 'نبني غداً أقوى.',
+        'who_we_are_desc' => 'صحراء الحديد هي مقاول رئيسي للهندسة والإنشاءات في المملكة العربية السعودية، متخصصون في الفولاذ الهيكلي الثقيل، والمباني مسبقة الصنع (PEB)، والأعمال المدنية الصناعية.',
+        'tag_structural' => 'الفولاذ الهيكلي',
+        'tag_engineering' => 'الهندسة والتصميم',
+        'tag_construction' => 'الإنشاءات المدنية',
         'more_about_us' => 'المزيد عنا',
 
-        // 3. Our Capability
-        'our_capability' => 'قدراتنا',
-        'cap_steel' => 'تصنيع الصلب',
-        'cap_civil' => 'الأعمال المدنية والبناء',
-        'cap_eng' => 'الهندسة والتصميم',
+        // Our Capability
+        'our_capability' => 'قدراتنا الرئيسية',
+        'cap_steel' => 'تصنيع الفولاذ الهيكلي',
+        'cap_civil' => 'الأعمال المدنية والأساسات',
+        'cap_eng' => 'الهندسة والتفاصيل BIM',
 
-        // 4. Services
+        // Services
         'services_title' => 'خدماتنا',
-        'services_sub' => 'حلول شاملة من التصميم إلى التركيب.',
-        'srv_1_t' => 'تصنيع الصلب الهيكلي', 'srv_1_d' => 'معالجة الصلب عالي الجودة والمصمم على نطاق صناعي.',
-        'srv_2_t' => 'المباني سابقة الهندسة (PEB)', 'srv_2_d' => 'هياكل حديدية سريعة واقتصادية ومخصصة بالكامل.',
-        'srv_3_t' => 'الهندسة والتصميم', 'srv_3_d' => 'نمذجة متقدمة وتفاصيل إنشائية باستخدام أحدث البرامج.',
-        'srv_4_t' => 'الأعمال المدنية والبناء', 'srv_4_d' => 'تجهيز شامل للموقع وأعمال الأساسات والخرسانة.',
-        'srv_5_t' => 'التركيب والتجميع', 'srv_5_d' => 'تجميع دقيق وفعال وآمن في الموقع من قبل فرق معتمدة.',
-        'srv_6_t' => 'تكسية الأسطح والجدران', 'srv_6_d' => 'تكسية خارجية متينة وجمالية لجميع المرافق.',
-        'srv_7_t' => 'السفع الرملي والطلاء', 'srv_7_d' => 'تجهيز الأسطح وطلاءات الحماية في الظروف القاسية.',
-        'srv_8_t' => 'اختبار الجودة (NDT)', 'srv_8_d' => 'اختبارات صارمة لضمان سلامة المواد الهيكلية.',
-        'srv_9_t' => 'إدارة المشاريع', 'srv_9_d' => 'إدارة تنفيذية شاملة لضمان التسليم في الوقت المحدد وضمن الميزانية.',
+        'services_sub' => 'حلول هندسية وإنشائية متكاملة.',
+        'srv_1_t' => 'الأعمال المعمارية', 'srv_1_d' => 'التخطيط المعماري المدمج مع BIM والامتثال لكود البناء السعودي SBC 201.',
+        'srv_2_t' => 'الإنشاءات المدنية', 'srv_2_d' => 'أعمال مدنية شاملة، وأساسات وهياكل خرسانية ثقيلة.',
+        'srv_3_t' => 'المباني مسبقة الصنع (PEB)', 'srv_3_d' => 'أنظمة مستودعات سريعة التركيب واقتصادية التكلفة.',
+        'srv_4_t' => 'الفولاذ الهيكلي', 'srv_4_d' => 'هياكل فولاذية عالية القوة للمشاريع الصناعية الكبرى.',
+        'srv_5_t' => 'ألواح الأسقف والجدران', 'srv_5_d' => 'ألواح ساندوتش المعزولة وأنظمة التكسية المضلعة.',
+        'srv_6_t' => 'خدمات الطلب عند الحاجة', 'srv_6_d' => 'عقود إطار تشغيلية واستجابة سريعة.',
+        'srv_7_t' => 'التجارة والمواد', 'srv_7_d' => 'توريد حديد التسليح والفولاذ المعتمد.',
+        'srv_8_t' => 'الكادر الفني المتخصص', 'srv_8_d' => 'لحامون وفنيو جودة ومراقبون معتمدون.',
+        'srv_9_t' => 'الإغلاق والصيانة', 'srv_9_d' => 'صيانة المحطات وعمليات الإيقاف المؤقت.',
 
-        // 5. Stats
+        // Stats
         'stats_years' => 'سنوات الخبرة',
-        'stats_projects' => 'مشاريع منجزة',
-        'stats_staff' => 'كوادر مؤهلة',
-        'stats_clients' => 'عملاء راضون',
+        'stats_projects' => 'مشروعاً مكتظاً',
+        'stats_staff' => 'قوة عاملة',
+        'stats_clients' => 'عميل سعيد',
 
-        // 6. Why Choose Us
-        'why_choose_us' => 'لماذا تختارنا؟',
+        // Why Choose Us
+        'why_choose_us' => 'لماذا تختارنا',
         'why_choose_sub' => 'ركائز نجاحنا وراحة بالك.',
         'why_1' => 'تنفيذ موثوق', 'why_2' => 'مهندسون ذوو خبرة',
-        'why_3' => 'مواد عالية الجودة', 'why_4' => 'إدارة مشاريع فعالة',
+        'why_3' => 'مواد عالية الجودة', 'why_4' => 'إدارة فعالة',
         'why_5' => 'السلامة والامتثال', 'why_6' => 'التسليم في الوقت المحدد',
-        'why_7' => 'علاقات عملاء قوية', 'why_8' => 'حلول مبتكرة',
+        'why_7' => 'علاقات قوية', 'why_8' => 'حلول مبتكرة',
 
-        // 7. Industries We Serve
-        'ind_title' => 'قطاعات نخدمها',
-        'ind_1' => 'التجاري', 'ind_2' => 'الصناعي', 'ind_3' => 'النفط والغاز',
-        'ind_4' => 'البنية التحتية', 'ind_5' => 'الخدمات اللوجستية', 'ind_6' => 'الدفاع',
-
-        // 8. Featured Projects
-        'feat_proj' => 'أبرز مشاريعنا',
-        'feat_proj_sub' => 'معالم تشهد ببراعتنا الهندسية.',
+        // Featured Projects
+        'feat_proj' => 'مشاريع بارزة',
+        'feat_proj_sub' => 'معالم هندسية تعكس خبرتنا.',
         'loc' => 'الموقع', 'client' => 'العميل',
         'proj_1' => 'توسعة مترو الرياض', 'proj_2' => 'مركز نيوم اللوجستي',
-        'proj_3' => 'مصنع الجبيل للبتروكيماويات', 'proj_4' => 'مركز جدة التجاري',
-        'proj_5' => 'مجمع مستودعات الدمام',
+        'proj_3' => 'مجمع الجبيل للبتروكيماويات', 'proj_4' => 'المركز التجاري بجدة',
+        'proj_5' => 'مجمع المستودعات بالدمام',
 
-        // 9. Logos
-        'trusted_by' => 'موثوقون من قبل قادة الصناعة',
-
-        // 10. Final CTA
-        'ready_build' => 'هل أنت مستعد للبناء معاً؟',
-        'contact_us_now' => 'اتصل بنا الآن',
+        // Logos & CTA
+        'trusted_by' => 'محط ثقة كبرى الشركات',
+        'ready_build' => 'جاهز لبناء مشروعك القادم؟',
+        'contact_us_now' => 'تواصل معنا الآن',
     ]
 ];
 
@@ -187,4 +201,3 @@ function t($key) {
     global $translations, $lang;
     return $translations[$lang][$key] ?? $key;
 }
-?>

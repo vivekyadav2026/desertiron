@@ -1,49 +1,69 @@
-<?php
+﻿<?php
 $page_title = "Our Projects | Desert Iron";
 require_once 'header.php';
-require_once 'components.php';
+
 $categories = ['All', 'Industrial', 'Commercial', 'Infrastructure', 'Warehousing'];
 ?>
-<section class="relative pt-32 pb-20 bg-charcoal text-offwhite">
-    <div class="container mx-auto px-4 relative z-10 text-center">
-        <h1 class="text-4xl md:text-5xl <?= $headingFontClass ?> mb-4"><?= $lang==='ar' ? 'مشاريعنا' : 'Our Projects' ?></h1>
-        <p class="text-steel"><?= $lang==='ar' ? 'اكتشف محفظة مشاريعنا الناجحة.' : 'Explore our portfolio of successful executions.' ?></p>
+<!-- Cinematic Hero Banner -->
+<section class="relative min-h-[45vh] flex items-center bg-charcoal overflow-hidden pt-24 pb-12">
+    <div class="absolute inset-0 z-0">
+        <img src="public/images/hero_riyadh_steel.jpg" alt="Our Projects" class="w-full h-full object-cover opacity-75">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/20"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 text-center" >
+        <div class="flex items-center justify-center gap-4 mb-5">
+            <div class="w-12 h-[3px] bg-saudi"></div>
+            <span class="text-white opacity-90 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
+                <?= $lang === 'ar' ? '??? ?????????' : 'Project Portfolio' ?>
+            </span>
+            <div class="w-12 h-[3px] bg-saudi"></div>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight drop-shadow-lg">
+            <?= $lang === 'ar' ? '???????? ???????' : 'Our Projects' ?>
+        </h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
+            <?= $lang === 'ar' ? '?????? ????? ???????? ??????? ?? ??????? ?????????? ??????? ????? ???????? ????????? ???????? ?????? ?? ????????.' : 'Explore our portfolio of successful structural steel, PEB, and mega-infrastructure executions across the Kingdom.' ?>
+        </p>
     </div>
 </section>
 
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <!-- Filters -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-            <?php foreach($categories as $cat): ?>
-            <button class="filter-btn px-6 py-2 rounded border border-gray-200 bg-offwhite text-charcoal hover:bg-saudi hover:text-white transition font-medium" data-filter="<?= strtolower($cat) ?>"><?= $cat ?></button>
+<!-- Projects Gallery Section -->
+<section class="py-12 md:py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
+        
+        <!-- Mobile Horizontal Scrollable Chip Row -->
+        <div class="flex overflow-x-auto no-scrollbar gap-2 mb-10 pb-2 justify-start sm:justify-center">
+            <?php foreach($categories as $idx => $cat): ?>
+            <button class="filter-btn shrink-0 px-5 py-2.5 rounded-sm border text-xs font-bold uppercase tracking-wider transition-colors min-h-[44px] <?= $idx === 0 ? 'bg-saudi text-white border-saudi' : 'bg-offwhite border-gray-200 text-charcoal hover:border-saudi' ?>" data-filter="<?= strtolower($cat) ?>"><?= $cat ?></button>
             <?php endforeach; ?>
         </div>
         
-        <!-- Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+        <!-- Responsive Grid (1 col mobile, 2 col sm, 3 col lg) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
             <?php
             $projects = [
-                ['title' => 'Jubail Petrochemical Plant', 'cat' => 'industrial', 'loc' => 'Jubail'],
-                ['title' => 'Riyadh Metro Hub', 'cat' => 'infrastructure', 'loc' => 'Riyadh'],
-                ['title' => 'NEOM Logistics Center', 'cat' => 'warehousing', 'loc' => 'Tabuk'],
-                ['title' => 'Jeddah Commercial Tower', 'cat' => 'commercial', 'loc' => 'Jeddah'],
-                ['title' => 'Dammam Storage Facility', 'cat' => 'warehousing', 'loc' => 'Dammam'],
-                ['title' => 'Yanbu Refinery Expansion', 'cat' => 'industrial', 'loc' => 'Yanbu'],
+                ['title' => 'Jubail Petrochemical Plant', 'cat' => 'industrial', 'loc' => 'Jubail', 'img' => 'structural_steel.jpg'],
+                ['title' => 'Riyadh Metro Hub', 'cat' => 'infrastructure', 'loc' => 'Riyadh', 'img' => 'civil_construction.jpg'],
+                ['title' => 'NEOM Logistics Center', 'cat' => 'warehousing', 'loc' => 'Tabuk', 'img' => 'peb_warehouse.jpg'],
+                ['title' => 'Jeddah Commercial Tower', 'cat' => 'commercial', 'loc' => 'Jeddah', 'img' => 'architectural_work.jpg'],
+                ['title' => 'Dammam Storage Facility', 'cat' => 'warehousing', 'loc' => 'Dammam', 'img' => 'trading_warehouse.jpg'],
+                ['title' => 'Yanbu Refinery Expansion', 'cat' => 'industrial', 'loc' => 'Yanbu', 'img' => 'shutdown_maintenance.jpg'],
             ];
             foreach($projects as $i => $p):
             ?>
-            <a href="project-detail.php?id=<?= $i ?>" class="project-item block group relative overflow-hidden rounded bg-charcoal aspect-[4/3]" data-category="<?= $p['cat'] ?>">
-                <img src="public/images/hero_riyadh_steel.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-90"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6">
-                    <span class="text-saudi text-xs font-bold uppercase tracking-wider mb-2 block bg-white/10 w-max px-2 py-1 rounded"><?= ucfirst($p['cat']) ?></span>
-                    <h3 class="text-offwhite text-xl mb-1 <?= $headingFontClass ?>"><?= $p['title'] ?></h3>
-                    <p class="text-steel text-sm"><?= $p['loc'] ?>, KSA</p>
+            <a href="quote.php" class="project-item block group relative overflow-hidden rounded-sm bg-charcoal aspect-[4/3] shadow-sm hover:shadow-xl transition-all duration-300" data-category="<?= $p['cat'] ?>">
+                <img src="public/images/<?= $p['img'] ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+                <div class="absolute bottom-0 start-0 end-0 p-6">
+                    <span class="text-saudi text-[10px] font-bold uppercase tracking-widest mb-2 inline-block bg-saudi/10 border border-saudi/20 px-2 py-0.5 rounded-sm text-saudi"><?= ucfirst($p['cat']) ?></span>
+                    <h3 class="text-white text-lg font-bold mb-1 leading-tight"><?= $p['title'] ?></h3>
+                    <p class="text-gray-400 text-xs font-light"><?= $p['loc'] ?>, KSA</p>
                 </div>
             </a>
             <?php endforeach; ?>
         </div>
+
     </div>
 </section>
 
@@ -54,9 +74,12 @@ $categories = ['All', 'Industrial', 'Commercial', 'Infrastructure', 'Warehousing
         
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                btns.forEach(b => { b.classList.remove('bg-saudi', 'text-white'); b.classList.add('bg-offwhite', 'text-charcoal'); });
-                btn.classList.remove('bg-offwhite', 'text-charcoal');
-                btn.classList.add('bg-saudi', 'text-white');
+                btns.forEach(b => { 
+                    b.classList.remove('bg-saudi', 'text-white', 'border-saudi'); 
+                    b.classList.add('bg-offwhite', 'text-charcoal', 'border-gray-200'); 
+                });
+                btn.classList.remove('bg-offwhite', 'text-charcoal', 'border-gray-200');
+                btn.classList.add('bg-saudi', 'text-white', 'border-saudi');
                 
                 const filter = btn.getAttribute('data-filter');
                 items.forEach(item => {
@@ -68,9 +91,6 @@ $categories = ['All', 'Industrial', 'Commercial', 'Infrastructure', 'Warehousing
                 });
             });
         });
-        
-        // set default active
-        btns[0].click();
     });
 </script>
 
