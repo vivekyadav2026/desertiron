@@ -198,12 +198,12 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
     </div>
 
     <!-- Main Header -->
-    <header class="bg-charcoal text-white sticky top-0 z-50 shadow-md h-16 md:h-20 flex items-center transition-all duration-300">
+    <header class="bg-charcoal text-white sticky top-0 z-50 shadow-md h-16 md:h-20 flex items-center transition-all duration-300 border-b border-gray-800/80">
         <div class="container mx-auto px-4 lg:px-6 max-w-7xl flex justify-between items-center w-full">
             
-            <!-- Official Logo -->
-            <a href="index.php" class="flex items-center gap-3 group shrink-0 min-h-[44px]">
-                <img src="public/images/logo-white.png" alt="Desert Iron" class="h-9 md:h-11 w-auto object-contain transition-transform group-hover:scale-105">
+            <!-- Official Logo (Prominent & High-Contrast on Mobile & Desktop) -->
+            <a href="index.php" class="flex items-center gap-3 group shrink-0 py-1 min-h-[44px]">
+                <img src="public/images/logo-white.png" alt="Desert Iron Steel & Construction" class="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] object-contain transition-transform group-hover:scale-105 filter drop-shadow-md">
             </a>
 
             <!-- Desktop Navigation Links (>= 1024px) -->
@@ -233,7 +233,9 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                     </div>
                 </div>
 
-                <a href="products.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? '????????' : 'Products' ?></a>
+                <a href="products.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'المنتجات' : 'Products' ?></a>
+                <a href="projects.php" class="hover:text-white transition-colors py-2"><?= t('projects') ?></a>
+                <a href="clients.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'العملاء' : 'Clients' ?></a>
                 <a href="contact.php" class="hover:text-white transition-colors py-2"><?= t('contact') ?></a>
             </nav>
 
@@ -243,17 +245,17 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
                     <?= t('switch_lang') ?>
                 </a>
-                <a href="quote.php" class="bg-saudi text-white px-6 py-2.5 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-saudi transition-colors shadow-md min-h-[44px] flex items-center">
+                <a href="quote.php" class="bg-saudi text-white px-6 py-2.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-emerald-700 transition-colors shadow-md min-h-[44px] flex items-center">
                     <?= t('get_quote') ?>
                 </a>
             </div>
 
-            <!-- Mobile Actions (Hamburger & Lang Switcher) -->
+            <!-- Mobile Header Actions (Prominent Logo Support & Hamburger) -->
             <div class="flex items-center gap-3 lg:hidden">
-                <a href="?lang=<?= t('switch_lang_code') ?>" class="text-xs font-bold text-saudi bg-saudi/10 border border-saudi/20 px-3 py-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center">
+                <a href="?lang=<?= t('switch_lang_code') ?>" class="text-xs font-bold text-saudi bg-saudi/20 border border-saudi/40 px-3 py-2 rounded-md min-h-[44px] min-w-[44px] flex items-center justify-center shadow-xs">
                     <?= t('switch_lang') ?>
                 </a>
-                <button id="mobile-drawer-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer" class="w-11 h-11 flex items-center justify-center text-white hover:text-saudi focus:outline-none rounded-sm border border-gray-700 bg-charcoal">
+                <button id="mobile-drawer-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer" class="w-11 h-11 flex items-center justify-center text-white hover:text-saudi focus:outline-none rounded-lg border border-gray-700 bg-charcoal shadow-md">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
@@ -261,70 +263,109 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
         </div>
     </header>
 
-    <!-- Mobile Full-Screen Slide-in Drawer -->
-    <div id="mobile-drawer" class="fixed inset-0 z-[100] bg-charcoal text-white hidden flex-col transition-all duration-300" aria-hidden="true">
+    <!-- Upgraded Mobile Full-Screen Slide-in Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-[100] bg-charcoal/95 backdrop-blur-xl text-white hidden flex-col transition-all duration-300" aria-hidden="true">
         
         <!-- Drawer Top Header -->
-        <div class="flex items-center justify-between px-5 h-16 border-b border-gray-800 shrink-0">
+        <div class="flex items-center justify-between px-5 h-16 border-b border-gray-800/80 shrink-0 bg-charcoal">
             <a href="index.php" class="flex items-center gap-2">
-                <img src="public/images/logo-white.png" alt="Desert Iron" class="h-8 w-auto">
+                <img src="public/images/logo-white.png" alt="Desert Iron" class="h-9 w-auto max-w-[170px] object-contain drop-shadow-md">
             </a>
-            <button id="mobile-drawer-close" aria-label="Close Navigation Menu" class="w-11 h-11 flex items-center justify-center text-gray-300 hover:text-saudi focus:outline-none rounded-sm border border-gray-800">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+            <div class="flex items-center gap-2">
+                <a href="?lang=<?= t('switch_lang_code') ?>" class="text-xs font-bold text-saudi bg-saudi/20 border border-saudi/40 px-3 py-1.5 rounded-md">
+                    <?= t('switch_lang') ?>
+                </a>
+                <button id="mobile-drawer-close" aria-label="Close Navigation Menu" class="w-10 h-10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-saudi focus:outline-none rounded-full border border-gray-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
         </div>
 
-        <!-- Scrollable Drawer Body -->
-        <div class="flex-1 overflow-y-auto px-5 py-6 space-y-2 text-base font-medium">
-            <a href="index.php" class="flex items-center justify-between py-3.5 border-b border-gray-800/60 hover:text-saudi transition-colors">
-                <span><?= t('home') ?></span>
+        <!-- Scrollable Drawer Body with Rich Menu Cards -->
+        <div class="flex-1 overflow-y-auto px-5 py-5 space-y-1.5 text-base font-medium">
+            
+            <a href="index.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">01</div>
+                    <span><?= t('home') ?></span>
+                </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
             
-            <a href="about.php" class="flex items-center justify-between py-3.5 border-b border-gray-800/60 hover:text-saudi transition-colors">
-                <span><?= t('about') ?></span>
+            <a href="about.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">02</div>
+                    <span><?= t('about') ?></span>
+                </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
 
-            <!-- Mobile Services Accordion -->
-            <div class="border-b border-gray-800/60 py-2">
-                <button onclick="document.getElementById('mobile-services-list').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');" class="w-full flex items-center justify-between py-2 text-start font-medium hover:text-saudi focus:outline-none min-h-[44px]">
-                    <span><?= t('services') ?> (9)</span>
-                    <svg class="w-4 h-4 text-saudi transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <!-- Mobile Services Accordion Dropdown -->
+            <div class="rounded-lg border border-gray-800/80 p-3 bg-white/[0.02]">
+                <button onclick="document.getElementById('mobile-services-list').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');" class="w-full flex items-center justify-between text-start font-medium hover:text-saudi focus:outline-none min-h-[36px]">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">03</div>
+                        <span class="font-bold text-white"><?= t('services') ?> (9)</span>
+                    </div>
+                    <svg class="w-4 h-4 text-saudi transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div id="mobile-services-list" class="hidden ps-4 pt-2 pb-1 space-y-2 text-sm text-gray-300">
-                    <a href="structural-steel.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Structural Steel Buildings</a>
-                    <a href="pre-engineered-buildings.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Pre-Engineered Buildings (PEB)</a>
-                    <a href="civil-construction.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Civil Construction</a>
-                    <a href="architectural-work.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Architectural Work</a>
-                    <a href="roof-wall-panels.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Roof & Wall Panels</a>
-                    <a href="call-off-services.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Call-off Services</a>
-                    <a href="trading.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Trading & Materials</a>
-                    <a href="technical-staffing.php" class="block py-2 border-b border-gray-800/40 hover:text-saudi">Technical Staffing</a>
-                    <a href="shutdown-maintenance.php" class="block py-2 hover:text-saudi">Shutdown & Maintenance</a>
+                <div id="mobile-services-list" class="hidden border-s-2 border-saudi ms-4 ps-3 pt-3 pb-1 space-y-2 text-sm text-gray-300 mt-2">
+                    <a href="structural-steel.php" class="block py-1.5 hover:text-saudi">Structural Steel Buildings</a>
+                    <a href="pre-engineered-buildings.php" class="block py-1.5 hover:text-saudi">Pre-Engineered Buildings (PEB)</a>
+                    <a href="civil-construction.php" class="block py-1.5 hover:text-saudi">Civil Construction</a>
+                    <a href="architectural-work.php" class="block py-1.5 hover:text-saudi">Architectural Work</a>
+                    <a href="roof-wall-panels.php" class="block py-1.5 hover:text-saudi">Roof & Wall Panels</a>
+                    <a href="call-off-services.php" class="block py-1.5 hover:text-saudi">Call-off Services</a>
+                    <a href="trading.php" class="block py-1.5 hover:text-saudi">Trading & Materials</a>
+                    <a href="technical-staffing.php" class="block py-1.5 hover:text-saudi">Technical Staffing</a>
+                    <a href="shutdown-maintenance.php" class="block py-1.5 hover:text-saudi">Shutdown & Maintenance</a>
                 </div>
             </div>
 
-            <a href="products.php" class="flex items-center justify-between py-3.5 border-b border-gray-800/60 hover:text-saudi transition-colors">
-                <span><?= $lang === 'ar' ? '????????' : 'Products' ?></span>
+            <a href="products.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">04</div>
+                    <span><?= $lang === 'ar' ? 'المنتجات' : 'Products' ?></span>
+                </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
 
-            <a href="projects.php" class="flex items-center justify-between py-3.5 border-b border-gray-800/60 hover:text-saudi transition-colors">
-                <span><?= t('projects') ?></span>
+            <a href="projects.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">05</div>
+                    <span><?= t('projects') ?></span>
+                </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
-            <a href="contact.php" class="flex items-center justify-between py-3.5 hover:text-saudi transition-colors">
-                <span><?= t('contact') ?></span>
+
+            <a href="clients.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">06</div>
+                    <span><?= $lang === 'ar' ? 'العملاء والاعتمادات' : 'Clients & Approvals' ?></span>
+                </div>
+                <span class="text-xs text-gray-500">&rarr;</span>
+            </a>
+
+            <a href="contact.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">07</div>
+                    <span><?= t('contact') ?></span>
+                </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
         </div>
 
-        <!-- Drawer Bottom Fixed CTA Button -->
-        <div class="p-5 border-t border-gray-800 bg-charcoal safe-pb shrink-0">
-            <a href="quote.php" class="block text-center bg-saudi text-white py-3.5 rounded-sm font-bold text-xs uppercase tracking-widest shadow-xl hover:bg-white hover:text-saudi transition-colors min-h-[44px] flex items-center justify-center">
-                <?= t('get_quote') ?>
-            </a>
+        <!-- Drawer Bottom Actions (Call + Get Quote) -->
+        <div class="p-4 border-t border-gray-800 bg-charcoal safe-pb shrink-0 space-y-2.5">
+            <div class="grid grid-cols-2 gap-3">
+                <a href="tel:+966599510213" class="bg-white/10 text-white text-center py-3 rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 border border-white/20 min-h-[44px]">
+                    <svg class="w-4 h-4 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    Call Us
+                </a>
+                <a href="quote.php" class="bg-saudi text-white text-center py-3 rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center shadow-lg hover:bg-emerald-700 transition-colors min-h-[44px]">
+                    <?= t('get_quote') ?>
+                </a>
+            </div>
         </div>
     </div>
 
