@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="110" fill="#1F2A27"/>
+  <g transform="translate(64, 64) scale(0.75)">
+    <!-- Steel I-Beam Badge Emblem -->
+    <path d="M60 40 H452 V100 H300 V412 H452 V472 H60 V412 H212 V100 H60 Z" fill="#006B3F"/>
+    <path d="M120 100 H392 V140 H280 V372 H392 V412 H120 V372 H232 V140 H120 Z" fill="#ffffff" opacity="0.95"/>
+    <circle cx="256" cy="256" r="36" fill="#DBC9A7"/>
+  </g>
+</svg>
