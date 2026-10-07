@@ -1,181 +1,170 @@
-<?php
-// Ensure this file is called with $slug defined.
-if(!isset($slug) || !isset($services_data[$slug])) {
-    die("Service not found.");
-}
-$sd = $services_data[$slug][$lang];
-$page_title = $sd['meta_title'];
-$page_meta_desc = $sd['meta_desc'];
+<?php 
+require_once 'header.php'; 
+require_once 'services-data.php';
 
-require_once 'header.php';
-require_once 'components.php';
+$service_slug = $slug ?? 'architectural-work';
+$data = $services_data[$service_slug][$lang] ?? $services_data[$service_slug]['en'];
 
-// JSON-LD Schema
-$schema = [
-    "@context" => "https://schema.org",
-    "@type" => "Service",
-    "name" => $sd['title'],
-    "description" => $sd['meta_desc'],
-    "provider" => [
-        "@type" => "LocalBusiness",
-        "name" => "Desert Iron",
-        "address" => ["@type" => "PostalAddress", "addressCountry" => "SA", "addressLocality" => "Riyadh"]
-    ],
-    "areaServed" => "SA"
+$service_title = $data['title'] ?? 'Service Name';
+$service_overview = '<p class="mb-3">' . ($data['overview'] ?? '') . '</p><p>' . ($data['overview_2'] ?? '') . '</p>';
+$service_features = $data['features'] ?? [];
+$service_process = $data['steps'] ?? [];
+$service_faqs = $data['faqs'] ?? [];
+$service_specs = $data['specs'] ?? [];
+
+$img_map = [
+    'architectural-work' => 'architectural_work.jpg',
+    'civil-construction' => 'civil_construction.jpg',
+    'pre-engineered-buildings' => 'peb_warehouse.jpg',
+    'structural-steel' => 'structural_steel.jpg',
+    'roof-wall-panels' => 'roof_wall_panels.jpg',
+    'call-off-services' => 'call_off_services.jpg',
+    'trading' => 'trading_warehouse.jpg',
+    'technical-staffing' => 'technical_staffing.jpg',
+    'shutdown-maintenance' => 'shutdown_maintenance.jpg',
 ];
-?>
-<script type="application/ld+json">
-<?= json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
-</script>
 
-<!-- Hero Banner -->
-<section class="relative pt-32 pb-20 bg-charcoal text-offwhite overflow-hidden">
-    <?php
-    $srv_map = ['architectural-work'=>'architectural_work','civil-construction'=>'civil_construction','pre-engineered-buildings'=>'peb_warehouse','structural-steel'=>'structural_steel','roof-wall-panels'=>'roof_wall_panels','call-off-services'=>'call_off_services','trading'=>'trading_warehouse','technical-staffing'=>'technical_staffing','shutdown-maintenance'=>'shutdown_maintenance'];
-    $bg_img = 'public/images/' . ($srv_map[$slug] ?? 'hero_riyadh_steel') . '.jpg';
-    ?>
-    <div class="absolute inset-0 bg-[url('<?= $bg_img ?>')] bg-cover bg-center opacity-30"></div>
-    <div class="container mx-auto px-4 relative z-10">
-        <?= renderBreadcrumb([t('home') => 'index.php', t('services') => 'services.php', $sd['title'] => '#']) ?>
-        <h1 class="text-4xl md:text-5xl <?= $headingFontClass ?> mb-4"><?= $sd['title'] ?></h1>
+$hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.jpg');
+?>
+
+<!-- Hero Section -->
+<section class="relative min-h-[50vh] flex items-center bg-charcoal overflow-hidden pt-24 pb-12">
+    <div class="absolute inset-0 z-0">
+        <img src="<?= $hero_img ?>" alt="<?= $service_title ?>" class="w-full h-full object-cover opacity-50">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/60 to-charcoal/30"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-[3px] bg-saudi"></div>
+            <span class="text-gray-300 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
+                <a href="services.php" class="text-white hover:text-saudi transition-colors">Our Services</a> 
+                <span class="mx-2 text-gray-500">/</span> 
+                <?= $service_title ?>
+            </span>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight drop-shadow-lg <?= $headingFontClass ?>">
+            <?= $service_title ?>
+        </h1>
     </div>
 </section>
 
-<!-- Main Content Grid -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="bg-offwhite py-8 md:py-10">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             
-            <!-- Left Column (Content) -->
-            <div class="lg:col-span-2 space-y-12">
+            <!-- Main Content Column -->
+            <div class="lg:col-span-8 space-y-8">
                 
                 <!-- Overview -->
-                <div>
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-4"><?= $lang==='ar' ? 'نظرة عامة' : 'Overview' ?></h2>
-                    <div class="w-12 h-1 bg-saudi mb-6"></div>
-                    <p class="text-steel text-lg mb-4 leading-relaxed"><?= $sd['overview'] ?></p>
-                    <p class="text-steel leading-relaxed"><?= $sd['overview_2'] ?></p>
-                </div>
-
-                <!-- What We Deliver (Features) -->
-                <div>
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-4"><?= $lang==='ar' ? 'ما نقدمه' : 'What We Deliver' ?></h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                        <?php foreach($sd['features'] as $feature): ?>
-                        <div class="flex items-start gap-3 p-4 bg-offwhite border border-gray-100 rounded">
-                            <svg class="w-6 h-6 text-saudi shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span class="text-charcoal font-medium"><?= $feature ?></span>
+                <section data-aos="fade-up">
+                    <h2 class="text-2xl text-charcoal font-semibold mb-3 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???? ????' : 'Overview' ?></h2>
+                    <div class="text-gray-700 leading-relaxed text-sm md:text-base">
+                        <?= $service_overview ?>
+                    </div>
+                </section>
+                
+                <!-- What We Deliver -->
+                <?php if(!empty($service_features)): ?>
+                <section data-aos="fade-up">
+                    <h2 class="text-2xl text-charcoal font-semibold mb-4 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???? ????' : 'What We Deliver' ?></h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <?php foreach($service_features as $feat): ?>
+                        <div class="bg-white p-4 rounded-sm shadow-sm border border-gray-100 flex items-start gap-3 hover:border-saudi transition-colors duration-300">
+                            <div class="mt-0.5 text-saudi shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="text-gray-800 font-medium text-sm leading-snug"><?= $feat ?></p>
                         </div>
                         <?php endforeach; ?>
                     </div>
-                </div>
-
-                <!-- Our Process (5 Steps) -->
-                <div>
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-6"><?= $lang==='ar' ? 'عملية التنفيذ' : 'Our Process' ?></h2>
-                    <div class="space-y-4">
-                        <?php foreach($sd['steps'] as $index => $step): ?>
-                        <div class="flex items-center gap-4 bg-white border border-gray-200 p-4 rounded shadow-sm relative overflow-hidden">
-                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-saudi"></div>
-                            <div class="w-10 h-10 shrink-0 bg-charcoal text-white rounded-full flex items-center justify-center font-bold">
-                                <?= $index + 1 ?>
-                            </div>
-                            <div class="text-charcoal font-medium text-lg"><?= $step ?></div>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <!-- Technical Specs Table -->
-                <div>
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-6"><?= $lang==='ar' ? 'المواصفات الفنية' : 'Technical Capabilities' ?></h2>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse border border-gray-200">
-                            <tbody>
-                                <?php foreach($sd['specs'] as $key => $val): ?>
-                                <tr class="border-b border-gray-200 hover:bg-offwhite transition-colors">
-                                    <th class="py-4 px-6 bg-gray-50 text-charcoal font-bold border-r border-gray-200 w-1/3"><?= $key ?></th>
-                                    <td class="py-4 px-6 text-steel"><?= $val ?></td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- FAQs -->
-                <?php if(!empty($sd['faqs'])): ?>
-                <div>
-                    <h2 class="text-2xl text-charcoal <?= $headingFontClass ?> mb-6"><?= $lang==='ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions' ?></h2>
-                    <div class="space-y-3">
-                        <?php foreach($sd['faqs'] as $i => $faq): ?>
-                        <details class="group border border-gray-200 rounded bg-white [&_summary::-webkit-details-marker]:hidden">
-                            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-4 text-charcoal font-medium">
-                                <?= $faq['q'] ?>
-                                <span class="transition duration-300 group-open:-rotate-180">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-                                </span>
-                            </summary>
-                            <div class="border-t border-gray-200 p-4 text-steel">
-                                <p><?= $faq['a'] ?></p>
-                            </div>
-                        </details>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                </section>
                 <?php endif; ?>
                 
+                <!-- Our Process -->
+                <?php if(!empty($service_process)): ?>
+                <section data-aos="fade-up">
+                    <h2 class="text-2xl text-charcoal font-semibold mb-4 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???????' : 'Our Process' ?></h2>
+                    <div class="flex flex-col">
+                        <?php foreach($service_process as $idx => $step): ?>
+                        <div class="flex gap-4 group">
+                            <div class="flex flex-col items-center">
+                                <div class="w-8 h-8 rounded bg-charcoal text-white flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-saudi transition-colors"><?= $idx + 1 ?></div>
+                                <?php if($idx < count($service_process) - 1): ?>
+                                <div class="w-px h-full bg-gray-200 my-1"></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="pb-4 pt-1.5">
+                                <h4 class="text-sm md:text-base text-gray-800 font-medium mb-0 <?= $headingFontClass ?>"><?= $step ?></h4>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+                <?php endif; ?>
+                
+                <!-- FAQ -->
+                <?php if(!empty($service_faqs)): ?>
+                <section data-aos="fade-up">
+                    <h2 class="text-2xl text-charcoal font-semibold mb-4 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '??????? ???????' : 'Frequently Asked Questions' ?></h2>
+                    <div class="space-y-2">
+                        <?php foreach($service_faqs as $idx => $faq): ?>
+                        <div class="bg-white border border-gray-200 rounded-sm shadow-sm">
+                            <button class="w-full text-left px-5 py-3 font-medium text-sm text-charcoal flex justify-between items-center focus:outline-none hover:text-saudi transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+                                <?= $faq['q'] ?>
+                                <svg class="w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div class="hidden px-5 pb-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-3">
+                                <?= $faq['a'] ?>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+                <?php endif; ?>
+
             </div>
             
-            <!-- Right Column (Sidebar) -->
-            <div class="space-y-8">
+            <!-- Sidebar -->
+            <div class="lg:col-span-4 space-y-6">
                 
-                <!-- Request Quote Card -->
-                <div class="bg-offwhite border-t-4 border-saudi p-6 rounded shadow-sm">
-                    <h3 class="text-xl text-charcoal <?= $headingFontClass ?> mb-2"><?= t('get_quote') ?></h3>
-                    <p class="text-steel text-sm mb-6"><?= $lang==='ar' ? 'تواصل معنا اليوم لمناقشة متطلبات مشروعك.' : 'Contact us today to discuss your project requirements.' ?></p>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="<?= $lang==='ar' ? 'الاسم' : 'Full Name' ?>" class="w-full border border-gray-300 p-3 rounded text-sm outline-none focus:border-saudi">
-                        <input type="email" placeholder="<?= $lang==='ar' ? 'البريد الإلكتروني' : 'Email' ?>" class="w-full border border-gray-300 p-3 rounded text-sm outline-none focus:border-saudi">
-                        <textarea rows="3" placeholder="<?= $lang==='ar' ? 'رسالتك' : 'Your Message' ?>" class="w-full border border-gray-300 p-3 rounded text-sm outline-none focus:border-saudi"></textarea>
-                        <button type="button" class="w-full bg-saudi text-white py-3 rounded font-bold hover:bg-opacity-90 transition <?= $headingFontClass ?>">
-                            <?= $lang==='ar' ? 'إرسال الطلب' : 'Submit Request' ?>
-                        </button>
-                    </form>
+                <!-- Quote Box -->
+                <div class="bg-charcoal text-white p-5 rounded-sm shadow-xl" data-aos="fade-left">
+                    <h3 class="text-lg font-medium mb-2 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '?? ??? ????? ??????' : 'Ready to get started?' ?></h3>
+                    <p class="text-gray-300 mb-4 text-xs leading-relaxed"><?= $lang === 'ar' ? '???? ????? ??????? ????? ??????? ??????? ?????? ??????? ??? ??? ??? ????.' : 'Contact our engineering team to discuss your project requirements.' ?></p>
+                    <a href="quote.php" class="block text-center bg-saudi text-white py-2.5 rounded-sm font-bold hover:bg-white hover:text-saudi transition-colors text-xs uppercase tracking-widest shadow-md"><?= t('get_quote') ?></a>
                 </div>
-
-                <!-- Related Services -->
-                <div class="bg-charcoal text-offwhite p-6 rounded shadow-sm">
-                    <h3 class="text-xl <?= $headingFontClass ?> mb-4"><?= t('services') ?></h3>
-                    <ul class="space-y-2">
-                        <?php foreach($services_data as $s_slug => $s_data): if($s_slug === $slug) continue; ?>
-                        <li>
-                            <a href="<?= $s_slug ?>.php" class="text-sm text-steel hover:text-saudi transition-colors flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 bg-saudi rounded-full"></span>
-                                <?= $s_data[$lang]['title'] ?>
-                            </a>
+                
+                <!-- Technical Specs / Industries -->
+                <?php if(!empty($service_specs)): ?>
+                <div class="bg-white p-5 rounded-sm shadow-sm border border-gray-200" data-aos="fade-up">
+                    <h3 class="text-sm text-charcoal font-bold mb-3 uppercase tracking-widest <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???????? ???????' : 'Technical Specs' ?></h3>
+                    <ul class="space-y-2.5">
+                        <?php foreach($service_specs as $key => $val): ?>
+                        <li class="flex flex-col border-b border-gray-100 pb-2 last:border-0 last:pb-0">
+                            <span class="text-gray-800 font-bold text-[10px] uppercase tracking-wider mb-0.5"><?= $key ?></span>
+                            <span class="text-gray-600 text-xs"><?= $val ?></span>
                         </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
+                <?php endif; ?>
+
+                <!-- Related Services -->
+                <div class="bg-white p-5 rounded-sm shadow-sm border border-gray-200" data-aos="fade-up">
+                    <h3 class="text-sm text-charcoal font-bold mb-3 uppercase tracking-widest <?= $headingFontClass ?>"><?= $lang === 'ar' ? '????? ????' : 'Other Services' ?></h3>
+                    <div class="space-y-2">
+                        <a href="structural-steel.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs font-medium border-b border-gray-100 pb-2">Structural Steel Buildings</a>
+                        <a href="civil-construction.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs font-medium border-b border-gray-100 pb-2">Civil Construction</a>
+                        <a href="pre-engineered-buildings.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs font-medium border-b border-gray-100 pb-2">Pre-Engineered Buildings (PEB)</a>
+                        <a href="shutdown-maintenance.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs font-medium">Shutdown & Maintenance</a>
+                    </div>
+                </div>
                 
             </div>
+
         </div>
     </div>
-</section>
-
-<!-- Related Projects Grid (Reusing CTA Band for now as requested by user to keep it simple, or insert project cards) -->
-<section class="py-16 bg-offwhite border-t border-gray-200">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl text-charcoal <?= $headingFontClass ?> mb-8 text-center"><?= $lang==='ar' ? 'مشاريع ذات صلة' : 'Related Projects' ?></h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <?= renderProjectCard('Project Image', 'Industrial Facility', 'Jubail') ?>
-            <?= renderProjectCard('Project Image', 'Commercial Tower', 'Riyadh') ?>
-            <?= renderProjectCard('Project Image', 'Logistics Hub', 'Dammam') ?>
-        </div>
-    </div>
-</section>
-
-<?= renderCTABand($lang==='ar' ? 'هل أنت مستعد لبدء مشروعك؟' : 'Ready to start your project?', t('contact')) ?>
+</div>
 
 <?php require_once 'footer.php'; ?>
