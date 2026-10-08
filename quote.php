@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $page_title = 'Request a Technical Quote | Desert Iron';
 require_once 'header.php';
 ?>
@@ -93,6 +93,13 @@ require_once 'header.php';
             <div class="lg:col-span-8">
                 <div class="bg-white p-8 md:p-10 rounded-sm shadow-md border border-gray-200">
                     
+                    <?php if(isset($_GET['success'])): ?>
+                    <div class="bg-green-50 border border-saudi text-saudi p-4 rounded-sm mb-6">
+                        <h4 class="font-bold text-sm">Thank you for your inquiry!</h4>
+                        <p class="text-xs mt-1">Your RFQ has been received and our engineering team will get back to you shortly.</p>
+                    </div>
+                    <?php endif; ?>
+                    
                     <!-- Progress Step Bar -->
                     <div class="mb-10">
                         <div class="flex justify-between items-center relative">
@@ -142,6 +149,17 @@ require_once 'header.php';
                                 </div>
                             </div>
                             
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Position</label>
+                                    <input type="text" id="position" name="position" placeholder="e.g. Procurement Manager" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Project Name</label>
+                                    <input type="text" id="project_name" name="project_name" placeholder="e.g. Dammam Warehouse" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                            </div>
+                            
                             <div class="pt-4 flex justify-end">
                                 <button type="button" onclick="goToStep(2)" class="bg-saudi text-white px-8 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-charcoal transition-colors shadow-md">
                                     Next Step: Select Scope &rarr;
@@ -184,6 +202,13 @@ require_once 'header.php';
                                 </div>
                             </div>
                             
+                            <div class="grid grid-cols-1 gap-5 pt-2">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Required Date</label>
+                                    <input type="date" name="required_date" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                </div>
+                            </div>
+                            
                             <div class="pt-4 flex justify-between">
                                 <button type="button" onclick="goToStep(1)" class="bg-gray-200 text-charcoal px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-gray-300 transition-colors">
                                     &larr; Back
@@ -198,6 +223,11 @@ require_once 'header.php';
                         <div class="step-container space-y-5 hidden" id="step-3">
                             <h3 class="text-xl font-bold text-charcoal mb-4 <?= $headingFontClass ?>">Step 3: Specifications & File Upload</h3>
                             
+                            <div style="display:none;">
+                                <label>Leave this empty</label>
+                                <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
+                            </div>
+                            
                             <div>
                                 <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Scope Summary / Technical Requirements</label>
                                 <textarea name="message" rows="4" placeholder="Mention steel grades, clear heights, crane capacities, timeline, or special requirements..." class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors"></textarea>
@@ -209,8 +239,8 @@ require_once 'header.php';
                                 <div class="border-2 border-dashed border-gray-300 rounded-sm p-6 text-center bg-offwhite hover:border-saudi transition-colors cursor-pointer" onclick="document.getElementById('rfq-file').click()">
                                     <svg class="w-8 h-8 text-saudi mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                                     <span class="text-xs text-gray-700 font-medium block">Click or Drag & Drop Drawings here</span>
-                                    <span class="text-[10px] text-gray-400 font-light block mt-1">Accepts DWG, PDF, ZIP, XLSX (Max 15MB)</span>
-                                    <input type="file" name="attachment" id="rfq-file" class="hidden">
+                                    <span class="text-[10px] text-gray-400 font-light block mt-1">Accepts PDF, XLSX, DOCX (Max 10MB)</span>
+                                    <input type="file" name="attachment" id="rfq-file" accept=".pdf,.xlsx,.xls,.doc,.docx" class="hidden">
                                 </div>
                             </div>
                             

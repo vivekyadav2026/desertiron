@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $page_title = "Our Projects | Desert Iron";
 require_once 'header.php';
 
@@ -43,22 +43,25 @@ $categories = ['All', 'Industrial', 'Commercial', 'Infrastructure', 'Warehousing
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
             <?php
             $projects = [
-                ['title' => 'Jubail Petrochemical Plant', 'cat' => 'industrial', 'loc' => 'Jubail', 'img' => 'structural_steel.jpg'],
-                ['title' => 'Riyadh Metro Hub', 'cat' => 'infrastructure', 'loc' => 'Riyadh', 'img' => 'civil_construction.jpg'],
-                ['title' => 'NEOM Logistics Center', 'cat' => 'warehousing', 'loc' => 'Tabuk', 'img' => 'peb_warehouse.jpg'],
-                ['title' => 'Jeddah Commercial Tower', 'cat' => 'commercial', 'loc' => 'Jeddah', 'img' => 'architectural_work.jpg'],
-                ['title' => 'Dammam Storage Facility', 'cat' => 'warehousing', 'loc' => 'Dammam', 'img' => 'trading_warehouse.jpg'],
-                ['title' => 'Yanbu Refinery Expansion', 'cat' => 'industrial', 'loc' => 'Yanbu', 'img' => 'shutdown_maintenance.jpg'],
+                ['title' => 'Doha Industrial Facility', 'cat' => 'industrial', 'loc' => 'Qatar', 'img' => 'structural_steel.jpg', 'group' => true],
+                ['title' => 'Commercial Tower Framework', 'cat' => 'commercial', 'loc' => 'Qatar', 'img' => 'civil_construction.jpg', 'group' => true],
+                ['title' => 'Logistics Center PEB', 'cat' => 'warehousing', 'loc' => 'Qatar', 'img' => 'peb_warehouse.jpg', 'group' => true],
+                ['title' => 'Pipeline Support Structures', 'cat' => 'infrastructure', 'loc' => 'Qatar', 'img' => 'architectural_work.jpg', 'group' => true],
+                ['title' => 'Cold Storage Facility', 'cat' => 'warehousing', 'loc' => 'Qatar', 'img' => 'trading_warehouse.jpg', 'group' => true],
+                ['title' => 'Refinery Structural Works', 'cat' => 'industrial', 'loc' => 'Qatar', 'img' => 'shutdown_maintenance.jpg', 'group' => true],
             ];
             foreach($projects as $i => $p):
             ?>
             <a href="quote.php" class="project-item block group relative overflow-hidden rounded-sm bg-charcoal aspect-[4/3] shadow-sm hover:shadow-xl transition-all duration-300" data-category="<?= $p['cat'] ?>">
-                <img src="public/images/<?= $p['img'] ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Project">
+                <img src="public/images/<?= $p['img'] ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Illustrative Project">
                 <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
                 <div class="absolute bottom-0 start-0 end-0 p-6">
                     <span class="text-saudi text-[10px] font-bold uppercase tracking-widest mb-2 inline-block bg-saudi/10 border border-saudi/20 px-2 py-0.5 rounded-sm text-saudi"><?= ucfirst($p['cat']) ?></span>
+                    <?php if(isset($p['group']) && $p['group']): ?>
+                    <span class="text-white text-[10px] font-bold uppercase tracking-widest mb-2 inline-block bg-charcoal/50 border border-gray-500 px-2 py-0.5 rounded-sm ms-2">Group Experience - Qatar</span>
+                    <?php endif; ?>
                     <h3 class="text-white text-lg font-bold mb-1 leading-tight"><?= $p['title'] ?></h3>
-                    <p class="text-gray-400 text-xs font-light"><?= $p['loc'] ?>, KSA</p>
+                    <p class="text-gray-400 text-xs font-light"><?= $p['loc'] ?></p>
                 </div>
             </a>
             <?php endforeach; ?>

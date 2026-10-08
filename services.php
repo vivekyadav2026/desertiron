@@ -3,69 +3,16 @@ $page_title = 'Our Services | Desert Iron';
 require_once 'header.php';
 
 $services = [
-    [
-        'title' => 'Structural Steel Buildings',
-        'title_ar' => 'الفولاذ الهيكلي للمباني',
-        'slug' => 'structural-steel',
-        'img' => 'structural_steel.jpg',
-        'desc' => 'High-strength, precision-engineered steel structures for heavy industrial and commercial applications.'
-    ],
-    [
-        'title' => 'Civil Construction',
-        'title_ar' => 'الإنشاءات المدنية',
-        'slug' => 'civil-construction',
-        'img' => 'civil_construction.jpg',
-        'desc' => 'Comprehensive civil works, from massive foundational concrete pouring to complete site development.'
-    ],
-    [
-        'title' => 'Pre-Engineered Buildings',
-        'title_ar' => 'المباني مسبقة الصنع',
-        'slug' => 'pre-engineered-buildings',
-        'img' => 'peb_warehouse.jpg',
-        'desc' => 'Cost-effective, rapid-deployment PEB solutions optimized for warehouses and logistics hubs.'
-    ],
-    [
-        'title' => 'Architectural Work',
-        'title_ar' => 'الأعمال المعمارية',
-        'slug' => 'architectural-work',
-        'img' => 'architectural_work.jpg',
-        'desc' => 'BIM-integrated architectural planning and geotechnical coordination aligned with SBC 201.'
-    ],
-    [
-        'title' => 'Roof & Wall Panels',
-        'title_ar' => 'ألواح الأسقف والجدران',
-        'slug' => 'roof-wall-panels',
-        'img' => 'roof_wall_panels.jpg',
-        'desc' => 'Advanced cladding systems, including sandwich panels and corrugated sheets for thermal efficiency.'
-    ],
-    [
-        'title' => 'Call-off Services',
-        'title_ar' => 'خدمات الطلب عند الحاجة',
-        'slug' => 'call-off-services',
-        'img' => 'call_off_services.jpg',
-        'desc' => 'On-demand contracting frameworks providing rapid mobilization for critical facility operations.'
-    ],
-    [
-        'title' => 'Trading',
-        'title_ar' => 'التجارة والمواد',
-        'slug' => 'trading',
-        'img' => 'trading_warehouse.jpg',
-        'desc' => 'Procurement and supply of premium structural materials, rebars, and fastening systems.'
-    ],
-    [
-        'title' => 'Technical Staffing',
-        'title_ar' => 'التزويد بالكادر الفني',
-        'slug' => 'technical-staffing',
-        'img' => 'technical_staffing.jpg',
-        'desc' => 'Deployment of certified welders, QA/QC inspectors, and project managers for mega-projects.'
-    ],
-    [
-        'title' => 'Shutdown & Maintenance',
-        'title_ar' => 'الإغلاق والصيانة',
-        'slug' => 'shutdown-maintenance',
-        'img' => 'shutdown_maintenance.jpg',
-        'desc' => 'Time-critical plant turnaround services ensuring maximum safety and minimal operational downtime.'
-    ]
+    ['title' => 'Structural Steel Fabrication & Erection', 'slug' => 'structural-steel', 'img' => 'structural_steel.jpg', 'desc' => 'Frames, columns, beams, trusses, platforms, supports, and modifications.'],
+    ['title' => 'Pre-Engineered Buildings (PEB)', 'slug' => 'pre-engineered-buildings', 'img' => 'peb_warehouse.jpg', 'desc' => 'Warehouses, factories, workshops, storage and utility buildings.'],
+    ['title' => 'Industrial Construction', 'slug' => 'industrial-construction', 'img' => 'civil_construction.jpg', 'desc' => 'Integrated steel, civil and industrial site works.'],
+    ['title' => 'Pipeline & Industrial Piping', 'slug' => 'pipeline-piping', 'img' => 'architectural_work.jpg', 'desc' => 'Installation, fabrication, pipe supports, and related mechanical work.'],
+    ['title' => 'Roof & Wall Cladding', 'slug' => 'roof-wall-cladding', 'img' => 'roof_wall_panels.jpg', 'desc' => 'Roof/wall systems, insulated/sandwich panels, flashings and accessories.'],
+    ['title' => 'Standing Seam Roofing Systems', 'slug' => 'standing-seam-roofing', 'img' => 'shutdown_maintenance.jpg', 'desc' => 'Supply, installation support, and associated accessories.'],
+    ['title' => 'Miscellaneous Metal Works', 'slug' => 'misc-metal-works', 'img' => 'trading_warehouse.jpg', 'desc' => 'Frames, access structures, brackets and customized steel items.'],
+    ['title' => 'Fireproofing Works', 'slug' => 'fireproofing-works', 'img' => 'structural_steel.jpg', 'desc' => 'Project-specified systems and associated support.'],
+    ['title' => 'Civil Works', 'slug' => 'civil-works', 'img' => 'civil_construction.jpg', 'desc' => 'Foundations, concrete, masonry, repairs and site improvements.'],
+    ['title' => 'Fit-Out Works', 'slug' => 'fit-out-works', 'img' => 'architectural_work.jpg', 'desc' => 'Commercial/industrial finishing and related coordination.']
 ];
 ?>
 

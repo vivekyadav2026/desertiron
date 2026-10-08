@@ -35,7 +35,7 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                         charcoal: '#1F2A27',
                         steel: '#6B7280',
                         saudi: '#006B3F',
-                        sand: '#DBC9A7',
+                        sand: '#D8C9A7',
                         offwhite: '#F5F5F2',
                     },
                     fontFamily: {
@@ -190,15 +190,15 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                     <svg class="w-3.5 h-3.5 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     <span dir="ltr">+966 59 951 0213</span>
                 </a>
-                <a href="mailto:sales@desrtiron.com" class="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="mailto:sales@desertiron.com" class="flex items-center gap-2 hover:text-white transition-colors">
                     <svg class="w-3.5 h-3.5 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    sales@desrtiron.com
+                    sales@desertiron.com
                 </a>
             </div>
             <div class="flex items-center gap-4">
                 <span class="flex items-center gap-2">
                     <svg class="w-3.5 h-3.5 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    Industrial Gate City, Riyadh, KSA
+                    Dammam, Saudi Arabia
                 </span>
             </div>
         </div>
@@ -224,25 +224,26 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                         <?= t('services') ?> 
                         <svg class="w-4 h-4 text-gray-500 group-hover:text-saudi transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <div class="absolute top-full <?= $lang === 'ar' ? 'right-0' : 'left-0' ?> w-64 bg-white text-charcoal shadow-2xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 border-t-2 border-saudi flex flex-col mt-2">
-                        <a href="structural-steel.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Structural Steel Buildings</a>
+                    <div class="absolute top-full <?= $lang === 'ar' ? 'right-0' : 'left-0' ?> w-72 bg-white text-charcoal shadow-2xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 border-t-2 border-saudi flex flex-col mt-2">
+                        <a href="structural-steel.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Structural Steel Fabrication & Erection</a>
                         <a href="pre-engineered-buildings.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Pre-Engineered Buildings (PEB)</a>
-                        <a href="civil-construction.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Civil Construction</a>
-                        <a href="architectural-work.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Architectural Work</a>
-                        <a href="roof-wall-panels.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Roof & Wall Panels</a>
-                        <a href="call-off-services.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Call-off Services</a>
-                        <a href="trading.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Trading & Supply</a>
-                        <a href="technical-staffing.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Technical Staffing</a>
-                        <a href="shutdown-maintenance.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm font-medium">Shutdown & Maintenance</a>
+                        <a href="industrial-construction.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Industrial Construction</a>
+                        <a href="pipeline-piping.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Pipeline & Industrial Piping</a>
+                        <a href="roof-wall-cladding.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Roof & Wall Cladding</a>
+                        <a href="standing-seam-roofing.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Standing Seam Roofing Systems</a>
+                        <a href="misc-metal-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Miscellaneous Metal Works</a>
+                        <a href="fireproofing-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Fireproofing Works</a>
+                        <a href="civil-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm font-medium border-b border-gray-100">Civil Works</a>
+                        <a href="fit-out-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm font-medium">Fit-Out Works</a>
                         <div class="bg-gray-50 mt-1 pt-1 border-t border-gray-200">
                             <a href="services.php" class="block px-5 py-3 hover:text-saudi text-xs font-bold uppercase tracking-widest text-saudi">View All Services &rarr;</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="products.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'المنتجات' : 'Products' ?></a>
+                <a href="industries.php" class="hover:text-white transition-colors py-2"><?= isset($translations[$lang]['industries']) ? $translations[$lang]['industries'] : 'Industries' ?></a>
                 <a href="projects.php" class="hover:text-white transition-colors py-2"><?= t('projects') ?></a>
-                <a href="clients.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'العملاء' : 'Clients' ?></a>
+                <a href="news.php" class="hover:text-white transition-colors py-2"><?= isset($translations[$lang]['news']) ? $translations[$lang]['news'] : 'Insights / News' ?></a>
                 <a href="contact.php" class="hover:text-white transition-colors py-2"><?= t('contact') ?></a>
             </nav>
 
@@ -312,27 +313,28 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                 <button onclick="document.getElementById('mobile-services-list').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');" class="w-full flex items-center justify-between text-start font-medium hover:text-saudi focus:outline-none min-h-[36px]">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">03</div>
-                        <span class="font-bold text-white"><?= t('services') ?> (9)</span>
+                        <span class="font-bold text-white"><?= t('services') ?> (10)</span>
                     </div>
                     <svg class="w-4 h-4 text-saudi transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="mobile-services-list" class="hidden border-s-2 border-saudi ms-4 ps-3 pt-3 pb-1 space-y-2 text-sm text-gray-300 mt-2">
-                    <a href="structural-steel.php" class="block py-1.5 hover:text-saudi">Structural Steel Buildings</a>
+                    <a href="structural-steel.php" class="block py-1.5 hover:text-saudi">Structural Steel Fabrication & Erection</a>
                     <a href="pre-engineered-buildings.php" class="block py-1.5 hover:text-saudi">Pre-Engineered Buildings (PEB)</a>
-                    <a href="civil-construction.php" class="block py-1.5 hover:text-saudi">Civil Construction</a>
-                    <a href="architectural-work.php" class="block py-1.5 hover:text-saudi">Architectural Work</a>
-                    <a href="roof-wall-panels.php" class="block py-1.5 hover:text-saudi">Roof & Wall Panels</a>
-                    <a href="call-off-services.php" class="block py-1.5 hover:text-saudi">Call-off Services</a>
-                    <a href="trading.php" class="block py-1.5 hover:text-saudi">Trading & Materials</a>
-                    <a href="technical-staffing.php" class="block py-1.5 hover:text-saudi">Technical Staffing</a>
-                    <a href="shutdown-maintenance.php" class="block py-1.5 hover:text-saudi">Shutdown & Maintenance</a>
+                    <a href="industrial-construction.php" class="block py-1.5 hover:text-saudi">Industrial Construction</a>
+                    <a href="pipeline-piping.php" class="block py-1.5 hover:text-saudi">Pipeline & Industrial Piping</a>
+                    <a href="roof-wall-cladding.php" class="block py-1.5 hover:text-saudi">Roof & Wall Cladding</a>
+                    <a href="standing-seam-roofing.php" class="block py-1.5 hover:text-saudi">Standing Seam Roofing Systems</a>
+                    <a href="misc-metal-works.php" class="block py-1.5 hover:text-saudi">Miscellaneous Metal Works</a>
+                    <a href="fireproofing-works.php" class="block py-1.5 hover:text-saudi">Fireproofing Works</a>
+                    <a href="civil-works.php" class="block py-1.5 hover:text-saudi">Civil Works</a>
+                    <a href="fit-out-works.php" class="block py-1.5 hover:text-saudi">Fit-Out Works</a>
                 </div>
             </div>
 
-            <a href="products.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+            <a href="industries.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">04</div>
-                    <span><?= $lang === 'ar' ? 'المنتجات' : 'Products' ?></span>
+                    <span><?= isset($translations[$lang]['industries']) ? $translations[$lang]['industries'] : 'Industries' ?></span>
                 </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
@@ -345,10 +347,10 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
 
-            <a href="clients.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+            <a href="news.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">06</div>
-                    <span><?= $lang === 'ar' ? 'العملاء والاعتمادات' : 'Clients & Approvals' ?></span>
+                    <span><?= isset($translations[$lang]['news']) ? $translations[$lang]['news'] : 'Insights / News' ?></span>
                 </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>

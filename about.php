@@ -86,6 +86,32 @@ require_once 'header.php';
     </div>
 </section>
 
+<!-- 3.5 Group Heritage & Management -->
+<section class="py-12 md:py-16 bg-white border-y border-gray-200">
+    <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h3 class="text-3xl font-bold text-charcoal mb-4 <?= $headingFontClass ?>">Group Heritage & Experience</h3>
+                <p class="text-gray-600 text-base leading-relaxed font-light mb-4">
+                    Desert Iron's executive management brings more than 25 years of extensive GCC industry experience in the structural steel and construction sectors, ensuring every project is guided by seasoned professionals.
+                </p>
+                <p class="text-gray-600 text-base leading-relaxed font-light">
+                    Our associated Qatar company, <strong>Safeera Trading, Contracting & Services</strong>, was established in 2012 under the same ownership. Our combined <strong>Group Experience – Qatar</strong> provides a strong foundation of completed mega-projects across the region.
+                </p>
+            </div>
+            <div class="bg-offwhite p-8 rounded-sm border border-gray-200">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 bg-saudi text-white flex items-center justify-center font-bold text-xl rounded-full">25+</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-charcoal <?= $headingFontClass ?>">Years GCC Experience</h4>
+                        <p class="text-sm text-gray-500">Executive Management Leadership</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- 4. Core Values Grid -->
 <section class="py-12 md:py-16 lg:py-24 bg-white">
     <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
