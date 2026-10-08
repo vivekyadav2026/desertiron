@@ -154,12 +154,24 @@
                 }
             });
 
-            // Automatically target cards, headings, and sections for scroll animation using AOS
-            const animateTargets = document.querySelectorAll('section h2, section h3, .grid > div, .grid > a, article, .hover-lift');
-            animateTargets.forEach((el, index) => {
+            // Advanced AOS Animations: Apply dynamic directions to ALL visual elements
+            const textTargets = document.querySelectorAll('section h2, section h3');
+            textTargets.forEach((el) => {
+                if (!el.hasAttribute('data-aos')) el.setAttribute('data-aos', 'fade-up');
+            });
+
+            const visualElements = document.querySelectorAll('.grid > div, .grid > a, section img:not(.parallax-img)');
+            const dynamicAnims = ['fade-left', 'fade-right', 'fade-down', 'fade-up', 'zoom-in', 'zoom-in-up'];
+            let vIndex = 0;
+            
+            visualElements.forEach((el) => {
                 if (!el.hasAttribute('data-aos')) {
-                    el.setAttribute('data-aos', 'fade-up');
-                    el.setAttribute('data-aos-delay', (index % 4) * 100);
+                    // Prevent double animation if an img is inside a grid item that is already getting animated
+                    if (el.tagName === 'IMG' && el.closest('[data-aos]')) return;
+                    
+                    el.setAttribute('data-aos', dynamicAnims[vIndex % dynamicAnims.length]);
+                    el.setAttribute('data-aos-duration', '1000');
+                    vIndex++;
                 }
             });
 
