@@ -134,42 +134,82 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Lazy Load Images
-            document.querySelectorAll('img:not([loading])').forEach(img => {
-                img.setAttribute('loading', 'lazy');
-            });
-
-            // Automatically target cards, headings, and sections for scroll animation
-            const animateTargets = document.querySelectorAll('section h2, section h3, .grid > div, .grid > a, article, .hover-lift');
-            animateTargets.forEach((el, index) => {
-                if (!el.classList.contains('reveal-on-scroll') && !el.classList.contains('reveal-scale')) {
-                    el.classList.add('reveal-on-scroll');
-                    const delay = (index % 4) * 80;
-                    el.style.transitionDelay = delay + 'ms';
+            // Lazy Load Images & Animation
+            document.querySelectorAll('img').forEach(img => {
+                if (!img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+                
+                // Exclude some tiny icons or already loaded from script
+                if (!img.classList.contains('parallax-img') && !img.closest('.parallax-container')) {
+                    img.classList.add('image-fade-in');
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    } else {
+                        img.addEventListener('load', () => img.classList.add('loaded'));
+                    }
+                } else {
+                    // For parallax hero images, just apply loaded to skip blur
+                    img.classList.add('loaded');
                 }
             });
 
-            // IntersectionObserver for Scroll Animations
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
+            // Automatically target cards, headings, and sections for scroll animation using AOS
+            const animateTargets = document.querySelectorAll('section h2, section h3, .grid > div, .grid > a, article, .hover-lift');
+            animateTargets.forEach((el, index) => {
+                if (!el.hasAttribute('data-aos')) {
+                    el.setAttribute('data-aos', 'fade-up');
+                    el.setAttribute('data-aos-delay', (index % 4) * 100);
+                }
+            });
 
-                document.querySelectorAll('.reveal-on-scroll, .reveal-scale').forEach(el => {
-                    observer.observe(el);
-                });
-            } else {
-                // Fallback for legacy browsers
-                document.querySelectorAll('.reveal-on-scroll, .reveal-scale').forEach(el => {
-                    el.classList.add('is-visible');
-                });
-            }
+            // Dynamically setup Parallax Images for all hero sections
+            const heroImages = document.querySelectorAll('.absolute.inset-0.z-0 > img');
+            heroImages.forEach(img => {
+                img.classList.add('parallax-img');
+                img.parentElement.classList.add('parallax-container');
+            });
+
+            // Initialize AOS reliably
+            const initAOS = () => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        offset: 50,
+                        easing: 'ease-out-cubic'
+                    });
+                } else {
+                    setTimeout(initAOS, 100);
+                }
+            };
+            initAOS();
         });
+
+        // High-Performance Parallax Scroll Event
+        const parallaxImages = document.getElementsByClassName('parallax-img');
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!parallaxImages.length) return;
+            
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    for (let i = 0; i < parallaxImages.length; i++) {
+                        const img = parallaxImages[i];
+                        const speed = parseFloat(img.getAttribute('data-speed')) || 0.4;
+                        // Limit animation to when hero is near viewport
+                        if (scrollY < window.innerHeight * 1.5) {
+                            img.style.transform = `scale(1.15) translateY(${scrollY * speed}px)`;
+                        }
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

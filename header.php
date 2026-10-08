@@ -23,7 +23,7 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Library for Scroll Reveal -->
-    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -172,6 +172,22 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                 transform: none !important;
                 transition: none !important;
             }
+        }
+
+        /* Parallax & Smooth Entrance Effects */
+        .parallax-container { overflow: hidden; position: relative; }
+        .parallax-img { will-change: transform; transform: scale(1.15); transform-origin: top center; }
+        
+        /* Image Load Animation */
+        .image-fade-in {
+            opacity: 0;
+            filter: blur(8px);
+            transition: opacity 0.7s ease-out, filter 0.7s ease-out;
+            will-change: opacity, filter;
+        }
+        .image-fade-in.loaded {
+            opacity: 1;
+            filter: blur(0);
         }
     </style>
 </head>
