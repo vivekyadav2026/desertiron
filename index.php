@@ -148,7 +148,7 @@ require_once 'header.php';
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <?php 
+            <?php
             $proj_imgs = ['shutdown_maintenance.jpg', 'civil_construction.jpg', 'peb_warehouse.jpg', 'contact_hq.jpg', 'trading_warehouse.jpg'];
             for($i=1; $i<=5; $i++): 
                 $p_img = 'public/images/' . $proj_imgs[$i-1];
@@ -166,6 +166,34 @@ require_once 'header.php';
             </a>
             <?php endfor; ?>
         </div>
+    </div>
+</section>
+
+<!-- 5.5 Home Gallery Preview -->
+<section class="py-16 md:py-24 bg-white relative">
+    <div class="container mx-auto px-4 lg:px-6 max-w-7xl text-center">
+        <h2 class="text-xs uppercase tracking-widest text-saudi font-bold mb-2"><?= $lang === 'ar' ? 'معرض الصور' : 'Visual Showcase' ?></h2>
+        <h3 class="text-3xl lg:text-4xl text-charcoal <?= $headingFontClass ?> font-bold mb-10 leading-tight">
+            <?= $lang === 'ar' ? 'لمحة عن أعمالنا السابقة' : 'Glimpse of Our Past Activity' ?>
+        </h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            <?php 
+            $home_gallery = array_slice(glob('pastactivity/images/*.{jpg,jpeg,png,JPG,PNG,JPEG}', GLOB_BRACE), 0, 8);
+            foreach($home_gallery as $img): 
+            ?>
+            <a href="<?= htmlspecialchars($img) ?>" class="glightbox block relative rounded overflow-hidden aspect-square group shadow-sm hover:shadow-lg transition-all" data-aos="zoom-in">
+                <img src="<?= htmlspecialchars($img) ?>" alt="Gallery Preview" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                </div>
+            </a>
+            <?php endforeach; ?>
+        </div>
+        
+        <a href="gallery.php" class="inline-flex items-center gap-2 bg-charcoal text-white px-8 py-3.5 rounded text-sm font-bold uppercase tracking-widest hover:bg-saudi transition-colors shadow-xl">
+            <?= $lang === 'ar' ? 'عرض المعرض بالكامل' : 'Explore Full Gallery' ?> &rarr;
+        </a>
     </div>
 </section>
 

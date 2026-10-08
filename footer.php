@@ -68,7 +68,7 @@
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-saudi shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <a href="mailto:sales@desertiron.com" class="hover:text-white transition-colors">sales@desertiron.com</a>
+                            <a href="mailto:sales@thedesertiron.com" class="hover:text-white transition-colors">sales@thedesertiron.com</a>
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-saudi shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
@@ -87,6 +87,8 @@
                     <span>&copy; <?= date('Y') ?> Desert Iron (Saudi LLC). CR: 7050215511. All rights reserved.</span>
                     <span class="mx-2 text-gray-700 hidden md:inline">|</span> 
                     <a href="privacy.php" class="hover:text-white transition-colors hidden md:inline">Privacy Policy</a>
+                    <span class="mx-2 text-gray-700 hidden md:inline">|</span>
+                    <span class="text-gray-400">Designed by <a href="https://foundida.com/" target="_blank" rel="noopener noreferrer" class="text-saudi hover:text-white transition-colors font-bold tracking-wide">Foundida</a></span>
                 </div>
                 <div class="flex items-center gap-2 text-gray-400 uppercase tracking-widest font-medium">
                     <svg class="w-4 h-4 text-saudi" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -223,5 +225,27 @@
         }, { passive: true });
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Interactive 3D Hover Tilt Effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if(document.querySelectorAll('.glightbox').length > 0) {
+                GLightbox({ selector: '.glightbox', loop: true });
+            }
+            // Apply 3D Tilt to Cards and Images
+            VanillaTilt.init(document.querySelectorAll(".grid > div.bg-white, .grid > a, .bg-offwhite.shadow-sm, .project-item"), {
+                max: 4,               // max tilt rotation (deg)
+                speed: 400,           // speed of the enter/exit transition
+                glare: true,          // enable glare effect
+                "max-glare": 0.15,    // max glare opacity
+                scale: 1.02           // slight pop-out scale on hover
+            });
+        });
+    </script>
 </body>
 </html>

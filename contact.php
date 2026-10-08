@@ -62,8 +62,8 @@ require_once 'components.php';
                 <div>
                     <h3 class="font-bold text-charcoal text-lg mb-1"><?= $lang==='ar' ? 'البريد الإلكتروني' : 'Email Addresses' ?></h3>
                     <p class="text-steel text-sm leading-relaxed">
-                        <a href="mailto:sales@desrtiron.com" class="hover:text-saudi transition block font-medium">sales@desrtiron.com</a>
-                        <a href="mailto:jaffar@desrtiron.com" class="hover:text-saudi transition block font-medium">jaffar@desrtiron.com</a>
+                        <a href="mailto:sales@thedesertiron.com" class="hover:text-saudi transition block font-medium">sales@thedesertiron.com</a>
+                        <a href="mailto:jaffar@thedesertiron.com" class="hover:text-saudi transition block font-medium">jaffar@thedesertiron.com</a>
                     </p>
                 </div>
             </div>
@@ -149,14 +149,14 @@ require_once 'components.php';
                         <div class="border-b border-gray-800 pb-3">
                             <div class="font-semibold text-saudi uppercase text-xs tracking-wider"><?= $lang==='ar' ? 'مبيعات العقود والصلب' : 'Sales & Estimation' ?></div>
                             <div class="text-offwhite font-medium mt-1">Eng. Jaffar / Sales Dept</div>
-                            <a href="mailto:sales@desrtiron.com" class="text-steel hover:text-white transition text-xs block">sales@desrtiron.com</a>
+                            <a href="mailto:sales@thedesertiron.com" class="text-steel hover:text-white transition text-xs block">sales@thedesertiron.com</a>
                             <a href="tel:+966599510213" class="text-steel hover:text-white transition text-xs block">+966 59 951 0213</a>
                         </div>
                         <!-- Engineering -->
                         <div class="border-b border-gray-800 pb-3">
                             <div class="font-semibold text-saudi uppercase text-xs tracking-wider"><?= $lang==='ar' ? 'الهندسة والتصميم' : 'Engineering & Detailing' ?></div>
                             <div class="text-offwhite font-medium mt-1">BIM & Technical Office</div>
-                            <a href="mailto:jaffar@desrtiron.com" class="text-steel hover:text-white transition text-xs block">jaffar@desrtiron.com</a>
+                            <a href="mailto:jaffar@thedesertiron.com" class="text-steel hover:text-white transition text-xs block">jaffar@thedesertiron.com</a>
                         </div>
                         <!-- Procurement -->
                         <div>

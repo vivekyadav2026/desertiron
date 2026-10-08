@@ -34,7 +34,6 @@ $translations = [
         'clients' => 'Clients',
         'certifications' => 'Certifications',
         'careers' => 'Careers',
-        'news' => 'News',
         'contact' => 'Contact Us',
         'get_quote' => 'Get a Quote',
 

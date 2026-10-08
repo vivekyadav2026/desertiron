@@ -178,6 +178,23 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
         .parallax-container { overflow: hidden; position: relative; }
         .parallax-img { will-change: transform; transform: scale(1.15); transform-origin: top center; }
         
+        /* Interactive Hover Enhancements */
+        .grid > a, .grid > div.bg-white, .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.25rem;
+        }
+        
+        /* Smooth Inner Image Zoom */
+        section img:not(.parallax-img) {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .grid > a:hover img:not(.parallax-img),
+        .grid > div:hover img:not(.parallax-img),
+        .project-item:hover img {
+            transform: scale(1.08) !important;
+        }
+        
         /* Image Load Animation */
         .image-fade-in {
             opacity: 0;
@@ -206,9 +223,9 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                     <svg class="w-3.5 h-3.5 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     <span dir="ltr">+966 59 951 0213</span>
                 </a>
-                <a href="mailto:sales@desertiron.com" class="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="mailto:sales@thedesertiron.com" class="flex items-center gap-2 hover:text-white transition-colors">
                     <svg class="w-3.5 h-3.5 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    sales@desertiron.com
+                    sales@thedesertiron.com
                 </a>
             </div>
             <div class="flex items-center gap-4">
@@ -259,7 +276,8 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
 
                 <a href="industries.php" class="hover:text-white transition-colors py-2"><?= isset($translations[$lang]['industries']) ? $translations[$lang]['industries'] : 'Industries' ?></a>
                 <a href="projects.php" class="hover:text-white transition-colors py-2"><?= t('projects') ?></a>
-                <a href="news.php" class="hover:text-white transition-colors py-2"><?= isset($translations[$lang]['news']) ? $translations[$lang]['news'] : 'Insights / News' ?></a>
+                <a href="past-experience.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'سجل الأعمال' : 'Past Activity' ?></a>
+                <a href="gallery.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'معرض الصور' : 'Gallery' ?></a>
                 <a href="contact.php" class="hover:text-white transition-colors py-2"><?= t('contact') ?></a>
             </nav>
 
@@ -363,17 +381,25 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
 
-            <a href="news.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+            <a href="past-experience.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">06</div>
-                    <span><?= isset($translations[$lang]['news']) ? $translations[$lang]['news'] : 'Insights / News' ?></span>
+                    <span><?= $lang === 'ar' ? 'سجل الأعمال' : 'Past Activity' ?></span>
+                </div>
+                <span class="text-xs text-gray-500">&rarr;</span>
+            </a>
+
+            <a href="gallery.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">07</div>
+                    <span><?= $lang === 'ar' ? 'معرض الصور' : 'Gallery' ?></span>
                 </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
             </a>
 
             <a href="contact.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">07</div>
+                    <div class="w-8 h-8 rounded bg-saudi/20 text-saudi flex items-center justify-center text-xs font-bold">08</div>
                     <span><?= t('contact') ?></span>
                 </div>
                 <span class="text-xs text-gray-500">&rarr;</span>

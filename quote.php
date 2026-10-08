@@ -84,7 +84,7 @@ require_once 'header.php';
                     <h4 class="text-base font-bold mb-2 <?= $headingFontClass ?>">Urgent Tender or RFQ?</h4>
                     <p class="text-gray-400 text-xs font-light mb-4">For immediate tender submissions or urgent budget estimates, contact our estimation desk directly.</p>
                     <div class="text-saudi font-bold text-sm">+966 59 951 0213</div>
-                    <div class="text-gray-300 text-xs">sales@desrtiron.com</div>
+                    <div class="text-gray-300 text-xs">sales@thedesertiron.com</div>
                 </div>
 
             </div>

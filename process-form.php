@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die('Missing required fields.');
     }
 
-    $to = "sales@desertiron.com";
+    $to = "sales@thedesertiron.com";
     $subject = "New RFQ: $project_name from $company";
     
     // File upload logic

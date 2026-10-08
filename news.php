@@ -8,7 +8,8 @@
 <section class="py-20 bg-white min-h-[50vh]">
 <div class="container mx-auto px-4">
 <?= renderSectionHeading('News & Insights Overview') ?>
-<div class='grid grid-cols-1 md:grid-cols-3 gap-6'><div class='border border-gray-200 rounded overflow-hidden'><div class='h-48 bg-gray-200'></div><div class='p-6'><h3 class='text-xl text-charcoal font-bold mb-2'>Project Milestone Reached</h3><a href='#' class='text-saudi font-bold'>Read Article &rarr;</a></div></div><div class='border border-gray-200 rounded overflow-hidden'><div class='h-48 bg-gray-200'></div><div class='p-6'><h3 class='text-xl text-charcoal font-bold mb-2'>Project Milestone Reached</h3><a href='#' class='text-saudi font-bold'>Read Article &rarr;</a></div></div><div class='border border-gray-200 rounded overflow-hidden'><div class='h-48 bg-gray-200'></div><div class='p-6'><h3 class='text-xl text-charcoal font-bold mb-2'>Project Milestone Reached</h3><a href='#' class='text-saudi font-bold'>Read Article &rarr;</a></div></div></div>
+<div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
+    <div class='border border-gray-200 rounded overflow-hidden'><div class='h-48 bg-gray-200'></div><div class='p-6'><h3 class='text-xl text-charcoal font-bold mb-2'>Project Milestone Reached</h3><a href='#' class='text-saudi font-bold'>Read Article &rarr;</a></div></div><div class='border border-gray-200 rounded overflow-hidden'><div class='h-48 bg-gray-200'></div><div class='p-6'><h3 class='text-xl text-charcoal font-bold mb-2'>Project Milestone Reached</h3><a href='#' class='text-saudi font-bold'>Read Article &rarr;</a></div></div><div class='border border-gray-200 rounded overflow-hidden'><div class='h-48 bg-gray-200'></div><div class='p-6'><h3 class='text-xl text-charcoal font-bold mb-2'>Project Milestone Reached</h3><a href='#' class='text-saudi font-bold'>Read Article &rarr;</a></div></div></div>
 </div>
 </section>
 <?php require_once 'footer.php'; ?>
