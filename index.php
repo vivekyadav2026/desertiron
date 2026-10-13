@@ -82,7 +82,7 @@ require_once 'header.php';
                 
                 <div class="space-y-4">
                     <?php 
-                    $caps = [['cap_steel', '95%'], ['cap_civil', '85%'], ['cap_eng', '90%']]; 
+                    $caps = [['cap_steel', '95%'], ['cap_civil', '85%']]; 
                     foreach($caps as $i => $cap): 
                     ?>
                     <div>

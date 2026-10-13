@@ -277,6 +277,7 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                 <a href="industries.php" class="hover:text-white transition-colors py-2"><?= isset($translations[$lang]['industries']) ? $translations[$lang]['industries'] : 'Industries' ?></a>
                 <a href="projects.php" class="hover:text-white transition-colors py-2"><?= t('projects') ?></a>
                 <a href="past-experience.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'سجل الأعمال' : 'Past Activity' ?></a>
+                <a href="corporate-profile.html" target="_blank" class="text-emerald-400 hover:text-white transition-colors py-2 flex items-center gap-1 font-semibold"><svg class="w-3.5 h-3.5 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> <?= $lang === 'ar' ? 'الملف التعريفي' : 'Corporate Profile' ?></a>
                 <a href="gallery.php" class="hover:text-white transition-colors py-2"><?= $lang === 'ar' ? 'معرض الصور' : 'Gallery' ?></a>
                 <a href="contact.php" class="hover:text-white transition-colors py-2"><?= t('contact') ?></a>
             </nav>
@@ -387,6 +388,14 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                     <span><?= $lang === 'ar' ? 'سجل الأعمال' : 'Past Activity' ?></span>
                 </div>
                 <span class="text-xs text-gray-500">&rarr;</span>
+            </a>
+
+            <a href="corporate-profile.html" target="_blank" class="flex items-center justify-between p-3 rounded-lg border border-saudi/50 bg-saudi/10 hover:bg-saudi/20 transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-saudi text-white flex items-center justify-center text-xs font-bold">📄</div>
+                    <span class="font-bold text-white"><?= $lang === 'ar' ? 'الملف التعريفي للشركة (PDF)' : 'Corporate Profile (PDF)' ?></span>
+                </div>
+                <span class="text-xs text-emerald-400 font-bold">&rarr;</span>
             </a>
 
             <a href="gallery.php" class="flex items-center justify-between p-3 rounded-lg border border-gray-800/80 hover:bg-white/5 hover:border-saudi transition-all">

@@ -59,9 +59,10 @@ $translations = [
 
         // Our Capability
         'our_capability' => 'Our Capabilities',
-        'cap_steel' => 'Structural Steel Fabrication',
-        'cap_civil' => 'Civil & Foundation Works',
+        'cap_steel' => 'Steel Fabrication and Erection',
+        'cap_civil' => 'Turn-key Civil Construction',
         'cap_eng' => 'Engineering & Detailing',
+        'cap_peb' => 'Pre-Engineered Buildings (PEB)',
 
         // Services
         'services_title' => 'Our Services',
@@ -150,9 +151,10 @@ $translations = [
 
         // Our Capability
         'our_capability' => 'قدراتنا الرئيسية',
-        'cap_steel' => 'تصنيع الفولاذ الهيكلي',
-        'cap_civil' => 'الأعمال المدنية والأساسات',
+        'cap_steel' => 'تصنيع وتركيب الفولاذ الهيكلي',
+        'cap_civil' => 'الإنشاءات المدنية المتكاملة (تسليم مفتاح)',
         'cap_eng' => 'الهندسة والتفاصيل BIM',
+        'cap_peb' => 'المباني مسبقة الصنع (PEB)',
 
         // Services
         'services_title' => 'خدماتنا',
