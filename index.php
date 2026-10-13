@@ -77,7 +77,7 @@ require_once 'header.php';
                 <h2 class="text-xs uppercase tracking-widest text-saudi font-bold mb-2"><?= $lang === 'ar' ? 'قدراتنا' : 'Capabilities' ?></h2>
                 <h3 class="text-2xl sm:text-3xl lg:text-4xl text-charcoal <?= $headingFontClass ?> mb-4 font-bold leading-tight"><?= t('our_capability') ?></h3>
                 <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base font-light">
-                    <?= $lang === 'ar' ? 'تمتلك صحراء الحديد واحدة من أكثر مرافق التصنيع تقدماً في المملكة. بدعم من أسطول ضخم من المعدات الثقيلة وكادر هندسي متخصص، نمتلك القدرة على تنفيذ مشاريع عملاقة متعددة في وقت واحد.' : 'Desert Iron operates one of the most advanced fabrication facilities in the Kingdom. Backed by a massive fleet of heavy equipment and a specialized engineering workforce, we have the capacity to execute multiple gigaprojects simultaneously.' ?>
+                    <?= $lang === 'ar' ? 'تجمع صحراء الحديد بين التنسيق الهندسي والتفصيل الفني وفرق التنفيذ الميداني ذات الخبرة لتقديم حلول الهياكل الفولاذية والمباني مسبقة الصنع (PEB) والإنشاءات المدنية المتكاملة في كافة أنحاء المملكة العربية السعودية.' : 'Desert Iron combines engineering coordination, technical detailing, and experienced site execution teams to deliver structural steel, pre-engineered buildings (PEB), and turnkey civil construction solutions across Saudi Arabia.' ?>
                 </p>
                 
                 <div class="space-y-4">
@@ -131,7 +131,11 @@ require_once 'header.php';
                 </div>
                 <div class="p-5">
                     <h3 class="text-base md:text-lg text-charcoal mb-1.5 <?= $headingFontClass ?> font-bold group-hover:text-saudi transition-colors"><?= t('srv_'.$idx.'_t') ?></h3>
-                    <p class="text-gray-600 text-xs md:text-sm font-light leading-relaxed"><?= t('srv_'.$idx.'_d') ?></p>
+                    <p class="text-gray-600 text-xs md:text-sm <?= $idx === 2 ? 'font-medium italic text-charcoal' : 'font-light' ?> leading-relaxed"><?= t('srv_'.$idx.'_d') ?></p>
+                    <div class="mt-3 flex items-center text-xs font-bold text-saudi uppercase tracking-widest group-hover:text-charcoal transition-colors">
+                        <?= $lang === 'ar' ? 'اقرأ المزيد' : 'Read More' ?>
+                        <span class="inline-block transition-transform group-hover:translate-x-1 mx-1.5">&rarr;</span>
+                    </div>
                 </div>
             </a>
             <?php endforeach; ?>
@@ -139,12 +143,13 @@ require_once 'header.php';
     </div>
 </section>
 
-<!-- 5. Featured Projects Grid -->
+<!-- 5. Industries & Project Applications Grid -->
 <section class="py-10 md:py-12 lg:py-14 bg-white">
     <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
         <div class="text-center max-w-2xl mx-auto mb-8">
-            <h2 class="text-xs uppercase tracking-widest text-saudi font-bold mb-2"><?= $lang === 'ar' ? 'سجل مشاريعنا' : 'Portfolio' ?></h2>
+            <h2 class="text-xs uppercase tracking-widest text-saudi font-bold mb-2"><?= $lang === 'ar' ? 'التطبيقات الهندسية' : 'Representative Applications' ?></h2>
             <h3 class="text-2xl sm:text-3xl lg:text-4xl text-charcoal <?= $headingFontClass ?> font-bold leading-tight"><?= t('feat_proj') ?></h3>
+            <p class="text-gray-500 text-xs md:text-sm mt-2 font-light"><?= t('feat_proj_sub') ?></p>
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -154,11 +159,11 @@ require_once 'header.php';
                 $p_img = 'public/images/' . $proj_imgs[$i-1];
             ?>
             <a href="quote.php" class="group relative overflow-hidden rounded-sm bg-charcoal aspect-[4/3] <?= $i==1 || $i==4 ? 'sm:col-span-2 lg:col-span-1' : '' ?> block shadow-sm hover:shadow-md transition-all duration-300">
-                <img src="<?= $p_img ?>" alt="Project <?= $i ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <img src="<?= $p_img ?>" alt="Representative Application <?= $i ?>" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent z-0"></div>
                 
                 <div class="absolute bottom-0 start-0 end-0 p-5 flex flex-col justify-end z-10">
-                    <span class="text-saudi text-xs font-bold uppercase tracking-widest mb-1.5"><?= t('client') ?>: Desert Iron</span>
+                    <span class="text-emerald-300 text-[11px] font-bold uppercase tracking-widest mb-1.5"><?= $lang === 'ar' ? 'تطبيق نموذجي (صورة توضيحية)' : 'Representative Application' ?></span>
                     <h3 class="text-white text-lg font-bold <?= $headingFontClass ?> leading-tight text-start">
                         <?= t('proj_'.$i) ?>
                     </h3>
@@ -173,17 +178,29 @@ require_once 'header.php';
 <section class="py-16 md:py-24 bg-white relative">
     <div class="container mx-auto px-4 lg:px-6 max-w-7xl text-center">
         <h2 class="text-xs uppercase tracking-widest text-saudi font-bold mb-2"><?= $lang === 'ar' ? 'معرض الصور' : 'Visual Showcase' ?></h2>
-        <h3 class="text-3xl lg:text-4xl text-charcoal <?= $headingFontClass ?> font-bold mb-10 leading-tight">
+        <h3 class="text-3xl lg:text-4xl text-charcoal <?= $headingFontClass ?> font-bold mb-3 leading-tight">
             <?= $lang === 'ar' ? 'لمحة عن أعمالنا السابقة' : 'Glimpse of Our Past Activity' ?>
         </h3>
+        <p class="text-gray-500 text-xs md:text-sm max-w-2xl mx-auto mb-10 font-light">
+            <?= $lang === 'ar' ? 'صور ميدانية مختارة من سجل أعمال المجموعة والمشاريع المنفذة.' : 'Selected on-site project photographs from our Group & Past Activity portfolio.' ?>
+        </p>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             <?php 
-            $home_gallery = array_slice(glob('pastactivity/images/*.{jpg,jpeg,png,JPG,PNG,JPEG}', GLOB_BRACE), 0, 8);
+            $home_gallery = [
+                'pastactivity/images/image2.jpg',
+                'pastactivity/images/image3.jpg',
+                'pastactivity/images/image5.jpg',
+                'pastactivity/images/image11.jpg',
+                'pastactivity/images/image13.jpg',
+                'pastactivity/images/image20.jpg',
+                'pastactivity/images/image25.jpg',
+                'pastactivity/images/image29.jpg'
+            ];
             foreach($home_gallery as $img): 
             ?>
             <a href="<?= htmlspecialchars($img) ?>" class="glightbox block relative rounded overflow-hidden aspect-square group shadow-sm hover:shadow-lg transition-all" data-aos="zoom-in">
-                <img src="<?= htmlspecialchars($img) ?>" alt="Gallery Preview" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                <img src="<?= htmlspecialchars($img) ?>" alt="Approved Project Photograph" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                 <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                 </div>
@@ -202,13 +219,13 @@ require_once 'header.php';
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#006B3F_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
     <div class="container mx-auto px-4 max-w-4xl relative z-10">
         <span class="inline-block px-3 py-1 bg-saudi/20 border border-saudi/40 text-emerald-300 rounded text-xs font-bold uppercase tracking-wider mb-3">
-            <?= $lang === 'ar' ? 'استشارة مجانية وعرض سعر' : 'Free Engineering Consultation & Quote' ?>
+            <?= $lang === 'ar' ? 'فريق المبيعات والتقدير في المملكة' : 'KSA Sales & Estimation Team' ?>
         </span>
         <h2 class="text-2xl sm:text-4xl text-white font-bold <?= $headingFontClass ?> mb-4 leading-tight">
             <?= t('ready_build') ?>
         </h2>
         <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto mb-8 font-light leading-relaxed">
-            <?= $lang === 'ar' ? 'تواصل مع مهندسي المبيعات والتقدير للحصول على تحليل دقيق لمخططات الفولاذ والمباني مسبقة الصنع.' : 'Connect with our Riyadh sales and estimation team for immediate BOQ analysis and structural steel pricing.' ?>
+            <?= $lang === 'ar' ? 'ناقش مشروعك، وأرسل جدول الكميات (BOQ) أو المخططات، واطلب عرض سعر تنافسي.' : 'Discuss your project, submit a BOQ or drawing, and request a competitive quotation.' ?>
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="quote.php" class="w-full sm:w-auto bg-saudi text-white px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-emerald-700 transition-all duration-300 shadow-xl min-h-[44px] flex items-center justify-center space-x-2">

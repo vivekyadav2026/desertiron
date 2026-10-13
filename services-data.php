@@ -1,151 +1,365 @@
 <?php
+$civil_turnkey_data = [
+    'en' => [
+        'title' => 'Civil Construction & Turnkey Solutions',
+        'tagline' => 'From Foundation to Final Handover',
+        'meta_title' => 'Civil Construction & Turnkey Solutions | Desert Iron',
+        'meta_desc' => 'Desert Iron provides end-to-end civil construction solutions for industrial and commercial projects across Saudi Arabia, from foundation to final handover.',
+        'overview' => 'Desert Iron provides end-to-end civil construction solutions for industrial and commercial projects, from initial site preparation and foundations to structural construction, finishing, and final handover.',
+        'overview_2' => 'We deliver reliable, quality-focused turnkey construction solutions across Saudi Arabia.',
+        'features_title' => 'Scope of Services',
+        'features' => [
+            'Site preparation, excavation and earthworks',
+            'Foundations and reinforced concrete works',
+            'Structural construction and masonry',
+            'Plastering, flooring, painting and finishing',
+            'Waterproofing and drainage systems',
+            'External works and paving',
+            'Quality inspections and final project handover'
+        ],
+        'steps' => [
+            'Site Preparation, Excavation & Earthworks',
+            'Foundations & Reinforced Concrete Works',
+            'Structural Construction & Masonry',
+            'Plastering, Flooring, Painting & Finishing',
+            'Waterproofing, Drainage & External Works',
+            'Quality Inspections & Final Project Handover'
+        ],
+        'specs' => [
+            'Standard' => 'SBC 301 / ACI 318 Compliant',
+            'Delivery Model' => 'Turnkey / End-to-End Civil Execution',
+            'Applications' => 'Industrial & Commercial Projects',
+            'Coverage' => 'Across Saudi Arabia'
+        ],
+        'faqs' => [
+            ['q' => 'What does your turnkey civil construction scope cover?', 'a' => 'We cover the complete lifecycle from initial site preparation, excavation, and reinforced concrete foundations to structural construction, masonry, finishing, waterproofing, external works, and final project handover.'],
+            ['q' => 'Do you execute both industrial and commercial civil projects?', 'a' => 'Yes, we deliver reliable, quality-focused turnkey civil construction solutions for both industrial facilities and commercial buildings across Saudi Arabia.']
+        ]
+    ],
+    'ar' => [
+        'title' => 'الإنشاءات المدنية والحلول المتكاملة (تسليم مفتاح)',
+        'tagline' => 'من الأساسات إلى التسليم النهائي',
+        'meta_title' => 'الإنشاءات المدنية والحلول المتكاملة | صحراء الحديد',
+        'meta_desc' => 'تقدم صحراء الحديد حلول إنشاءات مدنية متكاملة للمشاريع الصناعية والتجارية في جميع أنحاء المملكة العربية السعودية، من الأساسات إلى التسليم النهائي.',
+        'overview' => 'تقدم صحراء الحديد حلول إنشاءات مدنية متكاملة للمشاريع الصناعية والتجارية، بدءاً من تجهيز الموقع الأولي والأساسات وصولاً إلى الإنشاءات الهيكلية والتشطيبات والتسليم النهائي.',
+        'overview_2' => 'نقدم حلول بناء متكاملة (تسليم مفتاح) موثوقة وترتكز على الجودة في جميع أنحاء المملكة العربية السعودية.',
+        'features_title' => 'نطاق الخدمات',
+        'features' => [
+            'تجهيز الموقع وأعمال الحفر والأعمال الترابية',
+            'أعمال الأساسات والخرسانة المسلحة',
+            'الإنشاءات الهيكلية وأعمال المباني (البلوك)',
+            'أعمال اللياسة والأرضيات والدهانات والتشطيبات',
+            'أنظمة العزل المائي وتصريف المياه',
+            'الأعمال الخارجية والرصف',
+            'فحوصات الجودة والتسليم النهائي للمشروع'
+        ],
+        'steps' => [
+            'تجهيز الموقع والحفر والأعمال الترابية',
+            'الأساسات وأعمال الخرسانة المسلحة',
+            'الإنشاءات الهيكلية وأعمال المباني',
+            'اللياسة والأرضيات والدهانات والتشطيبات',
+            'العزل المائي وتصريف المياه والأعمال الخارجية',
+            'فحوصات الجودة والتسليم النهائي للمشروع'
+        ],
+        'specs' => [
+            'المعيار' => 'متوافق مع كود البناء السعودي SBC 301 / ACI 318',
+            'نموذج التنفيذ' => 'حلول متكاملة (تسليم مفتاح)',
+            'التطبيقات' => 'المشاريع الصناعية والتجارية',
+            'التغطية' => 'جميع أنحاء المملكة العربية السعودية'
+        ],
+        'faqs' => [
+            ['q' => 'ما الذي يشمله نطاق أعمال الإنشاءات المدنية والحلول المتكاملة؟', 'a' => 'يشمل نطاقنا دورة المشروع الكاملة من تجهيز الموقع والحفر والأساسات الخرسانية المسلحة إلى الإنشاءات الهيكلية وأعمال المباني والتشطيبات والعزل المائي والأعمال الخارجية والتسليم النهائي.'],
+            ['q' => 'هل تنفذون المشاريع الصناعية والتجارية في جميع مناطق المملكة؟', 'a' => 'نعم، نقدم حلول إنشاءات مدنية متكاملة تركز على الجودة والموثوقية للمنشآت الصناعية والتجارية في كافة أنحاء المملكة العربية السعودية.']
+        ]
+    ]
+];
+
 $services_data = [
     'architectural-work' => [
         'en' => [
             'title' => 'Architectural Work',
             'meta_title' => 'Architectural Work & Planning in KSA | Desert Iron',
-            'meta_desc' => 'Expert architectural planning, geotechnical investigations, and design coordination adhering to SBC codes for Vision 2030 projects.',
-            'overview' => 'Desert Iron provides comprehensive architectural planning and site investigations essential for the modern Saudi construction landscape. By aligning our practices with the Saudi Building Code (SBC) and the ambitious goals of Vision 2030, we lay the foundational blueprints for industrial and commercial mega-projects across Riyadh, NEOM, and Jubail.',
-            'overview_2' => 'Our architectural division bridges the gap between conceptual design and structural reality. We conduct exhaustive site analyses and geotechnical investigations to ensure structural integrity from the ground up.',
-            'features' => ['Detailed Project Reports', 'Geotechnical Investigation', 'Master Planning', 'BIM Design Coordination', 'SBC Compliance Audits', 'Permit Assistance'],
-            'steps' => ['Consultation & Site Visit', 'Geotechnical & Soil Testing', 'Initial Blueprint & BIM Modeling', 'SBC Code Verification', 'Final Handover for Execution'],
-            'specs' => ['Primary Code' => 'SBC 201 (Architectural)', 'Software' => 'Revit, AutoCAD, Navisworks', 'Terrain Scope' => 'Desert, Coastal, Urban', 'Output' => 'Level 350+ BIM Models'],
+            'meta_desc' => 'Expert architectural planning, geotechnical investigations, and design coordination adhering to SBC codes across Saudi Arabia.',
+            'overview' => 'Desert Iron provides comprehensive architectural planning and site investigations tailored to the Saudi construction landscape. By aligning our practices with the Saudi Building Code (SBC) and Vision 2030 standards, we prepare practical engineering blueprints for industrial and commercial projects across the Kingdom.',
+            'overview_2' => 'Our architectural division bridges the gap between conceptual design and structural reality. We coordinate site analyses and geotechnical investigations to ensure structural integrity from the ground up.',
+            'features' => ['Detailed Project Reports', 'Geotechnical Investigation Coordination', 'Master Planning', 'BIM Design Coordination', 'SBC Compliance Reviews', 'Permit Documentation Support'],
+            'steps' => ['Consultation & Site Visit', 'Geotechnical & Soil Assessment', 'Initial Blueprint & BIM Modeling', 'SBC Code Verification', 'Final Handover for Execution'],
+            'specs' => ['Primary Code' => 'SBC 201 (Architectural)', 'Software' => 'Revit, AutoCAD, Navisworks', 'Terrain Scope' => 'Industrial, Coastal, Urban', 'Output' => 'Coordinated BIM & CAD Drawings'],
             'faqs' => [
-                ['q' => 'Do you handle the municipal permitting process?', 'a' => 'Yes, our team coordinates with local Saudi municipalities (Amanat) to ensure all designs meet regional requirements.'],
-                ['q' => 'What level of BIM do you provide?', 'a' => 'We operate up to BIM Level 3, providing clash detection and detailed architectural-structural coordination.'],
-                ['q' => 'Are your designs compliant with Vision 2030 sustainability goals?', 'a' => 'Absolutely. We integrate Mostadam and LEED guidelines into our architectural planning for energy efficiency.']
+                ['q' => 'Do you assist with municipal permitting documentation?', 'a' => 'Yes, our engineering team prepares technical drawings and documentation aligned with regional municipal requirements.'],
+                ['q' => 'What level of BIM coordination do you provide?', 'a' => 'We provide 3D architectural-structural coordination and clash detection to streamline site execution.'],
+                ['q' => 'Are your designs compliant with Saudi Building Codes?', 'a' => 'Yes, all architectural and structural plans are prepared in accordance with applicable SBC requirements.']
             ]
         ],
         'ar' => [
             'title' => 'الأعمال المعمارية والتخطيط',
-            'meta_title' => 'الأعمال المعمارية والتخطيط في السعودية | ديزيرت آيرون',
-            'meta_desc' => 'تخطيط معماري خبير، دراسات جيوتقنية، وتنسيق تصميم متوافق مع كود البناء السعودي (SBC) لمشاريع رؤية 2030.',
-            'overview' => 'تقدم ديزيرت آيرون تخطيطًا معماريًا شاملاً ودراسات موقعية أساسية لمشهد البناء الحديث في السعودية. من خلال مواءمة ممارساتنا مع كود البناء السعودي وأهداف رؤية 2030، نضع المخططات التأسيسية للمشاريع الكبرى في الرياض ونيوم والجبيل.',
-            'overview_2' => 'يسد قسم الهندسة المعمارية لدينا الفجوة بين التصميم المفاهيمي والواقع الهيكلي. نجري تحليلات شاملة للموقع لضمان السلامة الهيكلية من الألف إلى الياء.',
-            'features' => ['تقارير المشاريع التفصيلية', 'التحقيقات الجيوتقنية', 'المخططات الرئيسية', 'تنسيق تصميم BIM', 'تدقيق التوافق مع SBC', 'المساعدة في التصاريح'],
-            'steps' => ['الاستشارة وزيارة الموقع', 'فحص التربة والدراسات الجيوتقنية', 'المخطط الأولي ونمذجة BIM', 'التحقق من كود البناء', 'التسليم النهائي للتنفيذ'],
-            'specs' => ['الكود الأساسي' => 'SBC 201 (المعماري)', 'البرمجيات' => 'Revit, AutoCAD, Navisworks', 'نطاق التضاريس' => 'صحراوي، ساحلي، حضري', 'المخرجات' => 'نماذج BIM مستوى 350+'],
+            'meta_title' => 'الأعمال المعمارية والتخطيط في السعودية | صحراء الحديد',
+            'meta_desc' => 'تخطيط معماري ودراسات فنية وتنسيق تصميم متوافق مع كود البناء السعودي (SBC).',
+            'overview' => 'تقدم صحراء الحديد تخطيطًا معماريًا شاملاً ودراسات موقعية لمشاريع البناء في المملكة العربية السعودية، بما يتوافق مع كود البناء السعودي (SBC) ومعايير الجودة المعتمدة.',
+            'overview_2' => 'يربط قسم الهندسة المعمارية لدينا بين التصميم المفاهيمي والتنفيذ الهيكلي لضمان سلامة وكفاءة المنشآت الصناعية والتجارية.',
+            'features' => ['تقارير المشاريع التفصيلية', 'تنسيق الدراسات الجيوتقنية', 'المخططات الرئيسية', 'تنسيق تصميم BIM', 'مراجعة التوافق مع SBC', 'دعم مستندات التصاريح'],
+            'steps' => ['الاستشارة وزيارة الموقع', 'تقييم التربة والموقع', 'المخطط الأولي ونمذجة BIM', 'التحقق من كود البناء', 'التسليم النهائي للتنفيذ'],
+            'specs' => ['الكود الأساسي' => 'SBC 201 (المعماري)', 'البرمجيات' => 'Revit, AutoCAD, Navisworks', 'نطاق المشاريع' => 'صناعي، تجاري، مستودعات', 'المخرجات' => 'مخططات هندسية معتمدة'],
             'faqs' => [
-                ['q' => 'هل تتولون عملية استخراج التصاريح البلدية؟', 'a' => 'نعم، يقوم فريقنا بالتنسيق مع الأمانات المحلية لضمان تلبية جميع التصاميم للمتطلبات الإقليمية.'],
-                ['q' => 'ما هو مستوى BIM الذي تقدمونه؟', 'a' => 'نعمل حتى مستوى BIM 3، ونوفر اكتشاف التداخلات والتنسيق المعماري الهيكلي التفصيلي.'],
-                ['q' => 'هل تصاميمكم متوافقة مع أهداف الاستدامة لرؤية 2030؟', 'a' => 'بالتأكيد. نحن ندمج إرشادات "مستدام" و LEED في تخطيطنا المعماري.']
+                ['q' => 'هل تساعدون في إعداد مخططات التصاريح البلدية؟', 'a' => 'نعم، يقوم فريقنا بإعداد المخططات الفنية المتوافقة مع متطلبات الجهات المختصة.']
             ]
         ]
     ],
-    'civil-construction' => [
-        'en' => [
-            'title' => 'Civil Construction',
-            'meta_title' => 'Industrial Civil Construction Services | Desert Iron',
-            'meta_desc' => 'Expert civil works including deep foundations, RCC, and infrastructure for industrial and commercial projects across Saudi Arabia.',
-            'overview' => 'Desert Iron delivers robust civil construction solutions tailored for heavy industrial and large-scale commercial applications. From the shifting sands of remote industrial cities to the dense urban centers of Riyadh and Jeddah, we build foundations that last.',
-            'overview_2' => 'Our expertise spans deep foundations, reinforced cement concrete (RCC) structures, and comprehensive site infrastructure, executed with strict adherence to SBC 301 structural codes.',
-            'features' => ['Deep & Shallow Foundations', 'RCC Structures', 'Industrial Flooring', 'Retaining Walls', 'Site Preparation & Earthworks', 'Underground Infrastructure'],
-            'steps' => ['Site Prep & Excavation', 'Formwork & Rebar Engineering', 'Concrete Pouring & Curing', 'Structural Erection Prep', 'Quality Handover'],
-            'specs' => ['Standard' => 'SBC 301 / ACI 318', 'Concrete Grades' => 'Up to C60 for heavy loads', 'Testing' => 'Compressive Strength, Slump', 'Machinery' => 'Heavy Excavators, Boom Pumps'],
-            'faqs' => [
-                ['q' => 'Can you handle civil works for heavy vibrating machinery?', 'a' => 'Yes, we design and cast isolated dynamic foundations specifically for heavy industrial equipment.'],
-                ['q' => 'Do you provide epoxy industrial flooring?', 'a' => 'Yes, we finish our concrete slabs with heavy-duty epoxy or polyurethane coatings suitable for warehouses and factories.']
-            ]
-        ],
-        'ar' => [
-            'title' => 'أعمال البناء المدنية',
-            'meta_title' => 'خدمات البناء المدني الصناعي | ديزيرت آيرون',
-            'meta_desc' => 'أعمال مدنية خبيرة تشمل الأساسات العميقة والخرسانة المسلحة والبنية التحتية للمشاريع الصناعية في السعودية.',
-            'overview' => 'تقدم ديزيرت آيرون حلول بناء مدنية قوية مصممة للتطبيقات الصناعية الثقيلة والتجارية الكبيرة. نبني أساسات تدوم طويلاً في جميع أنحاء المملكة.',
-            'overview_2' => 'تشمل خبرتنا الأساسات العميقة، هياكل الخرسانة المسلحة (RCC)، والبنية التحتية الشاملة للموقع، وتنفذ بالتزام صارم بأكواد SBC 301.',
-            'features' => ['الأساسات العميقة والسطحية', 'هياكل الخرسانة المسلحة', 'الأرضيات الصناعية', 'الجدران الاستنادية', 'تجهيز الموقع والأعمال الترابية', 'البنية التحتية تحت الأرض'],
-            'steps' => ['تجهيز الموقع والحفر', 'هندسة القوالب وحديد التسليح', 'صب الخرسانة والمعالجة', 'التجهيز للتركيب الهيكلي', 'التسليم النهائي'],
-            'specs' => ['المعيار' => 'SBC 301 / ACI 318', 'درجات الخرسانة' => 'حتى C60 للأحمال الثقيلة', 'الاختبار' => 'قوة الضغط، الهبوط', 'المعدات' => 'حفارات ثقيلة، مضخات خرسانة'],
-            'faqs' => [
-                ['q' => 'هل يمكنكم التعامل مع الأعمال المدنية للآلات الثقيلة؟', 'a' => 'نعم، نحن نصمم ونصب أساسات ديناميكية معزولة خصيصًا للمعدات الصناعية الثقيلة.'],
-                ['q' => 'هل تقدمون أرضيات إيبوكسي صناعية؟', 'a' => 'نعم، ننهي الألواح الخرسانية بطلاء إيبوكسي أو بولي يوريثان شديد التحمل للمستودعات والمصانع.']
-            ]
-        ]
-    ],
+    'civil-construction' => $civil_turnkey_data,
+    'civil-works' => $civil_turnkey_data,
     'pre-engineered-buildings' => [
         'en' => [
             'title' => 'Pre-Engineered Buildings (PEB)',
             'meta_title' => 'Pre-Engineered Buildings (PEB) in KSA | Desert Iron',
-            'meta_desc' => 'Fast, cost-effective, and fully customized PEB systems including framing, panels, and accessories for Saudi factories and warehouses.',
-            'overview' => 'Pre-Engineered Buildings (PEB) represent the pinnacle of modern industrial construction, offering unmatched speed, cost-efficiency, and clear-span capabilities. Desert Iron is a leader in supplying and erecting PEBs for logistics hubs in Dammam, factories in Jubail, and warehouses in Riyadh.',
-            'overview_2' => 'We utilize high-tensile steel built to precise factory tolerances, ensuring rapid on-site assembly. Our PEB solutions include primary and secondary framing, complete with integrated roofing and cladding.',
+            'meta_desc' => 'Cost-effective, customized PEB systems including framing, panels, and accessories for Saudi factories and warehouses.',
+            'overview' => 'Pre-Engineered Buildings (PEB) offer speed, cost-efficiency, and wide clear-span capabilities for modern industrial construction. Desert Iron supplies and erects PEB systems for warehouses, factories, workshops, storage, and utility buildings across Dammam, Jubail, Riyadh, and the wider Kingdom.',
+            'overview_2' => 'We utilize high-tensile steel fabricated to precise tolerances for efficient on-site assembly. Our PEB solutions include primary and secondary framing, complete with integrated roofing and wall cladding.',
             'features' => ['Primary Rigid Framing', 'Secondary Framing (Z & C Purlins)', 'Roof & Wall Panels', 'Mezzanine Floor Systems', 'Crane Beams & Runways', 'Custom Accessories (Fascias, Canopies)'],
-            'steps' => ['Consultation & Sizing', 'Structural Design & Detailing', 'Factory Fabrication', 'Site Delivery & Erection', 'Cladding & Handover'],
-            'specs' => ['Clear Span' => 'Up to 90 meters without interior columns', 'Steel Grade' => 'Grade 50 (345 MPa) High Tensile', 'Design Code' => 'AISC / MBMA', 'Erection Speed' => '30-40% faster than conventional'],
+            'steps' => ['Consultation & Sizing', 'Structural Design & Detailing', 'Shop Fabrication', 'Site Delivery & Erection', 'Cladding & Handover'],
+            'specs' => ['Applications' => 'Warehouses, Factories, Workshops', 'Steel Grade' => 'High-Tensile Structural Steel', 'Design Code' => 'AISC / MBMA / SBC', 'Span Capability' => 'Wide clear-span configurations'],
             'faqs' => [
-                ['q' => 'How much time does a standard PEB warehouse take to erect?', 'a' => 'Depending on the size, a 5,000 sqm warehouse can be fully erected and clad in 6-8 weeks.'],
-                ['q' => 'Can a PEB handle heavy overhead cranes?', 'a' => 'Yes, we design the primary framing with integrated crane brackets to support overhead bridge cranes up to 50 tons or more.']
+                ['q' => 'What types of facilities are best suited for PEB construction?', 'a' => 'PEB systems are ideal for warehouses, logistics centers, industrial workshops, manufacturing plants, and commercial storage buildings.'],
+                ['q' => 'Can a PEB structure accommodate overhead cranes?', 'a' => 'Yes, primary framing can be engineered with integrated crane brackets and runway beams to support project-specified crane capacities.']
             ]
         ],
         'ar' => [
-            'title' => 'المباني سابقة الهندسة (PEB)',
-            'meta_title' => 'المباني سابقة الهندسة في السعودية | ديزيرت آيرون',
-            'meta_desc' => 'أنظمة مباني معدنية سريعة واقتصادية ومخصصة بالكامل للمصانع والمستودعات السعودية.',
-            'overview' => 'تمثل المباني سابقة الهندسة (PEB) قمة البناء الصناعي الحديث، وتوفر سرعة لا مثيل لها وكفاءة في التكلفة وقدرات امتداد واسعة. ديزيرت آيرون هي شركة رائدة في توريد وتركيب هذه المباني للمراكز اللوجستية في الدمام والمصانع في الجبيل.',
-            'overview_2' => 'نستخدم صلب عالي الشد مصنع بتفاوتات دقيقة لضمان التجميع السريع في الموقع. تشمل حلولنا الإطارات الأولية والثانوية مع التكسية المتكاملة.',
-            'features' => ['الإطارات الصلبة الأولية', 'الإطارات الثانوية (مدادات Z و C)', 'ألواح السقف والجدران', 'أنظمة أرضيات الميزانين', 'عوارض ومسارات الرافعات', 'ملحقات مخصصة (مظلات، واجهات)'],
-            'steps' => ['الاستشارة وتحديد الأحجام', 'التصميم الهيكلي والتفاصيل', 'التصنيع في المصنع', 'التسليم والتركيب في الموقع', 'التكسية والتسليم'],
-            'specs' => ['الامتداد الصافي' => 'حتى 90 متر بدون أعمدة داخلية', 'درجة الصلب' => 'درجة 50 عالي الشد', 'كود التصميم' => 'AISC / MBMA', 'سرعة التركيب' => 'أسرع بنسبة 30-40٪ من البناء التقليدي'],
+            'title' => 'المباني مسبقة الصنع (PEB)',
+            'meta_title' => 'المباني مسبقة الصنع في السعودية | صحراء الحديد',
+            'meta_desc' => 'أنظمة مباني معدنية سريعة واقتصادية ومخصصة للمصانع والمستودعات في المملكة العربية السعودية.',
+            'overview' => 'توفر المباني مسبقة الصنع (PEB) سرعة في الإنجاز وكفاءة في التكلفة ومساحات واسعة خالية من الأعمدة للمستودعات والمصانع والورش في الدمام والجبيل والرياض وكافة أنحاء المملكة.',
+            'overview_2' => 'نورّد ونركّب الهياكل الفولاذية الأولية والثانوية مع أنظمة التكسية المتكاملة للأسقف والجدران وفق أعلى معايير السلامة والجودة.',
+            'features' => ['الإطارات الصلبة الأولية', 'الإطارات الثانوية (مدادات Z و C)', 'ألواح الأسقف والجدران', 'أنظمة أرضيات الميزانين', 'عوارض ومسارات الرافعات', 'ملحقات مخصصة (مظلات، واجهات)'],
+            'steps' => ['الاستشارة وتحديد الأبعاد', 'التصميم الهيكلي والتفاصيل', 'التصنيع', 'التوريد والتركيب في الموقع', 'التكسية والتسليم'],
+            'specs' => ['التطبيقات' => 'المستودعات، المصانع، الورش', 'درجة الصلب' => 'فولاذ عالي الشد', 'كود التصميم' => 'AISC / MBMA / SBC', 'الامتداد' => 'مساحات واسعة بدون أعمدة داخلية'],
             'faqs' => [
-                ['q' => 'كم يستغرق بناء مستودع PEB قياسي؟', 'a' => 'حسب الحجم، يمكن تركيب وتكسية مستودع مساحته 5000 متر مربع بالكامل في غضون 6-8 أسابيع.'],
-                ['q' => 'هل يمكن لنظام PEB تحمل رافعات علوية ثقيلة؟', 'a' => 'نعم، نصمم الإطارات بكتائف رافعة مدمجة لدعم الرافعات الجسرية العلوية حتى 50 طنًا أو أكثر.']
+                ['q' => 'هل يمكن تجهيز مباني PEB برافعات علوية؟', 'a' => 'نعم، يتم تصميم الإطارات بكتائف وعوارض مدمجة لدعم الرافعات العلوية حسب متطلبات المشروع.']
             ]
         ]
     ],
     'structural-steel' => [
         'en' => [
-            'title' => 'Structural Steel Buildings',
+            'title' => 'Structural Steel Fabrication & Erection',
             'meta_title' => 'Structural Steel Fabrication & Erection | Desert Iron',
-            'meta_desc' => 'Heavy structural steel fabrication, erection, and pipe rack construction for industrial gigaprojects in Saudi Arabia.',
-            'overview' => 'For extreme loads and complex architectural geometries, conventional structural steel is the ultimate solution. Desert Iron provides heavy workshop-fabricated structural steel for multi-story commercial buildings, petrochemical plants, and infrastructure gigaprojects aligned with Vision 2030.',
-            'overview_2' => 'Our highly certified fabrication facilities and expert rigging teams handle massive steel sections, ensuring millimeter-perfect erection even in the most challenging environments.',
-            'features' => ['Heavy Industrial Fabrication', 'Multi-story Commercial Steel', 'Equipment Support Structures', 'Pipe Racks & Gantries', 'Mezzanines & Platforms', 'Precision Erection & Bolting'],
-            'steps' => ['Consultation', 'Detailing (Tekla)', 'CNC Fabrication & Welding', 'Site Logistics & Rigging', 'Erection & QA/QC'],
-            'specs' => ['Fabrication Standards' => 'AWS D1.1, AISC', 'Capacity' => 'High Tonnage Monthly output', 'Connections' => 'High-Strength Friction Grip Bolting', 'Coating' => 'Intumescent Fireproofing available'],
+            'meta_desc' => 'Structural steel fabrication, erection, frames, columns, beams, trusses, platforms, and pipe supports in Saudi Arabia.',
+            'overview' => 'For demanding industrial loads and custom building geometries, structural steel provides unmatched strength and versatility. Desert Iron delivers structural steel fabrication and site erection for industrial plants, commercial frames, platforms, pipe racks, and structural modifications across Saudi Arabia.',
+            'overview_2' => 'Our experienced engineering and rigging teams coordinate detailing, fabrication, surface protection, and safe on-site erection in strict accordance with project specifications and international standards.',
+            'features' => ['Structural Frames, Columns & Beams', 'Trusses & Roof Structures', 'Industrial Platforms & Walkways', 'Pipe Racks & Equipment Supports', 'Mezzanines & Structural Modifications', 'Site Erection, Bolting & Alignment'],
+            'steps' => ['Requirement Review & Estimation', 'Shop Detailing (Tekla / CAD)', 'Fabrication & Surface Coating', 'Site Logistics & Rigging', 'Safe Erection & QA/QC Handover'],
+            'specs' => ['Standards' => 'AWS D1.1, AISC, SBC', 'Connections' => 'High-Strength Bolted & Welded', 'Finishes' => 'Alkyd, Epoxy, Galvanized, Fireproofed', 'Scope' => 'Fabrication, Supply & Erection'],
             'faqs' => [
-                ['q' => 'Do you provide fireproof coatings for structural steel?', 'a' => 'Yes, we apply intumescent paints and cementitious fireproofing to meet Saudi Civil Defense regulations.']
+                ['q' => 'Do you provide fireproof coatings for structural steel?', 'a' => 'Yes, we coordinate intumescent coatings and cementitious fireproofing to meet project and Civil Defense requirements.']
             ]
         ],
         'ar' => [
-            'title' => 'المباني الحديدية الهيكلية',
-            'meta_title' => 'تصنيع وتركيب الصلب الهيكلي | ديزيرت آيرون',
-            'meta_desc' => 'تصنيع الصلب الهيكلي الثقيل والتركيب لمشاريع البنية التحتية الكبرى في المملكة العربية السعودية.',
-            'overview' => 'بالنسبة للأحمال القصوى والهندسيات المعمارية المعقدة، يعتبر الصلب الهيكلي التقليدي الحل الأمثل. تقدم ديزيرت آيرون صلبًا هيكليًا ثقيلًا مصنعًا في الورش للمباني التجارية متعددة الطوابق ومصانع البتروكيماويات.',
-            'overview_2' => 'تتعامل مرافق التصنيع المعتمدة وفرق التركيب الخبيرة لدينا مع مقاطع الصلب الضخمة لضمان تركيب دقيق جداً.',
-            'features' => ['التصنيع الصناعي الثقيل', 'الصلب التجاري متعدد الطوابق', 'هياكل دعم المعدات', 'حوامل الأنابيب والجسور', 'الميزانين والمنصات', 'التركيب الدقيق والربط'],
-            'steps' => ['الاستشارة', 'التفاصيل (Tekla)', 'تصنيع CNC واللحام', 'الخدمات اللوجستية والرفع', 'التركيب ومراقبة الجودة'],
-            'specs' => ['معايير التصنيع' => 'AWS D1.1, AISC', 'القدرة' => 'إنتاج شهري عالي', 'الوصلات' => 'مسامير احتكاك عالية المقاومة', 'الطلاء' => 'يتوفر طلاء مقاوم للحريق'],
+            'title' => 'تصنيع وتركيب الهياكل الفولاذية',
+            'meta_title' => 'تصنيع وتركيب الفولاذ الهيكلي | صحراء الحديد',
+            'meta_desc' => 'تصنيع وتركيب الهياكل الفولاذية والأعمدة والجسور والمنصات وحوامل الأنابيب في المملكة العربية السعودية.',
+            'overview' => 'تقدم صحراء الحديد خدمات تصنيع وتركيب الهياكل الفولاذية للمنشآت الصناعية والمباني التجارية والمنصات وحوامل الأنابيب والتعديلات الهيكلية في جميع أنحاء المملكة.',
+            'overview_2' => 'تتولى فرقنا الهندسية والفنية أعمال التفصيل والتصنيع والتركيب الميداني الآمن وفق المواصفات الفنية ومعايير الجودة.',
+            'features' => ['الإطارات والأعمدة والجسور الفولاذية', 'الجمالونات وهياكل الأسقف', 'المنصات والممرات الصناعية', 'حوامل الأنابيب ودعامات المعدات', 'الميزانين والتعديلات الهيكلية', 'التركيب الميداني والربط ومراقبة الجودة'],
+            'steps' => ['دراسة المتطلبات والتسعير', 'التفصيل الهندسي (Tekla / CAD)', 'التصنيع والطلاء الواقي', 'التوريد للموقع والرفع', 'التركيب والفحص والتسليم'],
+            'specs' => ['المعايير' => 'AWS D1.1, AISC, SBC', 'الوصلات' => 'مسامير عالية المقاومة ولحام معتمد', 'التشطيبات' => 'دهانات إيبوكسي، جلفنة، مقاومة حريق', 'النطاق' => 'تصنيع وتوريد وتركيب'],
             'faqs' => [
-                ['q' => 'هل توفرون طلاءات مقاومة للحريق للصلب؟', 'a' => 'نعم، نقوم بتطبيق دهانات منتفخة ومواد إسمنتية مقاومة للحريق لتلبية لوائح الدفاع المدني السعودي.']
+                ['q' => 'هل توفرون دهانات مقاومة للحريق للهياكل الفولاذية؟', 'a' => 'نعم، نوفر أنظمة الطلاء المقاوم للحريق وفق مواصفات المشروع ومتطلبات الدفاع المدني.']
             ]
+        ]
+    ],
+    'industrial-construction' => [
+        'en' => [
+            'title' => 'Industrial Construction',
+            'meta_title' => 'Industrial Construction Services in KSA | Desert Iron',
+            'meta_desc' => 'Integrated structural steel, civil foundations, and industrial site works across Saudi Arabia.',
+            'overview' => 'Desert Iron delivers integrated industrial construction services combining structural steel, civil foundations, mechanical support structures, and site improvements for manufacturing plants, logistics hubs, and utility facilities across Saudi Arabia.',
+            'overview_2' => 'By coordinating civil, structural, and envelope scopes under unified project management, we reduce interface risks and keep industrial developments on schedule.',
+            'features' => ['Integrated Steel & Civil Execution', 'Industrial Plant Buildings & Workshops', 'Equipment Foundations & Pedestals', 'Pipe Racks & Utility Supports', 'Industrial Flooring & Paving', 'Safety-Focused Site Management'],
+            'steps' => ['Project Planning & Engineering', 'Site Preparation & Civil Works', 'Structural Steel & PEB Erection', 'Envelope, Cladding & Finishes', 'Testing & Final Handover'],
+            'specs' => ['Scope' => 'Integrated Civil & Structural Works', 'Compliance' => 'SBC & Industrial HSE Standards', 'Sectors' => 'Manufacturing, Logistics, Energy', 'Location' => 'Kingdom-Wide Execution'],
+            'faqs' => [
+                ['q' => 'Can Desert Iron manage both the concrete foundations and the steel building?', 'a' => 'Yes, we specialize in combined civil and structural packages to ensure seamless anchor bolt alignment and faster project delivery.']
+            ]
+        ],
+        'ar' => [
+            'title' => 'الإنشاءات الصناعية',
+            'meta_title' => 'خدمات الإنشاءات الصناعية في السعودية | صحراء الحديد',
+            'meta_desc' => 'أعمال الفولاذ الهيكلي والأعمال المدنية والإنشاءات الصناعية المتكاملة في المملكة العربية السعودية.',
+            'overview' => 'تقدم صحراء الحديد خدمات إنشاءات صناعية متكاملة تجمع بين الهياكل الفولاذية والأساسات المدنية وأعمال الموقع للمصانع والمراكز اللوجستية والمرافق الصناعية.',
+            'overview_2' => 'من خلال تنسيق الأعمال المدنية والهيكلية تحت إدارة موحدة، نضمن دقة التنفيذ والالتزام بالجدول الزمني.',
+            'features' => ['تنفيذ متكامل للأعمال المدنية والهيكلية', 'مباني المصانع والورش الصناعية', 'قواعد وأساسات المعدات', 'حوامل الأنابيب والمرافق', 'الأرضيات الصناعية والرصف', 'إدارة موقعية تلتزم بأعلى معايير السلامة'],
+            'steps' => ['التخطيط والهندسة', 'تجهيز الموقع والأعمال المدنية', 'تركيب الهياكل الفولاذية', 'التكسية والتشطيبات', 'الفحص والتسليم النهائي'],
+            'specs' => ['النطاق' => 'أعمال مدنية وهيكلية متكاملة', 'الامتثال' => 'كود البناء السعودي ومعايير السلامة', 'القطاعات' => 'التصنيع، اللوجستيات، الطاقة', 'التغطية' => 'جميع أنحاء المملكة'],
+            'faqs' => []
+        ]
+    ],
+    'pipeline-piping' => [
+        'en' => [
+            'title' => 'Pipeline & Industrial Piping',
+            'meta_title' => 'Pipeline & Industrial Piping Works | Desert Iron',
+            'meta_desc' => 'Industrial piping installation, fabrication, pipe supports, and related mechanical works in Saudi Arabia.',
+            'overview' => 'Desert Iron provides industrial piping fabrication, installation, pipe supports, and associated mechanical works for industrial plants, utilities, and commercial facilities across Saudi Arabia.',
+            'overview_2' => 'Our qualified welders, pipefitters, and supervisors execute carbon steel and stainless steel piping networks, structural pipe racks, and mechanical supports with rigorous quality inspection.',
+            'features' => ['Spool Fabrication & Site Installation', 'Structural Pipe Racks & Sleepers', 'Pipe Supports, Clamps & Hangers', 'Qualified Welding (TIG / MIG / SMAW)', 'Hydrotesting & NDT Coordination', 'Plant Tie-ins & Piping Modifications'],
+            'steps' => ['Isometric Review & Material Take-Off', 'Spool & Support Fabrication', 'Field Routing & Welding', 'NDT & Pressure Testing', 'System Handover'],
+            'specs' => ['Standards' => 'ASME B31.3 / API Standards', 'Materials' => 'Carbon Steel, Stainless Steel, Alloy', 'Scope' => 'Fabrication, Supports & Installation', 'QA/QC' => 'Weld Traceability & Testing'],
+            'faqs' => []
+        ],
+        'ar' => [
+            'title' => 'خطوط الأنابيب والأنابيب الصناعية',
+            'meta_title' => 'أعمال الأنابيب الصناعية وحوامل الأنابيب | صحراء الحديد',
+            'meta_desc' => 'تركيب وتصنيع الأنابيب الصناعية وحوامل الأنابيب والأعمال الميكانيكية ذات الصلة.',
+            'overview' => 'تقدم صحراء الحديد خدمات تصنيع وتركيب الأنابيب الصناعية وحوامل الأنابيب والأعمال الميكانيكية المرتبطة بها للمنشآت الصناعية والمرافق في المملكة.',
+            'overview_2' => 'ينفذ فريقنا من اللحامين والفنيين المعتمدين شبكات الأنابيب والدعامات الهيكلية وفق معايير الجودة والسلامة.',
+            'features' => ['تصنيع وتركيب وصلات الأنابيب', 'حوامل الأنابيب الهيكلية', 'الدعامات والمثبتات الميكانيكية', 'أعمال لحام معتمدة', 'تنسيق الفحوصات والاختبارات الهيدروليكية', 'تعديلات وتمديدات الشبكات الصناعية'],
+            'steps' => ['مراجعة المخططات وحصر الكميات', 'تصنيع الوصلات والدعامات', 'التركيب واللحام في الموقع', 'الفحص واختبار الضغط', 'التسليم النهائي'],
+            'specs' => ['المعايير' => 'ASME B31.3 / API', 'المواد' => 'فولاذ كربوني، ستانلس ستيل', 'النطاق' => 'تصنيع ودعامات وتركيب', 'الجودة' => 'فحص اللحام والضغط'],
+            'faqs' => []
         ]
     ],
     'roof-wall-panels' => [
         'en' => [
-            'title' => 'Roof & Wall Panels',
-            'meta_title' => 'Sandwich Panels & Cladding Systems | Desert Iron',
-            'meta_desc' => 'Durable insulated sandwich panels, standing seam roofs, and wall cladding designed for Saudi Arabia\'s extreme climate.',
-            'overview' => 'Protecting your industrial assets from the harsh Saudi climate requires superior cladding solutions. Desert Iron supplies and installs high-performance roof and wall panel systems that offer exceptional thermal insulation, durability, and architectural appeal.',
-            'overview_2' => 'From polyurethane (PU) insulated sandwich panels for cold stores to standing seam systems for massive factory roofs, our solutions are leak-proof, energy-efficient, and fast to install.',
-            'features' => ['Insulated Sandwich Panels (PU/PIR)', 'Standing Seam Roof Systems', 'Single Skin Corrugated Sheets', 'Polycarbonate Skylights', 'Gutters & Downpipes', 'Architectural Flashings'],
-            'steps' => ['Thermal & Load Calculation', 'Material Selection', 'Custom Manufacturing', 'Safe Installation', 'Weatherproofing Test'],
-            'specs' => ['Insulation' => 'PU, PIR, Rockwool', 'Thickness' => '50mm to 200mm', 'Outer Sheet' => 'AluZinc / Pre-painted Galvanized', 'Warranty' => 'Up to 20 years on standing seam'],
+            'title' => 'Roof & Wall Cladding',
+            'meta_title' => 'Sandwich Panels & Roof/Wall Cladding Systems | Desert Iron',
+            'meta_desc' => 'Durable insulated sandwich panels, single-skin sheets, flashings, and wall cladding designed for Saudi Arabia\'s climate.',
+            'overview' => 'Protecting industrial and commercial facilities from Saudi Arabia\'s demanding climate requires reliable envelope systems. Desert Iron supplies and installs high-performance roof and wall cladding, insulated sandwich panels, flashings, and rainwater accessories.',
+            'overview_2' => 'From polyurethane (PU/PIR) and rockwool insulated panels for temperature-controlled buildings to single-skin corrugated sheeting for industrial warehouses, our installations are weather-tight and energy-efficient.',
+            'features' => ['Insulated Sandwich Panels (PU / PIR / Rockwool)', 'Single-Skin Profiled Cladding Sheets', 'Skylights & Translucent Daylighting Panels', 'Custom Architectural Flashings & Trims', 'Gutters, Downspouts & Ridge Ventilators', 'Cladding Retrofit & Replacement'],
+            'steps' => ['Envelope & Thermal Review', 'Material Selection & Submittal', 'Panel & Flashing Delivery', 'Safe Site Installation', 'Weatherproofing Inspection'],
+            'specs' => ['Insulation Cores' => 'PU, PIR, Rockwool', 'Panel Thickness' => '50mm to 200mm', 'Sheet Finish' => 'AluZinc / Pre-painted Galvanized Steel', 'Accessories' => 'Complete Flashings, Sealants & Fasteners'],
             'faqs' => [
-                ['q' => 'What panels are best for a cold storage facility?', 'a' => 'We highly recommend PIR sandwich panels with a thickness of 100mm-150mm for optimal thermal retention and fire resistance.']
+                ['q' => 'What panels are recommended for cold storage or insulated warehouses?', 'a' => 'PIR and PU sandwich panels ranging from 75mm to 150mm provide high thermal resistance and energy efficiency for climate-controlled facilities.']
             ]
         ],
         'ar' => [
-            'title' => 'ألواح الأسقف والجدران',
-            'meta_title' => 'ألواح الساندوتش وأنظمة التكسية | ديزيرت آيرون',
-            'meta_desc' => 'ألواح معزولة متينة، وأسقف مخفية التثبيت، وتكسية جدران مصممة لتحمل المناخ القاسي في السعودية.',
-            'overview' => 'تتطلب حماية أصولك الصناعية من المناخ السعودي القاسي حلول تكسية متفوقة. تقوم ديزيرت آيرون بتوريد وتركيب أنظمة ألواح أسقف وجدران عالية الأداء.',
-            'overview_2' => 'من ألواح الساندوتش المعزولة بالبولي يوريثان إلى أنظمة التثبيت المخفي (Standing Seam) لأسقف المصانع الضخمة، حلولنا مانعة للتسرب وموفرة للطاقة.',
-            'features' => ['ألواح ساندوتش معزولة', 'أنظمة أسقف مخفية التثبيت', 'صفائح مموجة مفردة', 'مناور بولي كربونات', 'مزاريب وأنابيب تصريف', 'إكسسوارات معمارية'],
-            'steps' => ['حساب الأحمال والحرارة', 'اختيار المواد', 'تصنيع مخصص', 'تركيب آمن', 'اختبار العزل المائي'],
-            'specs' => ['العزل' => 'PU, PIR, صوف صخري', 'السماكة' => '50 مم إلى 200 مم', 'الطبقة الخارجية' => 'ألوزنك / مجلفن مطلي', 'الضمان' => 'حتى 20 عاماً لبعض الأنظمة'],
+            'title' => 'تكسية الأسقف والجدران (ألواح الساندوتش)',
+            'meta_title' => 'ألواح الساندوتش وتكسية الأسقف والجدران | صحراء الحديد',
+            'meta_desc' => 'توريد وتركيب ألواح الساندوتش المعزولة وتكسية الأسقف والجدران والإكسسوارات في السعودية.',
+            'overview' => 'تقوم صحراء الحديد بتوريد وتركيب أنظمة تكسية الأسقف والجدران وألواح الساندوتش المعزولة المصممة لتحمل المناخ القاسي وتوفير العزل الحراري الفعال للمستودعات والمصانع.',
+            'overview_2' => 'تشمل حلولنا الألواح المعزولة (PU / PIR / Rockwool) والصفائح المفردة والمناور والمزاريب وكافة إكسسوارات الإغلاق المعماري.',
+            'features' => ['ألواح ساندوتش معزولة (PU / PIR / صوف صخري)', 'صفائح تكسية مفردة مضلعة', 'مناور سقفية للإضاءة الطبيعية', 'حواف وإكسسوارات إغلاق معمارية', 'مزاريب وأنابيب تصريف مياه الأمطار', 'صيانة واستبدال أنظمة التكسية'],
+            'steps' => ['دراسة متطلبات العزل والتكسية', 'اعتماد المواد والمواصفات', 'التوريد للموقع', 'التركيب الآمن', 'فحص العزل والإحكام'],
+            'specs' => ['العزل' => 'PU, PIR, صوف صخري', 'السماكة' => '50 مم إلى 200 مم', 'الطبقة الخارجية' => 'ألوزنك / مجلفن مطلي مسبقاً', 'الملحقات' => 'إكسسوارات ومثبتات كاملة'],
+            'faqs' => []
+        ]
+    ],
+    'roof-wall-cladding' => [
+        'en' => [
+            'title' => 'Roof & Wall Cladding',
+            'meta_title' => 'Sandwich Panels & Roof/Wall Cladding Systems | Desert Iron',
+            'meta_desc' => 'Durable insulated sandwich panels, single-skin sheets, flashings, and wall cladding designed for Saudi Arabia\'s climate.',
+            'overview' => 'Protecting industrial and commercial facilities from Saudi Arabia\'s demanding climate requires reliable envelope systems. Desert Iron supplies and installs high-performance roof and wall cladding, insulated sandwich panels, flashings, and rainwater accessories.',
+            'overview_2' => 'From polyurethane (PU/PIR) and rockwool insulated panels for temperature-controlled buildings to single-skin corrugated sheeting for industrial warehouses, our installations are weather-tight and energy-efficient.',
+            'features' => ['Insulated Sandwich Panels (PU / PIR / Rockwool)', 'Single-Skin Profiled Cladding Sheets', 'Skylights & Translucent Daylighting Panels', 'Custom Architectural Flashings & Trims', 'Gutters, Downspouts & Ridge Ventilators', 'Cladding Retrofit & Replacement'],
+            'steps' => ['Envelope & Thermal Review', 'Material Selection & Submittal', 'Panel & Flashing Delivery', 'Safe Site Installation', 'Weatherproofing Inspection'],
+            'specs' => ['Insulation Cores' => 'PU, PIR, Rockwool', 'Panel Thickness' => '50mm to 200mm', 'Sheet Finish' => 'AluZinc / Pre-painted Galvanized Steel', 'Accessories' => 'Complete Flashings, Sealants & Fasteners'],
             'faqs' => [
-                ['q' => 'ما هي الألواح الأفضل لمرافق التخزين البارد؟', 'a' => 'نوصي بشدة بألواح PIR بسماكة 100-150 مم للاحتفاظ الحراري الأمثل ومقاومة الحريق.']
+                ['q' => 'What panels are recommended for cold storage or insulated warehouses?', 'a' => 'PIR and PU sandwich panels ranging from 75mm to 150mm provide high thermal resistance and energy efficiency for climate-controlled facilities.']
             ]
+        ],
+        'ar' => [
+            'title' => 'تكسية الأسقف والجدران',
+            'meta_title' => 'ألواح الساندوتش وتكسية الأسقف والجدران | صحراء الحديد',
+            'meta_desc' => 'توريد وتركيب ألواح الساندوتش المعزولة وتكسية الأسقف والجدران والإكسسوارات في السعودية.',
+            'overview' => 'تقوم صحراء الحديد بتوريد وتركيب أنظمة تكسية الأسقف والجدران وألواح الساندوتش المعزولة المصممة لتحمل المناخ القاسي وتوفير العزل الحراري الفعال للمستودعات والمصانع.',
+            'overview_2' => 'تشمل حلولنا الألواح المعزولة (PU / PIR / Rockwool) والصفائح المفردة والمناور والمزاريب وكافة إكسسوارات الإغلاق المعماري.',
+            'features' => ['ألواح ساندوتش معزولة (PU / PIR / صوف صخري)', 'صفائح تكسية مفردة مضلعة', 'مناور سقفية للإضاءة الطبيعية', 'حواف وإكسسوارات إغلاق معمارية', 'مزاريب وأنابيب تصريف مياه الأمطار', 'صيانة واستبدال أنظمة التكسية'],
+            'steps' => ['دراسة متطلبات العزل والتكسية', 'اعتماد المواد والمواصفات', 'التوريد للموقع', 'التركيب الآمن', 'فحص العزل والإحكام'],
+            'specs' => ['العزل' => 'PU, PIR, صوف صخري', 'السماكة' => '50 مم إلى 200 مم', 'الطبقة الخارجية' => 'ألوزنك / مجلفن مطلي مسبقاً', 'الملحقات' => 'إكسسوارات ومثبتات كاملة'],
+            'faqs' => []
+        ]
+    ],
+    'standing-seam-roofing' => [
+        'en' => [
+            'title' => 'Standing Seam Roofing Systems',
+            'meta_title' => 'Standing Seam Roofing Systems in KSA | Desert Iron',
+            'meta_desc' => 'Supply, installation support, thermal insulation, and accessories for standing seam metal roofing systems.',
+            'overview' => 'Standing seam roofing systems provide concealed-fastener, leak-resistant performance for large-span industrial, logistics, and commercial roofs. Desert Iron provides supply, installation support, thermal and acoustic buildup layers, and associated accessories.',
+            'overview_2' => 'Engineered to accommodate thermal expansion and contraction under intense solar exposure, standing seam roofs minimize through-fastener penetrations and offer long-term weather protection.',
+            'features' => ['Concealed Clip Standing Seam Profiles', 'On-Site Roll Forming & Installation Support', 'Thermal & Acoustic Insulation Layers', 'Roof Curbs, Skylights & Smoke Vents', 'Perimeter Flashings, Gutters & Downpipes', 'Roof Inspection & Weatherproofing'],
+            'steps' => ['Roof Geometry & Drainage Review', 'Sub-framing & Insulation Installation', 'Standing Seam Panel Placement & Seaming', 'Flashing & Penetration Detailing', 'Final Inspection & Handover'],
+            'specs' => ['Fastening System' => 'Concealed Sliding Clips (No Exposed Screws)', 'Materials' => 'Aluminum / AluZinc Pre-Painted Steel', 'Joint Type' => 'Mechanical Lock Seam', 'Application' => 'Large-Span Warehouses & Commercial Roofs'],
+            'faqs' => []
+        ],
+        'ar' => [
+            'title' => 'أنظمة الأسقف المخفية التثبيت (Standing Seam)',
+            'meta_title' => 'أنظمة الأسقف Standing Seam في السعودية | صحراء الحديد',
+            'meta_desc' => 'توريد وتركيب أنظمة الأسقف المعدنية المخفية التثبيت وملحقاتها للمشاريع الصناعية والتجارية.',
+            'overview' => 'توفر أنظمة الأسقف المخفية التثبيت (Standing Seam) حماية فائقة ضد التسرب للأسقف ذات المساحات الواسعة في المستودعات والمنشآت الصناعية والتجارية.',
+            'overview_2' => 'تتميز هذه الأنظمة بعدم وجود براغي مكشوفة وقدرتها على استيعاب التمدد الحراري بكفاءة عالية.',
+            'features' => ['ألواح سقفية بمرابط مخفية', 'طبقات العزل الحراري والصوتي', 'التركيب والطي الميكانيكي المحكم', 'المناور وفتحات التهوية', 'الحواف والمزاريب وتصريف الأمطار', 'فحص العزل المائي والتسليم'],
+            'steps' => ['مراجعة مخططات السقف والتصريف', 'تركيب المدادات والعزل', 'تثبيت وطي ألواح السقف', 'تركيب الحواف والإكسسوارات', 'الفحص النهائي والتسليم'],
+            'specs' => ['نظام التثبيت' => 'مرابط منزلقة مخفية', 'المواد' => 'ألمنيوم / فولاذ ألوزنك مطلي', 'نوع الوصلة' => 'طي ميكانيكي مانع للتسرب', 'التطبيقات' => 'المستودعات والمباني الكبرى'],
+            'faqs' => []
+        ]
+    ],
+    'misc-metal-works' => [
+        'en' => [
+            'title' => 'Miscellaneous Metal Works',
+            'meta_title' => 'Miscellaneous Metal Works & Custom Steel | Desert Iron',
+            'meta_desc' => 'Secondary steel frames, access stairs, handrails, cages, brackets, gratings, and custom architectural metal works.',
+            'overview' => 'Desert Iron fabricates and installs a complete range of miscellaneous and secondary metalwork essential for industrial functionality, safe personnel access, and commercial building completion.',
+            'overview_2' => 'From industrial staircases, caged ladders, and safety handrails to floor gratings, bollards, canopies, and custom brackets, every item is fabricated to project drawings with durable protective finishes.',
+            'features' => ['Steel Staircases, Walkways & Crossovers', 'Handrails, Guardrails & Safety Barriers', 'Caged Ladders & Maintenance Platforms', 'Floor Gratings, Trench Covers & Chequered Plates', 'Bollards, Embedments & Custom Brackets', 'Canopies, Louvers & Secondary Frames'],
+            'steps' => ['Site Measurement & Shop Drawings', 'Cutting, Welding & Assembly', 'Hot-Dip Galvanizing or Painting', 'Site Delivery & Installation', 'Safety & Quality Inspection'],
+            'specs' => ['Materials' => 'Mild Steel, Galvanized Steel, Stainless Steel', 'Finishes' => 'Hot-Dip Galvanized, Powder Coated, Epoxy', 'Fabrication' => 'Custom Built to Approved Shop Drawings', 'Compliance' => 'Industrial Safety & Access Standards'],
+            'faqs' => []
+        ],
+        'ar' => [
+            'title' => 'الأعمال المعدنية المتنوعة',
+            'meta_title' => 'الأعمال المعدنية المتنوعة والسلالم والمنصات | صحراء الحديد',
+            'meta_desc' => 'تصنيع وتركيب الإطارات المعدنية، السلالم، الدرابزين، المنصات، والدعامات المخصصة في السعودية.',
+            'overview' => 'تصنّع صحراء الحديد وتركّب مجموعة متكاملة من الأعمال المعدنية الثانوية والمخصصة الضرورية لتشغيل المنشآت الصناعية والمباني التجارية بأمان.',
+            'overview_2' => 'تشمل أعمالنا السلالم الفولاذية، الدرابزين، سلالم الطوارئ، أغطية القنوات، المظلات، والدعامات المعدنية المصنعة حسب المخططات المعتمدة.',
+            'features' => ['السلالم الفولاذية وممرات العبور', 'الدرابزين وحواجز السلامة', 'السلالم المحمية ومنصات الصيانة', 'شبك الأرضيات (Gratings) والألواح المبزرة', 'مصدات الحماية والزوايا والدعامات', 'المظلات والإطارات المعدنية الثانوية'],
+            'steps' => ['رفع المقاسات وإعداد المخططات التنفيذية', 'القص واللحام والتجميع', 'الجلفنة أو الطلاء الواقي', 'التوريد والتركيب في الموقع', 'فحص الجودة والسلامة'],
+            'specs' => ['المواد' => 'فولاذ كربوني، مجلفن، ستانلس ستيل', 'التشطيبات' => 'جلفنة بالغمس الساخن، دهان حراري أو إيبوكسي', 'التصنيع' => 'حسب المخططات التنفيذية المعتمدة', 'الامتثال' => 'معايير السلامة الصناعية'],
+            'faqs' => []
+        ]
+    ],
+    'fireproofing-works' => [
+        'en' => [
+            'title' => 'Fireproofing Works',
+            'meta_title' => 'Structural Steel Fireproofing Works | Desert Iron',
+            'meta_desc' => 'Intumescent coatings and cementitious fireproofing systems for structural steel in industrial and commercial buildings.',
+            'overview' => 'Desert Iron provides project-specified passive fire protection systems to safeguard structural steel frames against high temperatures and meet Saudi Civil Defense and building code fire-rating requirements.',
+            'overview_2' => 'We apply intumescent fire-retardant coatings and cementitious fireproofing materials with strict dry-film thickness (DFT) monitoring, surface preparation, and quality documentation.',
+            'features' => ['Intumescent Fireproof Coatings', 'Cementitious Fireproofing Application', 'Surface Preparation & Primer Verification', 'Dry Film Thickness (DFT) Testing', '1-Hour to 4-Hour Fire Rating Systems', 'Civil Defense & Consultant Submittal Support'],
+            'steps' => ['Fire Rating & Specification Review', 'Substrate Preparation & Inspection', 'Calibrated Fireproofing Application', 'DFT & Adhesion Quality Checks', 'Final Certification & Handover'],
+            'specs' => ['Systems' => 'Thin-Film Intumescent & Cementitious', 'Fire Ratings' => '60, 90, 120, up to 240 Minutes', 'Inspection' => 'Calibrated DFT & Adhesion Testing', 'Compliance' => 'SBC 801 / Civil Defense Approved Materials'],
+            'faqs' => []
+        ],
+        'ar' => [
+            'title' => 'أعمال الحماية من الحريق (Fireproofing)',
+            'meta_title' => 'أعمال الحماية من الحريق للهياكل الفولاذية | صحراء الحديد',
+            'meta_desc' => 'تطبيق الدهانات المنتفخة والمواد الإسمنتية المقاومة للحريق لحماية الهياكل الفولاذية.',
+            'overview' => 'توفر صحراء الحديد أنظمة الحماية السلبية من الحريق المعتمدة لحماية الهياكل الفولاذية في المباني الصناعية والتجارية وتلبية متطلبات كود البناء السعودي والدفاع المدني.',
+            'overview_2' => 'نقوم بتطبيق الدهانات المنتفخة (Intumescent) والمواد الإسمنتية المقاومة للحريق مع فحص دقيق لسماكة الطلاء وجودة الالتصاق.',
+            'features' => ['الدهانات المنتفخة المقاومة للحريق', 'التغطية الإسمنتية المقاومة للحريق', 'تجهيز الأسطح وفحص الطبقة التأسيسية', 'قياس وفحص سماكة الطلاء (DFT)', 'أنظمة مقاومة حريق من ساعة إلى 4 ساعات', 'إعداد تقارير الجودة والاعتمادات'],
+            'steps' => ['مراجعة المواصفات ودرجة مقاومة الحريق', 'تجهيز وتنظيف الأسطح الفولاذية', 'تطبيق طبقات الحماية من الحريق', 'فحص السماكة والالتصاق', 'التسليم وإصدار تقارير الفحص'],
+            'specs' => ['الأنظمة' => 'دهانات منتفخة ومواد إسمنتية', 'مقاومة الحريق' => '60، 90، 120 حتى 240 دقيقة', 'الفحص' => 'قياس السماكة والالتصاق', 'الامتثال' => 'مواد معتمدة وفق كود البناء والدفاع المدني'],
+            'faqs' => []
+        ]
+    ],
+    'fit-out-works' => [
+        'en' => [
+            'title' => 'Fit-Out Works',
+            'meta_title' => 'Commercial & Industrial Fit-Out Works | Desert Iron',
+            'meta_desc' => 'Interior finishing, partitions, ceilings, flooring, and MEP coordination for commercial offices and industrial buildings.',
+            'overview' => 'Desert Iron delivers functional, durable fit-out works for commercial offices, control rooms, administration buildings, and industrial support facilities across Saudi Arabia.',
+            'overview_2' => 'Our fit-out teams coordinate partitions, suspended ceilings, industrial and commercial flooring, joinery, painting, and MEP interfaces to deliver ready-to-use workspaces.',
+            'features' => ['Gypsum, Glass & Demountable Partitions', 'False Ceilings & Acoustic Systems', 'Epoxy, Tile & Commercial Flooring', 'Architectural Doors, Windows & Glazing', 'Interior Painting & Wall Finishes', 'Lighting, HVAC & MEP Coordination'],
+            'steps' => ['Space Layout & Material Approval', 'Partitioning & First-Fix Coordination', 'Ceiling, Flooring & Wall Finishes', 'Fixtures, Doors & Detailing', 'Snagging & Turnkey Handover'],
+            'specs' => ['Applications' => 'Offices, Admin Buildings, Showrooms', 'Materials' => 'Moisture & Fire-Resistant Systems', 'Execution' => 'Turnkey Interior Coordination', 'Quality' => 'Detailed Snagging & Handover Inspection'],
+            'faqs' => []
+        ],
+        'ar' => [
+            'title' => 'أعمال التشطيبات والتجهيز الداخلي (Fit-Out)',
+            'meta_title' => 'أعمال التشطيبات والتجهيز الداخلي | صحراء الحديد',
+            'meta_desc' => 'أعمال التشطيبات التجارية والصناعية والقواطع والأسقف المستعارة والأرضيات في السعودية.',
+            'overview' => 'تقدم صحراء الحديد خدمات التجهيز الداخلي والتشطيبات (Fit-Out) للمكاتب الإدارية والمباني التجارية ومرافق الدعم الصناعي في جميع أنحاء المملكة.',
+            'overview_2' => 'يتولى فريقنا تنسيق أعمال القواطع والأسقف المستعارة والأرضيات والدهانات والأبواب بالتكامل مع الأعمال الكهروميكانيكية لتسليم مساحات عمل جاهزة للتشغيل.',
+            'features' => ['القواطع الجبسية والزجاجية', 'الأسقف المستعارة والأنظمة الصوتية', 'أرضيات الإيبوكسي والسيراميك والمكاتب', 'الأبواب والنوافذ والواجهات الزجاجية', 'الدهانات والتشطيبات الجدارية', 'التنسيق مع أعمال التكييف والكهرباء (MEP)'],
+            'steps' => ['مراجعة المخططات واعتماد العينات', 'أعمال القواطع والتمديدات الأولية', 'تركيب الأسقف والأرضيات والدهانات', 'تركيب الأبواب والتجهيزات النهائية', 'الفحص النهائي والتسليم'],
+            'specs' => ['التطبيقات' => 'المكاتب، المباني الإدارية، المعارض', 'المواد' => 'أنظمة مقاومة للرطوبة والحريق', 'التنفيذ' => 'تنسيق داخلي متكامل', 'الجودة' => 'فحص دقيق قبل التسليم النهائي'],
+            'faqs' => []
         ]
     ],
     'call-off-services' => [
@@ -153,111 +367,103 @@ $services_data = [
             'title' => 'Call-off Services',
             'meta_title' => 'Framework & Call-off Contracts | Desert Iron',
             'meta_desc' => 'Fixed-period, fixed-rate framework contracts for industrial maintenance, structural modifications, and continuous support.',
-            'overview' => 'For large industrial operators like Aramco, SABIC, and Ma\'aden, agility and reliability are paramount. Desert Iron offers fixed-period, fixed-rate Call-off (Framework) Contracts that allow clients to request ad-hoc engineering, maintenance, and structural services on demand without the hassle of repeated tendering.',
-            'overview_2' => 'Our dedicated rapid-response teams are embedded within your operational matrix, ready to mobilize manpower, materials, and machinery at a moment\'s notice.',
-            'features' => ['Fixed-Rate Pricing Agreements', 'Rapid Mobilization', 'Emergency Structural Repairs', 'Facility Modifications', 'Continuous Manpower Supply', 'Equipment Rental'],
-            'steps' => ['Contract Negotiation', 'Rate Card Finalization', 'Dedicated Team Assignment', 'On-Demand Execution', 'Monthly Consolidated Billing'],
-            'specs' => ['Contract Duration' => '1 to 5 Years', 'Response Time' => '24-48 Hours SLAs', 'Scope' => 'Civil, Mechanical, Structural', 'Compliance' => 'Aramco / SABIC standards'],
+            'overview' => 'For industrial operators and facility managers, agility and reliability are essential. Desert Iron offers fixed-period Call-off (Framework) Contracts that allow clients to request ad-hoc engineering, maintenance, and structural modification services on demand.',
+            'overview_2' => 'Our responsive site teams coordinate manpower, materials, and equipment efficiently to support ongoing plant operations and facility upgrades.',
+            'features' => ['Pre-Agreed Rate Card Frameworks', 'Rapid Site Mobilization', 'Structural Repairs & Reinforcements', 'Facility & Platform Modifications', 'Skilled Manpower Support', 'Consolidated Monthly Reporting'],
+            'steps' => ['Contract Scope & Rate Alignment', 'Team & Safety Onboarding', 'Work Order Issuance', 'On-Site Execution & QA/QC', 'Completion Sign-Off & Billing'],
+            'specs' => ['Contract Model' => 'Annual / Multi-Year Framework', 'Scope' => 'Structural, Civil & Mechanical Support', 'Response' => 'Scheduled & Urgent Work Orders', 'Coverage' => 'Eastern Province & Kingdom-Wide'],
             'faqs' => [
-                ['q' => 'How does billing work for a call-off contract?', 'a' => 'Billing is typically consolidated monthly based on the pre-agreed rate card and the actual work orders executed.']
+                ['q' => 'How does billing work for a call-off contract?', 'a' => 'Billing is consolidated based on the pre-agreed unit rate card and verified work orders completed on site.']
             ]
         ],
         'ar' => [
-            'title' => 'خدمات العقود المفتوحة (Call-off)',
-            'meta_title' => 'عقود الصيانة والإطارية | ديزيرت آيرون',
-            'meta_desc' => 'عقود إطارية محددة المدة والسعر للصيانة الصناعية والتعديلات الهيكلية والدعم المستمر.',
-            'overview' => 'بالنسبة للمشغلين الصناعيين الكبار مثل أرامكو وسابك، تعتبر المرونة والموثوقية أمراً بالغ الأهمية. تقدم ديزيرت آيرون عقودًا إطارية محددة تتيح للعملاء طلب خدمات هندسية وصيانة عند الطلب دون عناء المناقصات المتكررة.',
-            'overview_2' => 'فرق الاستجابة السريعة لدينا جاهزة لتعبئة القوى العاملة والمواد والمعدات في أي لحظة.',
-            'features' => ['اتفاقيات تسعير ثابتة', 'تعبئة سريعة', 'إصلاحات هيكلية طارئة', 'تعديلات المرافق', 'توريد مستمر للعمالة', 'تأجير المعدات'],
-            'steps' => ['التفاوض على العقد', 'اعتماد جدول الأسعار', 'تعيين فريق مخصص', 'التنفيذ عند الطلب', 'فوترة شهرية مجمعة'],
-            'specs' => ['مدة العقد' => '1 إلى 5 سنوات', 'وقت الاستجابة' => '24-48 ساعة', 'النطاق' => 'مدني، ميكانيكي، هيكلي', 'الامتثال' => 'معايير أرامكو / سابك'],
-            'faqs' => [
-                ['q' => 'كيف تتم الفوترة لعقد Call-off؟', 'a' => 'يتم تجميع الفواتير عادةً بشكل شهري بناءً على جدول الأسعار المتفق عليه مسبقًا وأوامر العمل الفعلية المنفذة.']
-            ]
+            'title' => 'خدمات العقود الإطارية (Call-off)',
+            'meta_title' => 'العقود الإطارية والصيانة المستمرة | صحراء الحديد',
+            'meta_desc' => 'عقود إطارية للصيانة الصناعية والتعديلات الهيكلية والدعم الفني المستمر.',
+            'overview' => 'تقدم صحراء الحديد عقوداً إطارية مرنة تتيح للمنشآت الصناعية طلب خدمات التعديلات الهيكلية والصيانة والأعمال المدنية عند الحاجة وفق جداول أسعار متفق عليها مسبقاً.',
+            'overview_2' => 'تستجيب فرقنا الميدانية بسرعة لتنفيذ أوامر العمل بكفاءة عالية ودون تعطيل لسير العمليات.',
+            'features' => ['اتفاقيات أسعار محددة مسبقاً', 'تعبئة سريعة للموقع', 'إصلاحات وتقويات هيكلية', 'تعديلات المنصات والمرافق', 'دعم بالكوادر الفنية المؤهلة', 'تقارير وفوترة شهرية منظمة'],
+            'steps' => ['الاتفاق على النطاق وجدول الأسعار', 'تأهيل الفريق وإجراءات السلامة', 'إصدار أمر العمل', 'التنفيذ الميداني ومراقبة الجودة', 'الاعتماد والفوترة'],
+            'specs' => ['نموذج العقد' => 'عقود إطارية سنوية أو متعددة السنوات', 'النطاق' => 'هيكلي، مدني، ميكانيكي', 'الاستجابة' => 'أوامر عمل مجدولة وطارئة', 'التغطية' => 'المنطقة الشرقية وكافة أنحاء المملكة'],
+            'faqs' => []
         ]
     ],
     'trading' => [
         'en' => [
-            'title' => 'Trading',
+            'title' => 'Trading & Material Supply',
             'meta_title' => 'Industrial Trading & Material Supply KSA | Desert Iron',
-            'meta_desc' => 'Import and supply of high-grade industrial pipes, valves, flanges, fittings, and structural steel items in Saudi Arabia.',
-            'overview' => 'As a trusted backbone to Saudi Arabia\'s industrial sector, Desert Iron’s Trading division procures and supplies critical materials to the oil & gas, petrochemical, and construction industries. We leverage a robust global supply chain to import high-grade mechanical and structural components.',
-            'overview_2' => 'Our inventory is meticulously vetted for quality, ensuring full compliance with international standards (ASME, ASTM, API) and local regulatory requirements.',
-            'features' => ['Pipes & Tubes (Seamless/ERW)', 'Fittings & Flanges', 'Industrial Valves (Gate, Ball, Check)', 'Gaskets & Fasteners', 'Steel Plates (Mild & High Tensile)', 'Structural Sections (H-Beams, Channels)'],
-            'steps' => ['Client Requirement Analysis', 'Global Sourcing & Procurement', 'Quality Inspection (QA/QC)', 'Customs Clearance', 'On-time Site Delivery'],
-            'specs' => ['Certifications' => 'Mill Test Certificates (MTC) EN 10204 3.1', 'Standards' => 'ASTM, ASME, API, DIN', 'Materials' => 'Carbon Steel, Stainless, Alloy', 'Logistics' => 'Kingdom-wide delivery'],
+            'meta_desc' => 'Supply of industrial pipes, valves, flanges, fittings, fasteners, and structural steel items in Saudi Arabia.',
+            'overview' => 'Desert Iron’s Trading division sources and supplies structural steel sections, cladding materials, fasteners, and industrial piping components to construction and industrial projects across Saudi Arabia.',
+            'overview_2' => 'Materials are sourced from reputable manufacturers with Mill Test Certificates (MTC) to ensure compliance with project specifications and international standards.',
+            'features' => ['Structural Sections (H-Beams, I-Beams, Channels, Angles)', 'Steel Plates & Hollow Sections', 'Pipes, Fittings & Flanges', 'Industrial Valves & Gaskets', 'High-Strength Anchor Bolts & Fasteners', 'Cladding Sheets & Insulation Materials'],
+            'steps' => ['BOQ & Specification Review', 'Sourcing & Quotation', 'Quality & MTC Verification', 'Logistics Coordination', 'Site Delivery'],
+            'specs' => ['Documentation' => 'Mill Test Certificates (MTC)', 'Standards' => 'ASTM, ASME, API, EN, DIN', 'Materials' => 'Carbon Steel, Galvanized, Stainless', 'Delivery' => 'Direct to Project Sites Across KSA'],
             'faqs' => [
-                ['q' => 'Do you provide Mill Test Certificates (MTC)?', 'a' => 'Yes, every batch of materials we supply comes with 100% traceable MTCs and material safety data sheets.']
+                ['q' => 'Do you provide Mill Test Certificates (MTC) with supplied steel?', 'a' => 'Yes, structural steel and industrial piping materials are supplied with traceable Mill Test Certificates upon request.']
             ]
         ],
         'ar' => [
-            'title' => 'التجارة والتوريد',
-            'meta_title' => 'التوريد الصناعي وتجارة المواد بالسعودية | ديزيرت آيرون',
-            'meta_desc' => 'استيراد وتوريد الأنابيب الصناعية عالية الجودة والصمامات والفلنجات وعناصر الصلب الهيكلي في السعودية.',
-            'overview' => 'كعمود فقري موثوق للقطاع الصناعي في السعودية، يقوم قسم التجارة في ديزيرت آيرون بشراء وتوريد المواد الحيوية لصناعات النفط والغاز والبتروكيماويات والبناء.',
-            'overview_2' => 'يتم فحص مخزوننا بدقة لضمان الجودة والامتثال الكامل للمعايير الدولية والمحلية.',
-            'features' => ['الأنابيب (غير الملحومة / ERW)', 'الوصلات والفلنجات', 'الصمامات الصناعية', 'الحشوات والمثبتات', 'ألواح الصلب', 'المقاطع الهيكلية (عوارض H، قنوات)'],
-            'steps' => ['تحليل متطلبات العميل', 'التوريد العالمي', 'فحص الجودة', 'التخليص الجمركي', 'التسليم في الموقع في الوقت المحدد'],
-            'specs' => ['الشهادات' => 'شهادات اختبار المصنع (MTC)', 'المعايير' => 'ASTM, ASME, API, DIN', 'المواد' => 'الصلب الكربوني، المقاوم للصدأ، السبائك', 'الخدمات اللوجستية' => 'توصيل لجميع أنحاء المملكة'],
-            'faqs' => [
-                ['q' => 'هل تقدمون شهادات اختبار المصنع (MTC)؟', 'a' => 'نعم، كل دفعة من المواد التي نوردها تأتي مع شهادات MTC قابلة للتتبع بنسبة 100٪.']
-            ]
+            'title' => 'التجارة وتوريد المواد',
+            'meta_title' => 'التوريد الصناعي وتجارة مواد البناء والصلب | صحراء الحديد',
+            'meta_desc' => 'توريد المقاطع الفولاذية والأنابيب والصمامات والفلنجات والمثبتات الصناعية في السعودية.',
+            'overview' => 'يقوم قسم التجارة في صحراء الحديد بتوفير وتوريد مقاطع الفولاذ الهيكلي وألواح التكسية والمثبتات ومكونات الأنابيب الصناعية لمشاريع المقاولات والصناعة في المملكة.',
+            'overview_2' => 'يتم توريد المواد من مصانع معتمدة مع شهادات اختبار المصنع (MTC) لضمان مطابقتها للمواصفات الفنية.',
+            'features' => ['المقاطع الهيكلية (جسور H و I، قنوات، زوايا)', 'ألواح الصاج والمقاطع المفرغة', 'الأنابيب والوصلات والفلنجات', 'الصمامات والحشوات الصناعية', 'مسامير التثبيت والبراغي عالية الشد', 'ألواح التكسية ومواد العزل'],
+            'steps' => ['مراجعة جدول الكميات والمواصفات', 'التسعير والتوريد', 'التحقق من شهادات الجودة (MTC)', 'تنسيق الشحن', 'التسليم في موقع المشروع'],
+            'specs' => ['الشهادات' => 'شهادات اختبار المصنع (MTC)', 'المعايير' => 'ASTM, ASME, API, EN, DIN', 'المواد' => 'فولاذ كربوني، مجلفن، ستانلس ستيل', 'التوصيل' => 'توريد لمواقع المشاريع في المملكة'],
+            'faqs' => []
         ]
     ],
     'technical-staffing' => [
         'en' => [
             'title' => 'Technical Staffing',
-            'meta_title' => 'Technical Staffing & Manpower Supply | Desert Iron',
-            'meta_desc' => 'Deploying highly skilled engineers, certified welders, riggers, and QA/QC inspectors to industrial projects across Saudi Arabia.',
-            'overview' => 'Executing complex engineering projects requires highly specialized talent. Desert Iron’s Technical Staffing division bridges the skill gap by providing certified, experienced, and highly vetted industrial manpower to mega-projects across NEOM, Riyadh, and the Eastern Province.',
-            'overview_2' => 'Whether you need a short-term deployment for a plant shutdown or a long-term engineering team for a multi-year gigaproject, we supply the human capital that drives progress.',
-            'features' => ['Structural & Civil Engineers', 'Site Supervisors & Foremen', 'Certified Welders (TIG/MIG/Arc)', 'Steel Fitters & Fabricators', 'Certified Riggers & Scaffolders', 'QA/QC & HSE Inspectors'],
-            'steps' => ['Needs Assessment', 'Candidate Screening & Trade Testing', 'Mobilization & Visas', 'Site Integration', 'Ongoing Payroll & HR Support'],
-            'specs' => ['Deployment' => 'Short & Long-term Contracts', 'Compliance' => 'Saudi Labor Law, Nitaqat', 'Certifications' => 'TÜV, AWS, OSHA certified staff', 'Coverage' => 'Kingdom-wide'],
+            'meta_title' => 'Technical Staffing & Manpower Support | Desert Iron',
+            'meta_desc' => 'Deploying skilled engineers, certified welders, fitters, riggers, and QA/QC inspectors for industrial projects in Saudi Arabia.',
+            'overview' => 'Executing industrial and construction projects requires experienced technical personnel. Desert Iron provides vetted engineers, supervisors, certified welders, fabricators, and rigging crews to support project execution across the Eastern Province and Saudi Arabia.',
+            'overview_2' => 'Whether for short-term peak project support, shutdowns, or ongoing site construction, our technical personnel integrate smoothly with client project teams.',
+            'features' => ['Structural & Civil Site Engineers', 'Site Supervisors & Foremen', 'Certified Welders (6G / TIG / MIG / SMAW)', 'Structural Steel Fitters & Fabricators', 'Certified Riggers & Cladding Installers', 'QA/QC & HSE Officers'],
+            'steps' => ['Requirement & Trade Assessment', 'Candidate Screening & Trade Testing', 'Safety Induction & Documentation', 'Site Mobilization', 'Ongoing Supervision & Support'],
+            'specs' => ['Deployment' => 'Project-Based & Term Support', 'Compliance' => 'Saudi Labor Regulations & HSE Standards', 'Trades' => 'Welding, Fitting, Rigging, Engineering', 'Coverage' => 'Dammam, Jubail, Riyadh & Kingdom-Wide'],
             'faqs' => [
-                ['q' => 'Do you handle the HR, payroll, and accommodation for the supplied staff?', 'a' => 'Yes, our staffing solutions are fully turnkey. We manage payroll, insurance, accommodation, and transportation.']
+                ['q' => 'Are your welders and riggers trade-tested and certified?', 'a' => 'Yes, technical personnel undergo trade testing and hold relevant third-party certifications as required by project specifications.']
             ]
         ],
         'ar' => [
-            'title' => 'التوظيف الفني وتوريد العمالة',
-            'meta_title' => 'توريد العمالة الفنية والهندسية | ديزيرت آيرون',
-            'meta_desc' => 'توفير مهندسين ولحامين وعمال تزوير ومفتشي جودة ذوي مهارات عالية للمشاريع الصناعية في جميع أنحاء السعودية.',
-            'overview' => 'يتطلب تنفيذ المشاريع الهندسية المعقدة مواهب متخصصة. يسد قسم التوظيف الفني لدينا فجوة المهارات من خلال توفير قوى عاملة صناعية معتمدة وذات خبرة للمشاريع الكبرى.',
-            'overview_2' => 'سواء كنت بحاجة إلى فريق قصير الأجل لإغلاق مصنع أو فريق هندسي طويل الأجل، فنحن نوفر رأس المال البشري الذي يدفع عجلة التقدم.',
-            'features' => ['مهندسون مدنيون وهيكليون', 'مشرفو مواقع ومراقبون', 'لحامون معتمدون', 'مركبو صلب وفنيون', 'عمال رفع وسقالات معتمدون', 'مفتشو جودة وسلامة (HSE)'],
-            'steps' => ['تقييم الاحتياجات', 'فحص المرشحين والاختبار المهني', 'التعبئة والتأشيرات', 'الدمج في الموقع', 'دعم مستمر للموارد البشرية'],
-            'specs' => ['النشر' => 'عقود قصيرة وطويلة الأجل', 'الامتثال' => 'نظام العمل السعودي، نطاقات', 'الشهادات' => 'موظفون معتمدون', 'التغطية' => 'جميع أنحاء المملكة'],
-            'faqs' => [
-                ['q' => 'هل تتولون شؤون الموارد البشرية والرواتب والسكن للموظفين؟', 'a' => 'نعم، حلولنا شاملة بالكامل. ندير الرواتب والتأمين والسكن والنقل.']
-            ]
+            'title' => 'الكادر الفني المتخصص',
+            'meta_title' => 'توفير الكوادر الفنية والهندسية | صحراء الحديد',
+            'meta_desc' => 'توفير المهندسين واللحامين والفنيين ومفتشي الجودة والسلامة للمشاريع الصناعية والإنشائية في السعودية.',
+            'overview' => 'توفر صحراء الحديد كوادر فنية وهندسية مؤهلة تشمل المهندسين والمشرفين واللحامين المعتمدين وفنيي التركيب لدعم المشاريع الصناعية والإنشائية في المنطقة الشرقية وجميع أنحاء المملكة.',
+            'overview_2' => 'سواء للدعم المرحلي في المشاريع أو أعمال الصيانة والتشغيل، تندمج فرقنا الفنية بكفاءة عالية مع فرق إدارة المشروع.',
+            'features' => ['مهندسو مواقع مدنيون وهيكليون', 'مشرفو مواقع ومراقبون', 'لحامون معتمدون', 'فنيو تركيب وتشكيل الهياكل الفولاذية', 'فنيو رفع وتكسية معتمدون', 'مختصو الجودة والسلامة المهنية (QA/QC & HSE)'],
+            'steps' => ['تحديد الاحتياجات والتخصصات', 'الفحص والاختبار المهني', 'التدريب على السلامة وإصدار التصاريح', 'التعبئة للموقع', 'المتابعة والدعم المستمر'],
+            'specs' => ['النشر' => 'دعم حسب المشروع أو عقود مرحلية', 'الامتثال' => 'أنظمة العمل السعودية ومعايير السلامة', 'التخصصات' => 'لحام، تركيب، رفع، إشراف هندسي', 'التغطية' => 'الدمام، الجبيل، الرياض وكافة مناطق المملكة'],
+            'faqs' => []
         ]
     ],
     'shutdown-maintenance' => [
         'en' => [
             'title' => 'Shutdown & Maintenance',
             'meta_title' => 'Industrial Plant Shutdown & Maintenance KSA | Desert Iron',
-            'meta_desc' => 'Expert turnaround, shutdown, and maintenance services for oil & gas and petrochemical plants, minimizing downtime safely.',
-            'overview' => 'In the high-stakes world of oil & gas and petrochemicals, downtime equals immense revenue loss. Desert Iron specializes in meticulously planned plant Turnarounds, Shutdowns, and ongoing Maintenance (TAR). We mobilize massive resources rapidly to execute critical path tasks within tight windows.',
-            'overview_2' => 'Our highly coordinated approach ensures that plant modifications, equipment overhauls, and structural repairs are completed safely, flawlessly, and strictly on schedule, ensuring rapid operational resumption.',
-            'features' => ['Turnaround Planning & Scheduling', 'Plant Mobilization & Prep', 'Equipment Overhaul (Heat Exchangers, Columns)', 'Piping Replacement & Welding', 'Scaffolding & Access Solutions', 'Testing & Commissioning'],
-            'steps' => ['Pre-Shutdown Planning', 'Site Prep & Scaffolding', 'Execution of Mechanical/Structural Work', 'Hydro-testing & QA/QC', 'Safe Plant Restart'],
-            'specs' => ['Industries' => 'Oil & Gas, Petrochem, Power', 'Safety Record' => 'Zero LTI targeted', 'Shifts' => '24/7 Operations during TAR', 'Manpower' => 'Up to 1,000+ peak deployment'],
+            'meta_desc' => 'Planned turnaround, shutdown, structural repair, and maintenance services for industrial facilities in Saudi Arabia.',
+            'overview' => 'In industrial facilities, planned turnarounds and maintenance windows require disciplined scheduling and safe execution. Desert Iron supports plant shutdowns, structural repairs, piping modifications, and facility maintenance works across Saudi Arabia.',
+            'overview_2' => 'Our coordinated approach ensures that structural replacements, cladding repairs, piping tie-ins, and civil refurbishments are completed safely and on schedule.',
+            'features' => ['Pre-Shutdown Planning & Preparation', 'Structural Steel Repairs & Replacements', 'Piping Modifications & Support Works', 'Roof & Cladding Refurbishment', 'Civil & Concrete Foundation Repairs', 'Strict HSE & Permit-to-Work Compliance'],
+            'steps' => ['Scope Walkdown & Planning', 'Material & Resource Preparation', 'Safe Execution Under Permit-to-Work', 'Quality Inspection & Testing', 'Site Handover for Plant Restart'],
+            'specs' => ['Sectors' => 'Industrial Plants, Warehouses, Utilities', 'Safety Focus' => 'Strict HSE & PTW Compliance', 'Scheduling' => 'Time-Critical Window Execution', 'Scope' => 'Structural, Mechanical & Civil Maintenance'],
             'faqs' => [
-                ['q' => 'How much lead time do you need to plan a major turnaround?', 'a' => 'For major plant shutdowns, we typically engage 6-12 months in advance to ensure precise planning, material procurement, and resource allocation.']
+                ['q' => 'Can you execute structural and cladding repairs during brief operational windows?', 'a' => 'Yes, we pre-fabricate components in advance so on-site installation during scheduled downtime is completed as quickly and safely as possible.']
             ]
         ],
         'ar' => [
-            'title' => 'الصيانة وتوقف المصانع (Shutdown)',
-            'meta_title' => 'خدمات الصيانة وتوقف المصانع في السعودية | ديزيرت آيرون',
-            'meta_desc' => 'خدمات خبيرة لإغلاق المصانع والصيانة لقطاعات النفط والغاز والبتروكيماويات، وتقليل وقت التوقف عن العمل بأمان.',
-            'overview' => 'في عالم النفط والغاز والبتروكيماويات، التوقف عن العمل يعني خسارة هائلة في الإيرادات. تتخصص ديزيرت آيرون في التخطيط الدقيق لفترات توقف المصانع (Turnarounds) والصيانة المستمرة.',
-            'overview_2' => 'يضمن نهجنا المنسق للغاية إكمال تعديلات المصنع وإصلاح المعدات بأمان وبشكل لا تشوبه شائبة وفي الموعد المحدد بدقة.',
-            'features' => ['تخطيط وجدولة التوقف', 'تجهيز وتعبئة المصنع', 'إصلاح المعدات (المبادلات الحرارية، الأعمدة)', 'استبدال الأنابيب واللحام', 'حلول السقالات والوصول', 'الاختبار والتشغيل'],
-            'steps' => ['التخطيط قبل الإغلاق', 'تجهيز الموقع والسقالات', 'تنفيذ الأعمال الميكانيكية/الهيكلية', 'الاختبار الهيدروليكي ومراقبة الجودة', 'إعادة تشغيل المصنع بأمان'],
-            'specs' => ['الصناعات' => 'النفط والغاز، البتروكيماويات، الطاقة', 'سجل السلامة' => 'استهداف صفر إصابات عمل', 'المناوبات' => 'عمليات 24/7 أثناء التوقف', 'القوى العاملة' => 'تصل إلى 1000+ في وقت الذروة'],
-            'faqs' => [
-                ['q' => 'ما هو الوقت اللازم لتخطيط توقف رئيسي للمصنع؟', 'a' => 'بالنسبة لعمليات الإغلاق الكبرى، نبدأ عادة التخطيط قبل 6-12 شهرًا لضمان التخطيط الدقيق وشراء المواد.']
-            ]
+            'title' => 'أعمال التوقف والصيانة الصناعية (Shutdown)',
+            'meta_title' => 'خدمات الصيانة وتوقف المصانع في السعودية | صحراء الحديد',
+            'meta_desc' => 'خدمات الصيانة الدورية وأعمال التوقف والإصلاحات الهيكلية للمنشآت الصناعية في السعودية.',
+            'overview' => 'تدعم صحراء الحديد أعمال الصيانة الدورية وفترات التوقف المجدولة (Shutdowns) والإصلاحات الهيكلية وتعديلات الأنابيب للمنشآت الصناعية والمستودعات في المملكة العربية السعودية.',
+            'overview_2' => 'نحرص على التجهيز المسبق والتنفيذ الدقيق لضمان إنجاز أعمال الاستبدال والصيانة بأمان وفي الوقت المحدد.',
+            'features' => ['التخطيط والتجهيز المسبق لأعمال التوقف', 'إصلاح واستبدال العناصر الفولاذية الهيكلية', 'تعديلات الأنابيب والدعامات', 'صيانة وتجديد الأسقف والتكسية', 'إصلاحات الخرسانة والأساسات المدنية', 'الالتزام الصارم بتصاريح العمل وإجراءات السلامة'],
+            'steps' => ['المعاينة الميدانية والتخطيط', 'تجهيز المواد والموارد مسبقاً', 'التنفيذ الآمن وفق تصاريح العمل', 'الفحص ومراقبة الجودة', 'تسليم الموقع لإعادة التشغيل'],
+            'specs' => ['القطاعات' => 'المصانع، المستودعات، المرافق', 'السلامة' => 'التزام تام بمعايير HSE وتصاريح العمل', 'الجدولة' => 'تنفيذ دقيق ضمن الفترات الزمنية المحددة', 'النطاق' => 'صيانة هيكلية وميكانيكية ومدنية'],
+            'faqs' => []
         ]
     ]
 ];

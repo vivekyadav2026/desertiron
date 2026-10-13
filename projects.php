@@ -15,15 +15,15 @@ $categories = ['All', 'Industrial', 'Commercial', 'Infrastructure', 'Warehousing
         <div class="flex items-center justify-center gap-4 mb-5">
             <div class="w-12 h-[3px] bg-saudi"></div>
             <span class="text-white opacity-90 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
-                <?= $lang === 'ar' ? '??? ?????????' : 'Project Portfolio' ?>
+                <?= $lang === 'ar' ? 'سجل مشاريع المجموعة' : 'Group Project Portfolio' ?>
             </span>
             <div class="w-12 h-[3px] bg-saudi"></div>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight drop-shadow-lg">
-            <?= $lang === 'ar' ? '???????? ???????' : 'Our Projects' ?>
+            <?= $lang === 'ar' ? 'سجل الأعمال والتطبيقات' : 'Projects & Group Experience' ?>
         </h1>
         <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
-            <?= $lang === 'ar' ? '?????? ????? ???????? ??????? ?? ??????? ?????????? ??????? ????? ???????? ????????? ???????? ?????? ?? ????????.' : 'Explore our portfolio of successful structural steel, PEB, and mega-infrastructure executions across the Kingdom.' ?>
+            <?= $lang === 'ar' ? 'استكشف سجل مشاريع المجموعة في الهياكل الفولاذية، والمباني مسبقة الصنع (PEB)، والإنشاءات الصناعية والتجارية (صور توضيحية لتطبيقات المشاريع).' : 'Explore our Group Experience portfolio in structural steel, pre-engineered buildings (PEB), and industrial/commercial construction (illustrative representative imagery).' ?>
         </p>
     </div>
 </section>

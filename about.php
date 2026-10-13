@@ -14,15 +14,15 @@ require_once 'header.php';
         <div class="flex items-center justify-center gap-3 mb-4">
             <div class="w-8 h-[2px] bg-saudi"></div>
             <span class="text-white opacity-90 text-xs font-bold uppercase tracking-widest">
-                <?= $lang === 'ar' ? '????? ???????' : 'Our Legacy & Vision' ?>
+                <?= $lang === 'ar' ? 'إرثنا ورؤيتنا' : 'Our Legacy & Vision' ?>
             </span>
             <div class="w-8 h-[2px] bg-saudi"></div>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 leading-tight <?= $headingFontClass ?>">
-            <?= $lang === 'ar' ? '???? ????? ?????.' : 'Building Tomorrow, Today.' ?>
+            <?= $lang === 'ar' ? 'نبني المستقبل اليوم.' : 'Building Tomorrow, Today.' ?>
         </h1>
         <p class="text-gray-300 text-sm sm:text-lg font-light leading-relaxed">
-            <?= $lang === 'ar' ? '?????? ????? ?? ??? ????? ?? ???? ??????? ?????????? ?? ??????? ??????? ????????? ?????? ?? ??????? ????????? ????????? ????????.' : 'Desert Iron is a premier engineering and construction contractor in Saudi Arabia, specializing in heavy structural steel, PEB systems, and gigaproject execution.' ?>
+            <?= $lang === 'ar' ? 'صحراء الحديد هي شركة مقاولات هندسية وإنشائية في المملكة العربية السعودية، متخصصة في الهياكل الفولاذية، والمباني مسبقة الصنع (PEB)، والإنشاءات المدنية المتكاملة.' : 'Desert Iron is an engineering and construction contractor in Saudi Arabia, specializing in structural steel, PEB systems, and turnkey civil construction.' ?>
         </p>
     </div>
 </section>
@@ -35,10 +35,10 @@ require_once 'header.php';
             <div class="lg:col-span-6 space-y-6">
                 <span class="text-xs uppercase tracking-widest text-saudi font-bold block">Company Overview</span>
                 <h2 class="text-3xl sm:text-4xl text-charcoal font-bold <?= $headingFontClass ?> leading-tight">
-                    <?= $lang === 'ar' ? '????? ?????? ????? ?? ???????' : 'Engineering Excellence Across Saudi Arabia' ?>
+                    <?= $lang === 'ar' ? 'التميز الهندسي والإنشائي في المملكة العربية السعودية' : 'Engineering Excellence Across Saudi Arabia' ?>
                 </h2>
                 <p class="text-gray-600 text-base leading-relaxed font-light">
-                    <?= $lang === 'ar' ? '??? ??????? ?? ??????? ????? ?????? ?????? ??????? ???????? ?????????????? ????????? ??????? ???????? ??????? ????? ?????? ??????? ??????? ????????.' : 'Established in Riyadh, Desert Iron operates one of the most advanced structural steel fabrication plants in the region. We combine cutting-edge BIM modeling, SBC 201 code compliance, and rigorous QA/QC inspection to deliver mega-projects on schedule.' ?>
+                    <?= $lang === 'ar' ? 'يقع المقر المسجل لشركة صحراء الحديد في الدمام بالمملكة العربية السعودية، ونجمع بين التنسيق الهندسي المتقدم والامتثال لكود البناء السعودي (SBC 201) والرقابة الصارمة على الجودة (QA/QC) لتنفيذ المشاريع الصناعية والتجارية وفق الجداول الزمنية المعتمدة.' : 'Registered in Dammam, Saudi Arabia, Desert Iron delivers coordinated structural steel, pre-engineered buildings (PEB), and turnkey civil construction solutions across the Kingdom. We combine BIM technical coordination, SBC 201 code compliance, and rigorous QA/QC inspection to deliver industrial and commercial projects on schedule.' ?>
                 </p>
                 <div class="pt-2">
                     <a href="quote.php" class="inline-flex bg-saudi text-white px-8 py-3.5 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-charcoal transition-colors shadow-md min-h-[44px] items-center">
@@ -48,7 +48,7 @@ require_once 'header.php';
             </div>
             
             <div class="lg:col-span-6">
-                <img src="public/images/hero_riyadh_steel.jpg" alt="Steel Fabrication Plant" class="w-full aspect-[4/3] object-cover rounded-sm shadow-xl border border-gray-100">
+                <img src="public/images/hero_riyadh_steel.jpg" alt="Structural Steel & Construction" class="w-full aspect-[4/3] object-cover rounded-sm shadow-xl border border-gray-100">
             </div>
 
         </div>
@@ -64,10 +64,10 @@ require_once 'header.php';
             <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-200 hover:border-saudi transition-colors">
                 <div class="w-12 h-12 bg-saudi/10 text-saudi rounded-sm flex items-center justify-center font-bold text-lg mb-6">01</div>
                 <h3 class="text-2xl font-bold text-charcoal mb-3 <?= $headingFontClass ?>">
-                    <?= $lang === 'ar' ? '??????' : 'Our Vision' ?>
+                    <?= $lang === 'ar' ? 'رؤيتنا' : 'Our Vision' ?>
                 </h3>
                 <p class="text-gray-600 text-sm md:text-base leading-relaxed font-light">
-                    <?= $lang === 'ar' ? '?? ???? ??????? ?????? ????? ?? ???? ??????? ?????????? ????????? ?? ????? ??????? ????????? ??????? ?? ????? ???? ??????? 2030.' : 'To be the most trusted structural steel and contracting partner in the Middle East, setting the benchmark for safety, precision, and Vision 2030 localization.' ?>
+                    <?= $lang === 'ar' ? 'أن نكون الشريك الأكثر موثوقية في مجال الهياكل الفولاذية والمقاولات في المملكة والمنطقة، مع إرساء معايير عالية للسلامة والدقة والمساهمة في تحقيق مستهدفات رؤية السعودية 2030.' : 'To be a trusted structural steel and contracting partner in Saudi Arabia, setting high standards for safety, precision, and Vision 2030 industrial growth.' ?>
                 </p>
             </div>
 
@@ -75,10 +75,10 @@ require_once 'header.php';
             <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-200 hover:border-saudi transition-colors">
                 <div class="w-12 h-12 bg-saudi/10 text-saudi rounded-sm flex items-center justify-center font-bold text-lg mb-6">02</div>
                 <h3 class="text-2xl font-bold text-charcoal mb-3 <?= $headingFontClass ?>">
-                    <?= $lang === 'ar' ? '???????' : 'Our Mission' ?>
+                    <?= $lang === 'ar' ? 'رسالتنا' : 'Our Mission' ?>
                 </h3>
                 <p class="text-gray-600 text-sm md:text-base leading-relaxed font-light">
-                    <?= $lang === 'ar' ? '????? ???? ?????? ??????? ?????? ???? ?????? ?????? ?????? ??? ???? ?????? ???????? ???????? ????????.' : 'To deliver state-of-the-art engineering, precision steel fabrication, and safe field execution that empowers sustainable industrial growth for our clients.' ?>
+                    <?= $lang === 'ar' ? 'تقديم حلول هندسية متقنة وتنفيذ ميداني آمن للهياكل الفولاذية والأعمال المدنية المتكاملة بما يدعم النمو الصناعي والتجاري المستدام لعملائنا.' : 'To deliver reliable engineering coordination, quality steel and civil works, and safe field execution that supports sustainable industrial and commercial growth for our clients.' ?>
                 </p>
             </div>
 
@@ -96,7 +96,7 @@ require_once 'header.php';
                     Desert Iron's executive management brings more than 25 years of extensive GCC industry experience in the structural steel and construction sectors, ensuring every project is guided by seasoned professionals.
                 </p>
                 <p class="text-gray-600 text-base leading-relaxed font-light">
-                    Our associated Qatar company, <strong>Safeera Trading, Contracting & Services</strong>, was established in 2012 under the same ownership. Our combined <strong>Group Experience – Qatar</strong> provides a strong foundation of completed mega-projects across the region.
+                    Our associated Qatar company, <strong>Safeera Trading, Contracting & Services</strong>, was established in 2012 under the same ownership. Our combined <strong>Group Experience – Qatar</strong> provides a strong foundation of completed industrial and commercial projects across the region.
                 </p>
             </div>
             <div class="bg-offwhite p-8 rounded-sm border border-gray-200">
@@ -125,7 +125,7 @@ require_once 'header.php';
             <div class="bg-offwhite p-6 rounded-sm border border-gray-200 shadow-sm text-center">
                 <div class="w-12 h-12 bg-saudi text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">1</div>
                 <h4 class="text-lg font-bold text-charcoal mb-2 <?= $headingFontClass ?>">Safety First</h4>
-                <p class="text-gray-600 text-xs font-light leading-relaxed">Zero-LTI safety commitment across all active fabrication plants and job sites.</p>
+                <p class="text-gray-600 text-xs font-light leading-relaxed">Strict HSE and Zero-LTI safety commitment across all active construction and installation sites.</p>
             </div>
 
             <div class="bg-offwhite p-6 rounded-sm border border-gray-200 shadow-sm text-center">
@@ -137,13 +137,13 @@ require_once 'header.php';
             <div class="bg-offwhite p-6 rounded-sm border border-gray-200 shadow-sm text-center">
                 <div class="w-12 h-12 bg-saudi text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
                 <h4 class="text-lg font-bold text-charcoal mb-2 <?= $headingFontClass ?>">Precision Detailing</h4>
-                <p class="text-gray-600 text-xs font-light leading-relaxed">Advanced 3D BIM modeling and millimeter-perfect CNC steel processing.</p>
+                <p class="text-gray-600 text-xs font-light leading-relaxed">Detailed 3D BIM modeling, shop drawings, and quality-controlled steel fabrication coordination.</p>
             </div>
 
             <div class="bg-offwhite p-6 rounded-sm border border-gray-200 shadow-sm text-center">
                 <div class="w-12 h-12 bg-saudi text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">4</div>
                 <h4 class="text-lg font-bold text-charcoal mb-2 <?= $headingFontClass ?>">On-Time Delivery</h4>
-                <p class="text-gray-600 text-xs font-light leading-relaxed">Fast mobilization and guaranteed schedule adherence for industrial projects.</p>
+                <p class="text-gray-600 text-xs font-light leading-relaxed">Fast mobilization and reliable schedule adherence for industrial and commercial projects.</p>
             </div>
 
         </div>
@@ -155,13 +155,13 @@ require_once 'header.php';
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#006B3F_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
     <div class="container mx-auto px-4 max-w-4xl relative z-10">
         <span class="inline-block px-3 py-1 bg-saudi/20 border border-saudi/40 text-emerald-300 rounded text-xs font-bold uppercase tracking-wider mb-3">
-            <?= $lang === 'ar' ? 'استشارة مجانية وعروض أسعار' : 'Free Consultation & Engineering Quote' ?>
+            <?= $lang === 'ar' ? 'فريق المبيعات والتقدير في المملكة' : 'KSA Sales & Estimation Team' ?>
         </span>
         <h2 class="text-2xl sm:text-4xl text-white font-bold <?= $headingFontClass ?> mb-4 leading-tight">
-            <?= $lang === 'ar' ? 'جاهز لبناء مشروعك القادم؟' : 'Partner with Saudi Arabia\'s Steel Leaders' ?>
+            <?= $lang === 'ar' ? 'جاهز لبناء مشروعك القادم؟' : 'Partner with Desert Iron' ?>
         </h2>
         <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto mb-8 font-light leading-relaxed">
-            <?= $lang === 'ar' ? 'تواصل مع فريق مبيعات الهندسة للحصول على استشارة متخصصة وعروض أسعار منافسة.' : 'Connect with our engineering estimation team in Riyadh for structural steel fabrication and construction contracting.' ?>
+            <?= $lang === 'ar' ? 'ناقش مشروعك، وأرسل جدول الكميات (BOQ) أو المخططات، واطلب عرض سعر تنافسي.' : 'Discuss your project, submit a BOQ or drawing, and request a competitive quotation.' ?>
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="quote.php" class="w-full sm:w-auto bg-saudi text-white px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-emerald-700 transition-all duration-300 shadow-xl min-h-[44px] flex items-center justify-center space-x-2">

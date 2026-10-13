@@ -40,21 +40,21 @@ $translations = [
         // Hero Keys
         'hero_tag' => 'Engineering & Construction',
         'hero_title' => 'Building A Stronger Tomorrow',
-        'hero_desc' => 'Leading Saudi Arabia\'s industrial transformation with world-class structural steel, PEB systems, and mega-project execution aligned with Vision 2030.',
+        'hero_desc' => 'Delivering structural steel fabrication, pre-engineered buildings (PEB), and turnkey civil construction solutions across Saudi Arabia aligned with Vision 2030.',
         'request_quote' => 'Request a Quote',
         'explore_projects' => 'Explore Projects',
         'hero_line' => 'Building A Stronger Tomorrow',
-        'home_hero_sub' => 'Leading force in structural steel fabrication, civil construction, and gigaproject execution in Riyadh and across Saudi Arabia.',
+        'home_hero_sub' => 'Trusted partner in structural steel fabrication, PEB systems, and turnkey civil construction across Saudi Arabia.',
         'our_services' => 'Our Services',
         'scroll_down' => 'Scroll Down',
 
         // Who We Are
         'who_we_are' => 'Who We Are',
         'who_we_are_sub' => 'Building a Stronger Tomorrow.',
-        'who_we_are_desc' => 'Desert Iron is a premier engineering and construction contractor in Saudi Arabia, specializing in heavy structural steel, pre-engineered buildings (PEB), and industrial civil works. Backed by state-of-the-art fabrication facilities in Riyadh, we deliver uncompromised quality and safety.',
+        'who_we_are_desc' => 'Desert Iron is an engineering and construction contractor in Saudi Arabia, specializing in structural steel, pre-engineered buildings (PEB), and industrial civil works. Backed by over 25 years of GCC executive leadership and project experience, we deliver uncompromised quality and safety.',
         'tag_structural' => 'Structural Steel',
         'tag_engineering' => 'Engineering',
-        'tag_construction' => 'Civil Construction',
+        'tag_construction' => 'Civil Construction & Turnkey Solutions',
         'more_about_us' => 'More About Us',
 
         // Our Capability
@@ -67,9 +67,9 @@ $translations = [
         'services_title' => 'Our Services',
         'services_sub' => 'Comprehensive engineering and construction solutions.',
         'srv_1_t' => 'Architectural Work', 'srv_1_d' => 'BIM-integrated architectural planning and SBC 201 compliance.',
-        'srv_2_t' => 'Civil Construction', 'srv_2_d' => 'Comprehensive civil works, foundations, and heavy concrete structures.',
+        'srv_2_t' => 'Civil Construction & Turnkey Solutions', 'srv_2_d' => 'From Foundation to Final Handover',
         'srv_3_t' => 'Pre-Engineered Buildings (PEB)', 'srv_3_d' => 'Cost-effective, rapid-deployment PEB warehouse systems.',
-        'srv_4_t' => 'Structural Steel', 'srv_4_d' => 'High-strength steel structures for heavy industrial mega-projects.',
+        'srv_4_t' => 'Structural Steel', 'srv_4_d' => 'High-strength steel structures for industrial and commercial projects.',
         'srv_5_t' => 'Roof & Wall Panels', 'srv_5_d' => 'Insulated sandwich panels and corrugated cladding systems.',
         'srv_6_t' => 'Call-off Services', 'srv_6_d' => 'On-demand contracting frameworks and rapid site mobilization.',
         'srv_7_t' => 'Trading & Materials', 'srv_7_d' => 'Supply of certified structural steel, rebars, and industrial components.',
@@ -90,13 +90,13 @@ $translations = [
         'why_5' => 'Safety & Compliance', 'why_6' => 'On-time Delivery',
         'why_7' => 'Strong Relationships', 'why_8' => 'Innovative Solutions',
 
-        // Featured Projects
-        'feat_proj' => 'Featured Projects',
-        'feat_proj_sub' => 'Landmarks of our engineering prowess.',
-        'loc' => 'Location', 'client' => 'Client',
-        'proj_1' => 'Riyadh Metro Expansion', 'proj_2' => 'NEOM Logistics Center',
-        'proj_3' => 'Jubail Petrochemical Plant', 'proj_4' => 'Jeddah Commercial Hub',
-        'proj_5' => 'Dammam Warehouse Complex',
+        // Industries & Project Applications
+        'feat_proj' => 'Industries & Project Applications',
+        'feat_proj_sub' => 'Representative imagery illustrating structural steel, logistics, industrial, and commercial building applications.',
+        'loc' => 'Location', 'client' => 'Application',
+        'proj_1' => 'Major Steel Structures & Industrial Plants', 'proj_2' => 'Logistics & Distribution Centres',
+        'proj_3' => 'Industrial & Petrochemical Facilities', 'proj_4' => 'Commercial & Multi-Storey Buildings',
+        'proj_5' => 'Pre-Engineered Warehouses & Storage',
 
         // Logos & CTA
         'trusted_by' => 'Trusted by Industry Leaders',
@@ -131,21 +131,21 @@ $translations = [
         // Hero Keys
         'hero_tag' => 'الهندسة والإنشاءات',
         'hero_title' => 'نبني غداً أقوى',
-        'hero_desc' => 'نشارك في التحول الصناعي للمملكة العربية السعودية بمنتجات الهياكل الصلبة، والمباني مسبقة الصنع، وتنفيذ المشاريع الكبرى بما يتماشى مع رؤية 2030.',
+        'hero_desc' => 'نشارك في التحول الصناعي للمملكة العربية السعودية بحلول الهياكل الفولاذية، والمباني مسبقة الصنع (PEB)، والإنشاءات المدنية المتكاملة بما يتماشى مع رؤية 2030.',
         'request_quote' => 'طلب عرض سعر',
         'explore_projects' => 'استكشف المشاريع',
         'hero_line' => 'نبني غداً أقوى',
-        'home_hero_sub' => 'قوة رائدة في تصنيع الهياكل الفولاذية، والإنشاءات المدنية، وتنفيذ المشاريع العملاقة في الرياض وكافة أنحاء المملكة.',
+        'home_hero_sub' => 'شريك موثوق في تصنيع الهياكل الفولاذية، والإنشاءات المدنية المتكاملة في كافة أنحاء المملكة العربية السعودية.',
         'our_services' => 'خدماتنا',
         'scroll_down' => 'تمرير للأسفل',
 
         // Who We Are
         'who_we_are' => 'من نحن',
         'who_we_are_sub' => 'نبني غداً أقوى.',
-        'who_we_are_desc' => 'صحراء الحديد هي مقاول رئيسي للهندسة والإنشاءات في المملكة العربية السعودية، متخصصون في الفولاذ الهيكلي الثقيل، والمباني مسبقة الصنع (PEB)، والأعمال المدنية الصناعية.',
+        'who_we_are_desc' => 'صحراء الحديد هي شركة مقاولات هندسية وإنشائية في المملكة العربية السعودية، متخصصة في الفولاذ الهيكلي، والمباني مسبقة الصنع (PEB)، والأعمال المدنية الصناعية والتجارية.',
         'tag_structural' => 'الفولاذ الهيكلي',
         'tag_engineering' => 'الهندسة والتصميم',
-        'tag_construction' => 'الإنشاءات المدنية',
+        'tag_construction' => 'الإنشاءات المدنية والحلول المتكاملة',
         'more_about_us' => 'المزيد عنا',
 
         // Our Capability
@@ -158,9 +158,9 @@ $translations = [
         'services_title' => 'خدماتنا',
         'services_sub' => 'حلول هندسية وإنشائية متكاملة.',
         'srv_1_t' => 'الأعمال المعمارية', 'srv_1_d' => 'التخطيط المعماري المدمج مع BIM والامتثال لكود البناء السعودي SBC 201.',
-        'srv_2_t' => 'الإنشاءات المدنية', 'srv_2_d' => 'أعمال مدنية شاملة، وأساسات وهياكل خرسانية ثقيلة.',
+        'srv_2_t' => 'الإنشاءات المدنية والحلول المتكاملة (تسليم مفتاح)', 'srv_2_d' => 'من الأساسات إلى التسليم النهائي',
         'srv_3_t' => 'المباني مسبقة الصنع (PEB)', 'srv_3_d' => 'أنظمة مستودعات سريعة التركيب واقتصادية التكلفة.',
-        'srv_4_t' => 'الفولاذ الهيكلي', 'srv_4_d' => 'هياكل فولاذية عالية القوة للمشاريع الصناعية الكبرى.',
+        'srv_4_t' => 'الفولاذ الهيكلي', 'srv_4_d' => 'هياكل فولاذية عالية القوة للمشاريع الصناعية والتجارية.',
         'srv_5_t' => 'ألواح الأسقف والجدران', 'srv_5_d' => 'ألواح ساندوتش المعزولة وأنظمة التكسية المضلعة.',
         'srv_6_t' => 'خدمات الطلب عند الحاجة', 'srv_6_d' => 'عقود إطار تشغيلية واستجابة سريعة.',
         'srv_7_t' => 'التجارة والمواد', 'srv_7_d' => 'توريد حديد التسليح والفولاذ المعتمد.',
@@ -169,7 +169,7 @@ $translations = [
 
         // Stats
         'stats_years' => 'سنوات الخبرة',
-        'stats_projects' => 'مشروعاً مكتظاً',
+        'stats_projects' => 'مشروعاً منجزاً',
         'stats_staff' => 'قوة عاملة',
         'stats_clients' => 'عميل سعيد',
 
@@ -181,13 +181,13 @@ $translations = [
         'why_5' => 'السلامة والامتثال', 'why_6' => 'التسليم في الوقت المحدد',
         'why_7' => 'علاقات قوية', 'why_8' => 'حلول مبتكرة',
 
-        // Featured Projects
-        'feat_proj' => 'مشاريع بارزة',
-        'feat_proj_sub' => 'معالم هندسية تعكس خبرتنا.',
-        'loc' => 'الموقع', 'client' => 'العميل',
-        'proj_1' => 'توسعة مترو الرياض', 'proj_2' => 'مركز نيوم اللوجستي',
-        'proj_3' => 'مجمع الجبيل للبتروكيماويات', 'proj_4' => 'المركز التجاري بجدة',
-        'proj_5' => 'مجمع المستودعات بالدمام',
+        // Industries & Project Applications
+        'feat_proj' => 'القطاعات وتطبيقات المشاريع',
+        'feat_proj_sub' => 'صور توضيحية تمثل تطبيقات الهياكل الفولاذية والمراكز اللوجستية والمنشآت الصناعية والمباني التجارية.',
+        'loc' => 'الموقع', 'client' => 'التطبيق',
+        'proj_1' => 'الهياكل الفولاذية الكبرى والمنشآت الصناعية', 'proj_2' => 'المراكز اللوجستية ومراكز التوزيع',
+        'proj_3' => 'المنشآت الصناعية والبتروكيماوية', 'proj_4' => 'المباني التجارية ومتعددة الطوابق',
+        'proj_5' => 'المستودعات والمباني مسبقة الصنع (PEB)',
 
         // Logos & CTA
         'trusted_by' => 'محط ثقة كبرى الشركات',

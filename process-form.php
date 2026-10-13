@@ -31,20 +31,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $attachment_info = "No attachment provided.";
     
     if (isset($_FILES['attachment']) && $_FILES['attachment']['error'] == UPLOAD_ERR_OK) {
-        $allowed = ['pdf' => 'application/pdf', 'doc' => 'application/msword', 'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'xls' => 'application/vnd.ms-excel', 'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+        $allowed = [
+            'pdf' => 'application/pdf',
+            'doc' => 'application/msword',
+            'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'xls' => 'application/vnd.ms-excel',
+            'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'dwg' => 'application/acad',
+            'zip' => 'application/zip'
+        ];
         $filename = $_FILES['attachment']['name'];
-        $filetype = $_FILES['attachment']['type'];
         $filesize = $_FILES['attachment']['size'];
         
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
         if (!array_key_exists($ext, $allowed) || $filesize > 10 * 1024 * 1024) {
             $upload_success = false;
             $attachment_info = "Invalid file type or size exceeded 10MB limit.";
         } else {
-            // Usually we'd send as email attachment using PHPMailer, but for now we just save to a safe dir and link it
+            // Save uploaded BOQ/drawing to public/uploads/
             $upload_dir = __DIR__ . '/public/uploads/';
             if(!is_dir($upload_dir)) mkdir($upload_dir, 0755, true);
-            $safe_filename = time() . '_' . basename($filename);
+            $safe_filename = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', basename($filename));
             if(move_uploaded_file($_FILES['attachment']['tmp_name'], $upload_dir . $safe_filename)){
                 $attachment_info = "File attached: " . $safe_filename;
             } else {
@@ -70,10 +77,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: no-reply@thedesertiron.com\r\n";
     $headers .= "Reply-To: $email";
 
-    mail($to, $subject, $email_content, $headers);
+    @mail($to, $subject, $email_content, $headers);
     
     // Redirect with success
-    header('Location: quote.php?success=1');
+    $referer = $_SERVER['HTTP_REFERER'] ?? '';
+    if (strpos($referer, 'contact.php') !== false) {
+        header('Location: contact.php?success=1');
+    } else {
+        header('Location: quote.php?success=1');
+    }
     exit;
 } else {
     header('Location: quote.php');

@@ -49,8 +49,8 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
     </script>
     <style>
         /* CSS Clamp Fluid Typography & Touch UX */
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { overflow-x: hidden; width: 100%; max-width: 100%; }
+        html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
+        body, main { overflow-x: hidden; overflow-x: clip; width: 100%; max-width: 100vw; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .safe-pb { padding-bottom: env(safe-area-inset-bottom, 1rem); }
@@ -266,7 +266,7 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                         <a href="standing-seam-roofing.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Standing Seam Roofing Systems</a>
                         <a href="misc-metal-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Miscellaneous Metal Works</a>
                         <a href="fireproofing-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm border-b border-gray-100 font-medium">Fireproofing Works</a>
-                        <a href="civil-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm font-medium border-b border-gray-100">Civil Works</a>
+                        <a href="civil-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm font-medium border-b border-gray-100">Civil Construction & Turnkey Solutions</a>
                         <a href="fit-out-works.php" class="px-5 py-2.5 hover:bg-offwhite hover:text-saudi text-sm font-medium">Fit-Out Works</a>
                         <div class="bg-gray-50 mt-1 pt-1 border-t border-gray-200">
                             <a href="services.php" class="block px-5 py-3 hover:text-saudi text-xs font-bold uppercase tracking-widest text-saudi">View All Services &rarr;</a>
@@ -360,7 +360,7 @@ $bodyFontClass = $lang === 'ar' ? 'font-arabic' : 'font-sans';
                     <a href="standing-seam-roofing.php" class="block py-1.5 hover:text-saudi">Standing Seam Roofing Systems</a>
                     <a href="misc-metal-works.php" class="block py-1.5 hover:text-saudi">Miscellaneous Metal Works</a>
                     <a href="fireproofing-works.php" class="block py-1.5 hover:text-saudi">Fireproofing Works</a>
-                    <a href="civil-works.php" class="block py-1.5 hover:text-saudi">Civil Works</a>
+                    <a href="civil-works.php" class="block py-1.5 hover:text-saudi">Civil Construction & Turnkey Solutions</a>
                     <a href="fit-out-works.php" class="block py-1.5 hover:text-saudi">Fit-Out Works</a>
                 </div>
             </div>

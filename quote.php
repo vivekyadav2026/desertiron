@@ -14,15 +14,15 @@ require_once 'header.php';
         <div class="flex items-center justify-center gap-4 mb-4">
             <div class="w-12 h-[3px] bg-saudi"></div>
             <span class="text-white opacity-90 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
-                <?= $lang === 'ar' ? '??? ??? ???' : 'Commercial & Technical Proposals' ?>
+                <?= $lang === 'ar' ? 'فريق المبيعات والتقدير في المملكة' : 'KSA Sales & Estimation Team' ?>
             </span>
             <div class="w-12 h-[3px] bg-saudi"></div>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 leading-tight drop-shadow-lg <?= $headingFontClass ?>">
-            <?= $lang === 'ar' ? '??? ??? ??? ??????' : 'Request a Fast Quote' ?>
+            <?= $lang === 'ar' ? 'طلب عرض سعر فني وتجاري' : 'Request a Fast Quote' ?>
         </h1>
         <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
-            <?= $lang === 'ar' ? '?? ?????? ??????? ????? ?????? ??? ??? ??? ??? ??????? ???? ??????? ???? 24 ????.' : 'Complete our quick 3-step RFQ portal to receive a detailed engineering estimate and proposal within 24 hours.' ?>
+            <?= $lang === 'ar' ? 'ناقش مشروعك، وأرسل جدول الكميات (BOQ) أو المخططات، واطلب عرض سعر تنافسي من فريق المبيعات والتقدير في المملكة.' : 'Discuss your project, submit a BOQ or drawing, and request a competitive quotation from our KSA Sales & Estimation Team.' ?>
         </p>
     </div>
 </section>
@@ -37,12 +37,12 @@ require_once 'header.php';
             <div class="lg:col-span-4 space-y-8">
                 
                 <div>
-                    <span class="text-xs uppercase tracking-widest text-saudi font-bold mb-2 block">Prequalified Estimators</span>
+                    <span class="text-xs uppercase tracking-widest text-saudi font-bold mb-2 block">KSA Sales & Estimation Team</span>
                     <h2 class="text-3xl text-charcoal font-bold <?= $headingFontClass ?> mb-4">
-                        <?= $lang === 'ar' ? '????? ????? ?????? ??????' : 'Why RFQ With Us?' ?>
+                        <?= $lang === 'ar' ? 'لماذا تطلب عرض سعر معنا؟' : 'Why RFQ With Us?' ?>
                     </h2>
                     <p class="text-gray-600 text-sm font-light leading-relaxed">
-                        <?= $lang === 'ar' ? '???? ???? ??????? ???????? ????? ??????? ???? ???????? ??????????? ?????? ?????? ???? ??????? ????????.' : 'Our team of experienced Saudi structural engineers and cost estimators evaluate every RFQ to provide budget-optimized, code-compliant proposals.' ?>
+                        <?= $lang === 'ar' ? 'يقوم فريق المهندسين والمقدرين لدينا بمراجعة كل طلب بعناية لتقديم عروض أسعار تنافسية ومتوافقة مع كود البناء السعودي.' : 'Our KSA Sales & Estimation Team evaluates every inquiry, BOQ, and drawing to provide competitive, code-compliant engineering proposals.' ?>
                     </p>
                 </div>
 
@@ -52,8 +52,8 @@ require_once 'header.php';
                     <div class="bg-white p-5 rounded-sm border border-gray-200 shadow-sm flex items-start gap-4">
                         <div class="w-10 h-10 bg-saudi/10 text-saudi flex items-center justify-center rounded shrink-0 font-bold">24h</div>
                         <div>
-                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? '??????? ?????' : '24-Hour Proposal Turnaround' ?></h4>
-                            <p class="text-gray-500 text-xs font-light mt-1">Fast technical evaluation for standard PEB and structural steel inquiries.</p>
+                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'استجابة سريعة' : '24-Hour Proposal Turnaround' ?></h4>
+                            <p class="text-gray-500 text-xs font-light mt-1">Fast technical evaluation for PEB, structural steel, and civil construction inquiries.</p>
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@ require_once 'header.php';
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
-                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? '?????? ????? ??????? (SBC)' : 'SBC Code Pre-Check' ?></h4>
+                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'التوافق مع كود البناء السعودي (SBC)' : 'SBC Code Pre-Check' ?></h4>
                             <p class="text-gray-500 text-xs font-light mt-1">All design estimates are pre-vetted to ensure compliance with Saudi Building Codes.</p>
                         </div>
                     </div>
@@ -72,8 +72,8 @@ require_once 'header.php';
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
                         </div>
                         <div>
-                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? '?????? ???????? (BOQ)' : 'BOQ & Drawing Review' ?></h4>
-                            <p class="text-gray-500 text-xs font-light mt-1">Direct upload of AutoCAD/DWG drawings and BOQ spreadsheets.</p>
+                            <h4 class="text-charcoal font-bold text-sm <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'مراجعة المخططات وجداول الكميات (BOQ)' : 'BOQ & Drawing Review' ?></h4>
+                            <p class="text-gray-500 text-xs font-light mt-1">Direct upload of AutoCAD/DWG drawings, PDFs, and BOQ spreadsheets.</p>
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@ require_once 'header.php';
                 <!-- Direct Assistance Box -->
                 <div class="bg-charcoal text-white p-6 rounded-sm shadow-md">
                     <h4 class="text-base font-bold mb-2 <?= $headingFontClass ?>">Urgent Tender or RFQ?</h4>
-                    <p class="text-gray-400 text-xs font-light mb-4">For immediate tender submissions or urgent budget estimates, contact our estimation desk directly.</p>
+                    <p class="text-gray-400 text-xs font-light mb-4">For immediate tender submissions or urgent budget estimates, contact our KSA Sales & Estimation Team directly.</p>
                     <div class="text-saudi font-bold text-sm">+966 59 951 0213</div>
                     <div class="text-gray-300 text-xs">sales@thedesertiron.com</div>
                 </div>
@@ -96,7 +96,7 @@ require_once 'header.php';
                     <?php if(isset($_GET['success'])): ?>
                     <div class="bg-green-50 border border-saudi text-saudi p-4 rounded-sm mb-6">
                         <h4 class="font-bold text-sm">Thank you for your inquiry!</h4>
-                        <p class="text-xs mt-1">Your RFQ has been received and our engineering team will get back to you shortly.</p>
+                        <p class="text-xs mt-1">Your RFQ has been received and our KSA Sales & Estimation Team will get back to you shortly.</p>
                     </div>
                     <?php endif; ?>
                     
@@ -182,8 +182,8 @@ require_once 'header.php';
                                     <span class="text-sm font-medium text-charcoal">PEB Warehouse Systems</span>
                                 </label>
                                 <label class="border border-gray-200 p-4 rounded-sm cursor-pointer hover:border-saudi flex items-center gap-3 bg-offwhite transition-colors">
-                                    <input type="radio" name="service" value="Civil Construction" class="text-saudi focus:ring-saudi">
-                                    <span class="text-sm font-medium text-charcoal">Civil Construction Works</span>
+                                    <input type="radio" name="service" value="Civil Construction & Turnkey Solutions" class="text-saudi focus:ring-saudi">
+                                    <span class="text-sm font-medium text-charcoal">Civil Construction & Turnkey Solutions</span>
                                 </label>
                                 <label class="border border-gray-200 p-4 rounded-sm cursor-pointer hover:border-saudi flex items-center gap-3 bg-offwhite transition-colors">
                                     <input type="radio" name="service" value="Roof & Wall Panels" class="text-saudi focus:ring-saudi">
@@ -194,7 +194,7 @@ require_once 'header.php';
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
                                 <div>
                                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Project Location</label>
-                                    <input type="text" name="location" placeholder="e.g. Riyadh, NEOM, Jubail" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
+                                    <input type="text" name="location" placeholder="e.g. Dammam, Riyadh, Jubail, Jeddah" class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Estimated Tonnage / Area</label>
@@ -230,7 +230,7 @@ require_once 'header.php';
                             
                             <div>
                                 <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Scope Summary / Technical Requirements</label>
-                                <textarea name="message" rows="4" placeholder="Mention steel grades, clear heights, crane capacities, timeline, or special requirements..." class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors"></textarea>
+                                <textarea name="message" rows="4" placeholder="Mention steel grades, clear heights, crane capacities, civil scope, timeline, or special requirements..." class="w-full bg-offwhite border border-gray-200 p-3 text-sm rounded-sm outline-none focus:border-saudi focus:bg-white transition-colors"></textarea>
                             </div>
 
                             <!-- File Upload Box -->
@@ -238,9 +238,9 @@ require_once 'header.php';
                                 <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Upload Drawings / BOQ (Optional)</label>
                                 <div class="border-2 border-dashed border-gray-300 rounded-sm p-6 text-center bg-offwhite hover:border-saudi transition-colors cursor-pointer" onclick="document.getElementById('rfq-file').click()">
                                     <svg class="w-8 h-8 text-saudi mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                    <span class="text-xs text-gray-700 font-medium block">Click or Drag & Drop Drawings here</span>
-                                    <span class="text-[10px] text-gray-400 font-light block mt-1">Accepts PDF, XLSX, DOCX (Max 10MB)</span>
-                                    <input type="file" name="attachment" id="rfq-file" accept=".pdf,.xlsx,.xls,.doc,.docx" class="hidden">
+                                    <span class="text-xs text-gray-700 font-medium block">Click or Drag & Drop Drawings / BOQ here</span>
+                                    <span class="text-[10px] text-gray-400 font-light block mt-1">Accepts PDF, DWG, ZIP, XLSX, DOCX (Max 10MB)</span>
+                                    <input type="file" name="attachment" id="rfq-file" accept=".pdf,.dwg,.zip,.xlsx,.xls,.doc,.docx" class="hidden">
                                 </div>
                             </div>
                             

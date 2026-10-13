@@ -1,12 +1,30 @@
 <?php 
-require_once 'header.php'; 
 require_once 'services-data.php';
 
-$service_slug = $slug ?? 'architectural-work';
+$detected_slug = basename($_SERVER['PHP_SELF'], '.php');
+$service_slug = $slug ?? ($services_data[$detected_slug] ? $detected_slug : 'architectural-work');
+
+$temp_lang = $_GET['lang'] ?? ($_SESSION['lang'] ?? 'en');
+$temp_data = $services_data[$service_slug][$temp_lang] ?? ($services_data[$service_slug]['en'] ?? []);
+if (!isset($page_title) && !empty($temp_data['meta_title'])) {
+    $page_title = $temp_data['meta_title'];
+}
+
+require_once 'header.php'; 
+
 $data = $services_data[$service_slug][$lang] ?? $services_data[$service_slug]['en'];
 
 $service_title = $data['title'] ?? 'Service Name';
-$service_overview = '<p class="mb-4">' . ($data['overview'] ?? '') . '</p><p>' . ($data['overview_2'] ?? '') . '</p>';
+$service_tagline = $data['tagline'] ?? '';
+$is_civil_turnkey = in_array($service_slug, ['civil-works', 'civil-construction'], true);
+
+if ($is_civil_turnkey) {
+    $service_overview = '<p class="mb-2">' . ($data['overview'] ?? '') . '</p>';
+} else {
+    $service_overview = '<p class="mb-4">' . ($data['overview'] ?? '') . '</p><p>' . ($data['overview_2'] ?? '') . '</p>';
+}
+
+$features_heading = $data['features_title'] ?? ($lang === 'ar' ? 'ما نقدمه' : 'What We Deliver');
 $service_features = $data['features'] ?? [];
 $service_process = $data['steps'] ?? [];
 $service_faqs = $data['faqs'] ?? [];
@@ -15,9 +33,17 @@ $service_specs = $data['specs'] ?? [];
 $img_map = [
     'architectural-work' => 'architectural_work.jpg',
     'civil-construction' => 'civil_construction.jpg',
+    'civil-works' => 'civil_construction.jpg',
+    'industrial-construction' => 'civil_construction.jpg',
     'pre-engineered-buildings' => 'peb_warehouse.jpg',
     'structural-steel' => 'structural_steel.jpg',
+    'pipeline-piping' => 'architectural_work.jpg',
     'roof-wall-panels' => 'roof_wall_panels.jpg',
+    'roof-wall-cladding' => 'roof_wall_panels.jpg',
+    'standing-seam-roofing' => 'shutdown_maintenance.jpg',
+    'misc-metal-works' => 'trading_warehouse.jpg',
+    'fireproofing-works' => 'structural_steel.jpg',
+    'fit-out-works' => 'architectural_work.jpg',
     'call-off-services' => 'call_off_services.jpg',
     'trading' => 'trading_warehouse.jpg',
     'technical-staffing' => 'technical_staffing.jpg',
@@ -30,7 +56,7 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
 <!-- Hero Section -->
 <section class="relative min-h-[45vh] md:min-h-[50vh] flex items-center bg-charcoal overflow-hidden pt-24 pb-12">
     <div class="absolute inset-0 z-0">
-        <img src="<?= $hero_img ?>" alt="<?= $service_title ?>" class="w-full h-full object-cover opacity-75">
+        <img src="<?= $hero_img ?>" alt="<?= htmlspecialchars($service_title) ?>" class="w-full h-full object-cover opacity-75">
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/20"></div>
     </div>
     
@@ -38,14 +64,19 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
         <div class="flex items-center gap-4 mb-5">
             <div class="w-12 h-[3px] bg-saudi"></div>
             <span class="text-gray-300 text-xs md:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
-                <a href="services.php" class="text-white hover:text-saudi transition-colors">Our Services</a> 
+                <a href="services.php" class="text-white hover:text-saudi transition-colors"><?= $lang === 'ar' ? 'خدماتنا' : 'Our Services' ?></a> 
                 <span class="mx-2 text-gray-500">/</span> 
                 <?= $service_title ?>
             </span>
         </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight drop-shadow-lg <?= $headingFontClass ?>">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight drop-shadow-lg <?= $headingFontClass ?>">
             <?= $service_title ?>
         </h1>
+        <?php if(!empty($service_tagline)): ?>
+        <p class="text-emerald-300 text-lg md:text-2xl font-medium italic mt-3 drop-shadow">
+            <?= $service_tagline ?>
+        </p>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -58,17 +89,26 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
             <div class="lg:col-span-8 space-y-10 md:space-y-12">
                 
                 <!-- Overview -->
-                <section >
-                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-4 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???? ????' : 'Overview' ?></h2>
+                <section>
+                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-3 <?= $headingFontClass ?>">
+                        <?= $is_civil_turnkey ? $service_title : ($lang === 'ar' ? 'نظرة عامة' : 'Overview') ?>
+                    </h2>
+                    <?php if(!empty($service_tagline)): ?>
+                    <p class="text-saudi font-semibold italic text-base md:text-lg mb-4">
+                        <?= $service_tagline ?>
+                    </p>
+                    <?php endif; ?>
                     <div class="text-gray-700 leading-relaxed text-base md:text-lg font-light">
                         <?= $service_overview ?>
                     </div>
                 </section>
                 
-                <!-- What We Deliver (1 col mobile, 2 col sm+) -->
+                <!-- Scope of Services / What We Deliver (1 col mobile, 2 col sm+) -->
                 <?php if(!empty($service_features)): ?>
                 <section>
-                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-6 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???? ????' : 'What We Deliver' ?></h2>
+                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-6 <?= $headingFontClass ?>">
+                        <?= $features_heading ?><?= $is_civil_turnkey ? ':' : '' ?>
+                    </h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <?php foreach($service_features as $feat): ?>
                         <div class="bg-white p-5 rounded-sm shadow-sm border border-gray-200 flex items-start gap-3.5 group hover:border-saudi transition-colors duration-300">
@@ -79,13 +119,21 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
                         </div>
                         <?php endforeach; ?>
                     </div>
+
+                    <?php if($is_civil_turnkey && !empty($data['overview_2'])): ?>
+                    <div class="mt-6 bg-white border-s-4 border-saudi p-5 rounded-sm shadow-xs">
+                        <p class="text-charcoal font-medium text-base md:text-lg leading-relaxed">
+                            <?= $data['overview_2'] ?>
+                        </p>
+                    </div>
+                    <?php endif; ?>
                 </section>
                 <?php endif; ?>
                 
                 <!-- Our Process -->
                 <?php if(!empty($service_process)): ?>
                 <section>
-                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-6 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???????' : 'Our Process' ?></h2>
+                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-6 <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'مراحل العمل' : 'Our Process' ?></h2>
                     <div class="space-y-3">
                         <?php foreach($service_process as $idx => $step): ?>
                         <div class="flex gap-4 group">
@@ -107,7 +155,7 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
                 <!-- FAQ Accordion (48px header tap height) -->
                 <?php if(!empty($service_faqs)): ?>
                 <section>
-                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-6 <?= $headingFontClass ?>"><?= $lang === 'ar' ? '??????? ???????' : 'Frequently Asked Questions' ?></h2>
+                    <h2 class="text-2xl md:text-3xl text-charcoal font-bold mb-6 <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions' ?></h2>
                     <div class="space-y-3">
                         <?php foreach($service_faqs as $idx => $faq): ?>
                         <div class="bg-white border border-gray-200 rounded-sm shadow-sm">
@@ -132,10 +180,10 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
                 <!-- Quote Box -->
                 <div class="bg-gradient-to-br from-charcoal to-[#14231f] text-white p-6 md:p-8 rounded-xl shadow-xl border border-saudi/30">
                     <span class="inline-block px-2.5 py-0.5 bg-saudi/20 border border-saudi/40 text-emerald-300 rounded text-[11px] font-bold uppercase tracking-wider mb-2">
-                        <?= $lang === 'ar' ? 'استشارة مجانية' : 'Direct RFQ & Consultation' ?>
+                        <?= $lang === 'ar' ? 'فريق المبيعات والتقدير في المملكة' : 'KSA Sales & Estimation Team' ?>
                     </span>
                     <h3 class="text-xl md:text-2xl font-bold mb-2 <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'جاهز لبدء مشروعك؟' : 'Ready to get started?' ?></h3>
-                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-light"><?= $lang === 'ar' ? 'تواصل مع فريقنا الهندسي لمناقشة المتطلبات الفنية والحصول على عرض سعر مفصل.' : 'Contact our engineering team in Riyadh to discuss your structural requirements and receive a detailed technical proposal.' ?></p>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-light"><?= $lang === 'ar' ? 'ناقش مشروعك، وأرسل جدول الكميات (BOQ) أو المخططات، واطلب عرض سعر تنافسي من فريق المبيعات والتقدير في المملكة.' : 'Discuss your project, submit a BOQ or drawing, and request a competitive quotation.' ?></p>
                     <div class="space-y-3">
                         <a href="quote.php" class="w-full bg-saudi text-white py-3 px-4 rounded-lg font-bold hover:bg-emerald-700 transition-all text-xs uppercase tracking-widest shadow-md min-h-[44px] flex items-center justify-center space-x-2">
                             <span><?= t('get_quote') ?></span>
@@ -143,7 +191,7 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
                         </a>
                         <a href="tel:+966599510213" class="w-full bg-white/10 border border-white/20 text-white py-3 px-4 rounded-lg font-bold hover:bg-white hover:text-charcoal transition-all text-xs uppercase tracking-widest min-h-[44px] flex items-center justify-center space-x-2">
                             <svg class="w-4 h-4 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <span>+966 59 951 0213</span>
+                            <span dir="ltr">+966 59 951 0213</span>
                         </a>
                     </div>
                 </div>
@@ -151,7 +199,7 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
                 <!-- Technical Specs (Stacked Key-Value Cards on Mobile) -->
                 <?php if(!empty($service_specs)): ?>
                 <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-200">
-                    <h3 class="text-sm text-charcoal font-bold mb-4 uppercase tracking-widest <?= $headingFontClass ?>"><?= $lang === 'ar' ? '???????? ???????' : 'Technical Specs' ?></h3>
+                    <h3 class="text-sm text-charcoal font-bold mb-4 uppercase tracking-widest <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'المواصفات الفنية' : 'Technical Specs' ?></h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
                         <?php foreach($service_specs as $key => $val): ?>
                         <div class="bg-offwhite p-3.5 rounded-sm border border-gray-100">
@@ -165,10 +213,10 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
 
                 <!-- Related Services -->
                 <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-200">
-                    <h3 class="text-sm text-charcoal font-bold mb-4 uppercase tracking-widest <?= $headingFontClass ?>"><?= $lang === 'ar' ? '????? ????' : 'Other Services' ?></h3>
+                    <h3 class="text-sm text-charcoal font-bold mb-4 uppercase tracking-widest <?= $headingFontClass ?>"><?= $lang === 'ar' ? 'خدمات أخرى' : 'Other Services' ?></h3>
                     <div class="space-y-2">
-                        <a href="structural-steel.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs md:text-sm font-medium border-b border-gray-100 pb-2.5 py-1">Structural Steel Buildings</a>
-                        <a href="civil-construction.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs md:text-sm font-medium border-b border-gray-100 pb-2.5 py-1">Civil Construction</a>
+                        <a href="structural-steel.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs md:text-sm font-medium border-b border-gray-100 pb-2.5 py-1">Structural Steel Fabrication & Erection</a>
+                        <a href="civil-works.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs md:text-sm font-medium border-b border-gray-100 pb-2.5 py-1">Civil Construction & Turnkey Solutions</a>
                         <a href="pre-engineered-buildings.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs md:text-sm font-medium border-b border-gray-100 pb-2.5 py-1">Pre-Engineered Buildings (PEB)</a>
                         <a href="shutdown-maintenance.php" class="block text-gray-700 hover:text-saudi transition-colors text-xs md:text-sm font-medium py-1">Shutdown & Maintenance</a>
                     </div>
@@ -181,7 +229,7 @@ $hero_img = 'public/images/' . ($img_map[$service_slug] ?? 'civil_construction.j
 </div>
 
 <!-- Mobile Sticky Quick-Action Bar (Fixed at bottom on screens < 768px) -->
-<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-charcoal/95  p-3 border-t border-saudi/40 flex gap-3 shadow-2xl safe-pb">
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-charcoal/95 p-3 border-t border-saudi/40 flex gap-3 shadow-2xl safe-pb">
     <a href="tel:+966599510213" class="flex-1 bg-white/10 text-white text-center py-2.5 rounded-sm font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 border border-white/20 min-h-[44px]">
         <svg class="w-4 h-4 text-saudi" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
         Call Us

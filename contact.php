@@ -16,7 +16,7 @@ require_once 'components.php';
             <?= $lang==='ar' ? 'تواصل مع فريقنا' : 'Contact Desert Iron' ?>
         </h1>
         <p class="text-steel max-w-2xl mx-auto text-sm md:text-base">
-            <?= $lang==='ar' ? 'نحن هنا للإجابة على استفساراتكم وتوفير استشارات هندسية وعروض أسعار دقيقة لمشاريعكم.' : 'Our engineering and sales team in Riyadh is ready to support your structural steel, PEB, and civil construction projects.' ?>
+            <?= $lang==='ar' ? 'تواصل مع فريق المبيعات والتقدير في المملكة لمناقشة مشروعك، أو إرسال جدول الكميات (BOQ) أو المخططات، وطلب عرض سعر تنافسي.' : 'Contact our KSA Sales & Estimation Team — discuss your project, submit a BOQ or drawing, and request a competitive quotation.' ?>
         </p>
     </div>
 </section>
@@ -32,10 +32,10 @@ require_once 'components.php';
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
-                    <h3 class="font-bold text-charcoal text-lg mb-1"><?= $lang==='ar' ? 'المقر الرئيسي والمصنع' : 'Head Office & Plant' ?></h3>
+                    <h3 class="font-bold text-charcoal text-lg mb-1"><?= $lang==='ar' ? 'المقر المسجل للشركة' : 'Registered Company Address' ?></h3>
                     <p class="text-steel text-sm leading-relaxed">
-                        Industrial Gate City, Riyadh<br>
-                        Kingdom of Saudi Arabia
+                        Building 4996, King Faisal Road,<br>
+                        Al Mazruiyah, Dammam 32414, Saudi Arabia
                     </p>
                 </div>
             </div>
@@ -78,8 +78,15 @@ require_once 'components.php';
                     <?= $lang==='ar' ? 'أرسل لنا استفسارك' : 'Send Us a Message' ?>
                 </h2>
                 <p class="text-steel text-sm mb-6">
-                    <?= $lang==='ar' ? 'يرجى تعبئة النموذج وسيقوم مهندسو المبيعات بالتواصل معكم خلال 24 ساعة.' : 'Fill out the form below and our engineering estimation team will respond within 24 hours.' ?>
+                    <?= $lang==='ar' ? 'ناقش مشروعك، وأرسل جدول الكميات (BOQ) أو المخططات، واطلب عرض سعر تنافسي من فريق المبيعات والتقدير في المملكة.' : 'Discuss your project, submit a BOQ or drawing, and request a competitive quotation from our KSA Sales & Estimation Team.' ?>
                 </p>
+
+                <?php if(isset($_GET['success'])): ?>
+                <div class="bg-green-50 border border-saudi text-saudi p-4 rounded-lg mb-6">
+                    <h4 class="font-bold text-sm">Thank you for your inquiry!</h4>
+                    <p class="text-xs mt-1">Your message has been received and our KSA Sales & Estimation Team will respond shortly.</p>
+                </div>
+                <?php endif; ?>
 
                 <form action="process-form.php" method="POST" enctype="multipart/form-data" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -109,7 +116,7 @@ require_once 'components.php';
                         <select name="service" class="w-full bg-offwhite border border-gray-300 px-4 py-3 rounded-lg text-base focus:outline-none focus:border-saudi focus:ring-1 focus:ring-saudi transition text-charcoal">
                             <option value="structural-steel"><?= $lang==='ar' ? 'تصنيع الفولاذ الهيكلي (Structural Steel)' : 'Structural Steel Fabrication' ?></option>
                             <option value="peb"><?= $lang==='ar' ? 'المباني مسبقة الصنع (PEB)' : 'Pre-Engineered Buildings (PEB)' ?></option>
-                            <option value="civil-construction"><?= $lang==='ar' ? 'الإنشاءات المدنية (Civil Construction)' : 'Civil & Foundation Construction' ?></option>
+                            <option value="civil-works"><?= $lang==='ar' ? 'الإنشاءات المدنية والحلول المتكاملة (تسليم مفتاح)' : 'Civil Construction & Turnkey Solutions' ?></option>
                             <option value="roof-panels"><?= $lang==='ar' ? 'ألواح التكسية والأسقف' : 'Roof & Wall Cladding Panels' ?></option>
                             <option value="technical-staffing"><?= $lang==='ar' ? 'التزويد بالكادر الفني' : 'Technical Staffing & Riggers' ?></option>
                             <option value="general"><?= $lang==='ar' ? 'استفسار عام' : 'General Inquiry' ?></option>
@@ -147,8 +154,8 @@ require_once 'components.php';
                     <div class="space-y-4 text-sm">
                         <!-- Sales -->
                         <div class="border-b border-gray-800 pb-3">
-                            <div class="font-semibold text-saudi uppercase text-xs tracking-wider"><?= $lang==='ar' ? 'مبيعات العقود والصلب' : 'Sales & Estimation' ?></div>
-                            <div class="text-offwhite font-medium mt-1">Eng. Jaffar / Sales Dept</div>
+                            <div class="font-semibold text-saudi uppercase text-xs tracking-wider"><?= $lang==='ar' ? 'فريق المبيعات والتقدير في المملكة' : 'KSA Sales & Estimation Team' ?></div>
+                            <div class="text-offwhite font-medium mt-1">Eng. Jaffar / Sales & Estimation</div>
                             <a href="mailto:sales@thedesertiron.com" class="text-steel hover:text-white transition text-xs block">sales@thedesertiron.com</a>
                             <a href="tel:+966599510213" class="text-steel hover:text-white transition text-xs block">+966 59 951 0213</a>
                         </div>
@@ -158,11 +165,11 @@ require_once 'components.php';
                             <div class="text-offwhite font-medium mt-1">BIM & Technical Office</div>
                             <a href="mailto:jaffar@thedesertiron.com" class="text-steel hover:text-white transition text-xs block">jaffar@thedesertiron.com</a>
                         </div>
-                        <!-- Procurement -->
+                        <!-- Registered Office -->
                         <div>
-                            <div class="font-semibold text-saudi uppercase text-xs tracking-wider"><?= $lang==='ar' ? 'المشتريات والمحتوى المحلي' : 'Procurement & Vendor Affairs' ?></div>
-                            <div class="text-offwhite font-medium mt-1">Riyadh Industrial Facility</div>
-                            <div class="text-steel text-xs">Industrial Gate City, Zone 3, Riyadh</div>
+                            <div class="font-semibold text-saudi uppercase text-xs tracking-wider"><?= $lang==='ar' ? 'المقر المسجل والمراسلات' : 'Registered Office & Administration' ?></div>
+                            <div class="text-offwhite font-medium mt-1">Dammam Head Office</div>
+                            <div class="text-steel text-xs">Building 4996, King Faisal Road, Al Mazruiyah, Dammam 32414, Saudi Arabia</div>
                         </div>
                     </div>
                 </div>
@@ -172,13 +179,13 @@ require_once 'components.php';
                     <div class="p-3 bg-offwhite rounded-t-lg border-b border-gray-200">
                         <span class="text-xs font-bold text-charcoal uppercase tracking-wider flex items-center">
                             <svg class="w-4 h-4 text-saudi mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
-                            <?= $lang==='ar' ? 'موقعنا - مدينة البوابة الصناعية بالرياض' : 'Factory Location - Riyadh' ?>
+                            <?= $lang==='ar' ? 'المقر المسجل - الدمام، المملكة العربية السعودية' : 'Registered Office - Dammam, Saudi Arabia' ?>
                         </span>
                     </div>
                     <div class="h-64 w-full rounded-b-lg overflow-hidden relative">
                         <iframe 
                             class="w-full h-full border-0" 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116024.28723652876!2d46.75!3d24.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sIndustrial%20City%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2ssa" 
+                            src="https://www.google.com/maps?q=Al+Mazruiyah,+Dammam+32414,+Saudi+Arabia&output=embed" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
